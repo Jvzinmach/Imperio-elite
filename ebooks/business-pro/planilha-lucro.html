@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Lucro Profissional 2.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a3321;
+            --highlight: #ffbb00;
+            --bg: #f7f5e0;
+            --white: #ffffff;
+            --success: #28a745;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            padding: 20px;
+        }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .calc-panel {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .result-panel {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        h1,
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #f0f0f0;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .btn-calc {
+            background: var(--highlight);
+            color: var(--primary);
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+
+        .btn-calc:hover {
+            transform: scale(1.02);
+        }
+
+        .metric {
+            margin: 15px 0;
+        }
+
+        .metric-val {
+            font-size: 2.2rem;
+            display: block;
+            font-weight: 800;
+            color: var(--highlight);
+        }
+
+        @media (max-width: 800px) {
+            .wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="calc-panel">
+            <h2>📊 Custos do Produto</h2>
+            <div class="input-group">
+                <label>Custos de Ingredientes (R$)</label>
+                <input type="number" id="ing" placeholder="Ex: 12.50" step="0.01">
+            </div>
+            <div class="input-group">
+                <label>Embalagem e Etiquetas (R$)</label>
+                <input type="number" id="emb" placeholder="Ex: 3.00" step="0.01">
+            </div>
+            <div class="input-group">
+                <label>Fator de Perda/Desperdício (5% a 10%)</label>
+                <input type="number" id="lost" value="5">
+            </div>
+
+            <hr style="opacity: 0.1; margin: 25px 0;">
+
+            <h2>🏢 Custos Fixos (Estimativa)</h2>
+            <p style="font-size: 0.8rem; margin-bottom: 15px; opacity: 0.7;">Gás, Luz, Água, MEI. Sugerimos somar tudo
+                do mês e dividir pelo total de bolos que você faz.</p>
+            <div class="input-group">
+                <label>Custo Fixo Mensal Médio (R$)</label>
+                <input type="number" id="fixed_total" placeholder="Ex: 400.00">
+            </div>
+            <div class="input-group">
+                <label>Meta de Bolos p/ Mês</label>
+                <input type="number" id="goal" value="100">
+            </div>
+
+            <button class="btn-calc" onclick="calcPro()">GERAR PRECIFICAÇÃO PRO ➔</button>
+        </div>
+
+        <div class="result-panel">
+            <div class="metric">
+                <p>Preço de Venda Mínimo</p>
+                <span class="metric-val" id="res_min">R$ 0,00</span>
+                <p style="font-size: 0.8rem;">(Margem 30% - Sobrevivência)</p>
+            </div>
+            <div class="metric">
+                <p>Preço de Venda Sugerido (VIP)</p>
+                <span class="metric-val" id="res_sugg" style="color: #64ffda;">R$ 0,00</span>
+                <p style="font-size: 0.8rem;">(Margem 60% - Crescimento)</p>
+            </div>
+            <div class="metric" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px;">
+                <p>Lucro Líquido Real/Unid.</p>
+                <span id="res_profit" style="font-weight: bold; font-size: 1.2rem;">R$ 0,00</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calcPro() {
+            const ing = parseFloat(document.getElementById('ing').value) || 0;
+            const emb = parseFloat(document.getElementById('emb').value) || 0;
+            const lost = parseFloat(document.getElementById('lost').value) / 100;
+            const fixedT = parseFloat(document.getElementById('fixed_total').value) || 0;
+            const goal = parseFloat(document.getElementById('goal').value) || 1;
+
+            const custoVariavel = (ing + emb) * (1 + lost);
+            const custoFixoUnid = fixedT / goal;
+            const custoTotal = custoVariavel + custoFixoUnid;
+
+            const precoMin = custoTotal / (1 - 0.30);
+            const precoSugg = custoTotal / (1 - 0.60);
+            const lucroReal = precoSugg - custoTotal;
+
+            document.getElementById('res_min').innerText = "R$ " + precoMin.toFixed(2).replace('.', ',');
+            document.getElementById('res_sugg').innerText = "R$ " + precoSugg.toFixed(2).replace('.', ',');
+            document.getElementById('res_profit').innerText = "R$ " + lucroReal.toFixed(2).replace('.', ',');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+=== ORDER BUMPS (OFERTAS COMPLEMENTARES) - 2 OPÇÕES RECOMENDADAS ===
+
+👉 OPÇÃO 1: A BÍBLIA DOS RECHEIOS PERFEITOS
+Título: 🔴 LEVE TAMBÉM: A Bíblia dos Recheios Perfeitos
+Descrição: Aprenda a "Química Secreta" dos recheios que aguentam 24h fora da geladeira. Mousseline, Ganache e Brigadeiro de Ouro.
+Imagem: capas_cakto/v2/1_recheios_chocolate.png
+Preço Sugerido: R$ 9,70
+
+👉 OPÇÃO 2: MÉTODO BOLOS DE POTE
+Título: 🍰 ADICIONAR: O Segredo do Bolo Fofinho (Massa Nuvem)
+Descrição: A técnica exata para massas que nunca solam e ficam sempre úmidas e aeradas. 
+Imagem: capas_cakto/v2/2_bolo_pote_maracuja.png
+Preço Sugerido: R$ 11,90
+
+=== ESTRATÉGIA DO FUNIL "BUSINESS DE OURO" ===
+
+1️⃣ PRODUTO PRINCIPAL (Check-out): 100 Receitas de Bolos Fit (R$ 17,90)
+2️⃣ UPSELL (Página 1): Guia Estratégico "Como Lucrar Vendendo Bolos Fit" (R$ 27,90)
+3️⃣ DOWNSELL (Página 2): Combo 2 em 1 (Bolo de Pote + Doces de Festa) (R$ 24,90)
+
+=== PERSONALIZAÇÃO DAS CORES (Check-out Premium) ===
+1️⃣ COR PRIMÁRIA: #6A3321 (Marrom Chocolate)
+2️⃣ COR DE FUNDO: #F7F5E0 (Creme Suave)
+3️⃣ COR DE DESTAQUE: #FFBB00 (Amarelo Ouro)
+
+=== PERSONALIZAÇÃO DO ORDER BUMP (Se houver opção de CSS/Estilo) ===
+Se a Cakto pedir "Cor de Fundo do Bump": #FFFFFF (Branco) ou #FFF9E6 (Creme)
+Se a Cakto pedir "Cor da Borda": #FFBB00 (Amarelo) ou #E5D6C6 (Marrom Claro)
+=== TÍTULO DO PRODUTO PRINCIPAL ===
+Ebook 100 Receitas de Bolos Sem Glúten - Receitas da Nutri
+
+=== DESCRIÇÃO CURTA DO PRODUTO PRINCIPAL ===
+Descubra como comer bolos deliciosos todos os dias sem sair da dieta. O guia definitivo com 100 receitas testadas de bolos sem glúten, sem açúcar e sem leite. Inclui 4 Bônus Exclusivos e Garantia de 7 Dias.

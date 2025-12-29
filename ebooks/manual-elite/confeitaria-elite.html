@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual da Confeiteira de Elite - Beatriz Langoni</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #4a2511;
+            --gold: #c5a059;
+            --gold-light: #e6c288;
+            --bg: #f9f7f2;
+            --white: #ffffff;
+            --text-main: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #e0e0e0;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .ebook-container {
+            width: 210mm;
+            /* A4 Width */
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .page {
+            width: 100%;
+            height: 297mm;
+            /* A4 Height */
+            padding: 25mm;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            background: white;
+            border-bottom: 1px solid #eee;
+        }
+
+        .page-break {
+            page-break-after: always;
+        }
+
+        /* Cover Page Styles */
+        .cover {
+            background: linear-gradient(135deg, var(--primary) 0%, #2a150a 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .cover-content {
+            border: 2px solid var(--gold);
+            margin: 40px;
+            height: calc(100% - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .cover h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 20px;
+            color: var(--gold-light);
+            text-transform: uppercase;
+        }
+
+        .cover .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .cover .badge {
+            background: var(--gold);
+            color: var(--primary);
+            padding: 10px 30px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border-radius: 50px;
+        }
+
+        /* Interior Styles */
+        h2 {
+            font-family: 'Baloo 2', cursive;
+            color: var(--primary);
+            font-size: 2.2rem;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .chapter-intro {
+            background: var(--bg);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+            border-left: 8px solid var(--gold);
+        }
+
+        .highlight-box {
+            background: var(--primary);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .gold-text {
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        .image-placeholder {
+            width: 100%;
+            height: 250px;
+            background: #f0f0f0;
+            border: 1px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px 0;
+            border-radius: 10px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 25mm;
+            left: 25mm;
+            right: 25mm;
+            font-size: 0.8rem;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* TABLE OF CONTENTS */
+        .toc-list {
+            list-style: none;
+            margin-top: 50px;
+        }
+
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            border-bottom: 1px dotted #ccc;
+            padding-bottom: 5px;
+        }
+
+        .toc-item span:first-child {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        @media print {
+            body {
+                background: none;
+            }
+
+            .ebook-container {
+                margin: 0;
+                box-shadow: none;
+                width: 100%;
+            }
+
+            .page {
+                border: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="ebook-container">
+
+        <!-- PAGE 1: COVER -->
+        <div class="page cover">
+            <div class="cover-content">
+                <span class="subtitle">MÉTODO IMPRESSIONAR</span>
+                <h1>MANUAL DA<br>CONFEITEIRA<br><span style="color: white;">DE ELITE</span></h1>
+                <p class="subtitle" style="text-align: center; margin-top: 20px;">Transformando Bolos em Joias
+                    Comestíveis</p>
+                <div class="badge">EDIÇÃO LUXO 2025</div>
+                <div style="margin-top: 60px; color: var(--gold-light);">BEATRIZ LANGONI</div>
+            </div>
+        </div>
+
+        <!-- PAGE 2: SUMÁRIO -->
+        <div class="page">
+            <h2>Sumário</h2>
+            <div class="toc-list">
+                <div class="toc-item"><span>Capítulo 1: A Psicologia da Primeira Garfada</span><span>03</span></div>
+                <div class="toc-item"><span>Capítulo 2: Harmonia de Cores e Paletas Luxuosas</span><span>05</span></div>
+                <div class="toc-item"><span>Capítulo 3: Bicos de Confeitar: Guia de Modelagem</span><span>07</span>
+                </div>
+                <div class="toc-item"><span>Capítulo 4: Finalização com Frutas e Flores</span><span>09</span></div>
+                <div class="toc-item"><span>Capítulo 5: A Engenharia das Embalagens de Luxo</span><span>11</span></div>
+                <div class="toc-item"><span>Capítulo 6: Fotografia de Alimentos com Celular</span><span>13</span></div>
+                <div class="toc-item"><span>Capítulo 7: Como Cobrar Preços Premium</span><span>15</span></div>
+                <div class="toc-item"><span>Capítulo 8: Higiene e Segurança de Elite</span><span>17</span></div>
+                <div class="toc-item"><span>Capítulo 9: O Segredo da Textura Perfeita</span><span>19</span></div>
+                <div class="toc-item"><span>Capítulo 10: Estruturação de Bolos de Andar</span><span>21</span></div>
+                <div class="toc-item"><span>Capítulo 11: Transportando Obras de Arte</span><span>23</span></div>
+                <div class="toc-item"><span>Capítulo 12: Atendimento VIP ao Cliente</span><span>25</span></div>
+                <div class="toc-item"><span>Capítulo 13: Criando sua Identidade Visual</span><span>27</span></div>
+                <div class="toc-item"><span>Capítulo 14: Marketing de Desejo</span><span>29</span></div>
+                <div class="toc-item"><span>Capítulo 15: O Próximo Passo do seu Império</span><span>31</span></div>
+            </div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 02</span></div>
+        </div>
+
+        <!-- PAGE 3: CAP 1 -->
+        <div class="page">
+            <h2>Capítulo 1: A Psicologia da Primeira Garfada</h2>
+            <div class="chapter-intro">
+                "Ninguém compra um bolo apenas porque está com fome. Compramos bolos para celebrar, para impressionar e
+                para sentir que merecemos um momento de luxo."
+            </div>
+            <p>A ciência explica que nós comemos primeiro com os olhos. O cérebro humano demora apenas <strong>0,5
+                    segundos</strong> para decidir se algo é apetitoso ou não. Em um mercado saturado, a sua única
+                chance de se destacar é dominando a estética.</p>
+            <p>Neste capítulo, exploraremos como criar o <span class="gold-text">Gatilho do Prazer Imediato</span>. Não
+                se trata apenas de colocar um morango no topo, mas sim de entender a geometria do desejo. A simetria (ou
+                a assimetria proposital) guia o olhar do seu cliente até o ponto focal do seu bolo.</p>
+            <div class="highlight-box">
+                <h4>💡 Insight de Elite:</h4>
+                O brilho da calda e a opacidade da massa criam contrastes que o cérebro interpreta como frescor e
+                qualidade premium.
+            </div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 03</span></div>
+        </div>
+
+        <!-- PAGE 4: CAP 2 -->
+        <div class="page">
+            <h2>Capítulo 2: Harmonia de Cores e Paletas Luxuosas</h2>
+            <p>Cores erradas podem fazer o bolo mais gostoso do mundo parecer um desastre caseiro. A confeitaria de
+                elite utiliza a <span class="gold-text">Roda de Cores</span> para criar sofisticação.</p>
+            <p>Dê preferência a cores análogas (tons vizinhos no círculo cromático) para um visual calmo e elegante, ou
+                cores complementares para um visual vibrante e festivo. Fuja dos cores "Artificiais" intensas demais,
+                que podem passar a ideia de excesso de corantes químicos.</p>
+            <div class="image-placeholder">
+                [INFOGRÁFICO: Exemplos de combinações Marrom/Dourado e Rosa/Champanhe]
+            </div>
+            <p>Lembre-se: O branco nunca é "apenas branco". Existe o marfim, o pérola e o off-white, cada um
+                transmitindo um nível diferente de sofisticação para o seu chantilly ou buttercream.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 04</span></div>
+        </div>
+
+        <!-- PAGE 5: CAP 3 -->
+        <div class="page">
+            <h2>Capítulo 3: Bicos de Confeitar: Guia de Modelagem</h2>
+            <p>O bico de confeitar é a caneta do artista. Dominar os movimentos básicos separa as amadoras das
+                profissionais de elite.</p>
+            <ul style="margin-left: 20px; margin-bottom: 20px;">
+                <li><strong>Bico 1M:</strong> A clássica roseta, mas com técnica de pressão constante.</li>
+                <li><strong>Bico Folha:</strong> Para dar vida e movimento.</li>
+                <li><strong>Bico Perlê:</strong> Para escritas e detalhes de precisão.</li>
+            </ul>
+            <p>O segredo da elite não é ter 100 bicos, mas saber usar 5 bicos com perfeição total. A consistência do seu
+                creme é o fator determinante aqui: ele deve ser firme o suficiente para segurar a forma, mas macio o
+                suficiente para não "serrilhar" as bordas.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 05</span></div>
+        </div>
+
+        <!-- PAGE 6: CAP 4 -->
+        <div class="page">
+            <h2>Capítulo 4: Finalização com Frutas e Flores</h2>
+            <p>Produtos naturais elevam o valor percebido de forma imediata. Um bolo decorado com flores frescas
+                selecionadas pode custar até 40% a mais do que um decorado apenas com açúcar.</p>
+            <div class="highlight-box"
+                style="background: #fdfdfd; color: var(--primary); border: 2px solid var(--primary);">
+                <strong>⚠️ Atenção à Segurança:</strong> Sempre higienize as flores e proteja o caule com fita para que
+                o contato com o alimento seja seguro. Utilize apenas flores classificadas como comestíveis ou não
+                tóxicas.
+            </div>
+            <p>A técnica do "Drip" (calda escorrendo) deve parecer um acidente controlado, não uma bagunça. A
+                temperatura da calda é a chave para o escorrimento perfeito.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 06</span></div>
+        </div>
+
+        <!-- PAGE 7: CAP 5 -->
+        <div class="page">
+            <h2>Capítulo 5: A Engenharia das Embalagens de Luxo</h2>
+            <p>O seu cliente não compra só o bolo, ele compra a experiência de "desembrulhar um presente". Se você
+                entrega um bolo premium em uma caixa comum de papelão fino, você está destruindo o seu lucro antes mesmo
+                do cliente provar.</p>
+            <p>Invista em caixas com visores transparentes, fitas de cetim grossas e tags personalizadas. O som do papel
+                de seda sendo aberto faz parte da gastronomia sensorial.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 07</span></div>
+        </div>
+
+        <!-- PAGE 8: CAP 8 -->
+        <div class="page">
+            <h2>Capítulo 8: Higiene e Segurança de Elite</h2>
+            <div class="chapter-intro">
+                "O luxo não aceita falhas. A segurança alimentar é a base invisível que sustenta a sua autoridade."
+            </div>
+            <p>Em um ambiente de elite, a limpeza não é opcional, é ritualística. Cada utensílio, cada bancada e cada
+                ingrediente deve passar por um processo rigoroso de controle.</p>
+            <p><strong>A Regra de Ouro:</strong> Nunca utilize panos de prato convencionais. Utilize papéis descartáveis
+                de alta absorção ou bobinas de TNT esterilizadas. Isso reduz o risco de contaminação cruzada em 95%.</p>
+            <div class="highlight-box">
+                <h4>🔒 Protocolo de Segurança:</h4>
+                Armazene seus ovos em prateleiras separadas e nuca utilize a casca para separar a gema da clara. Use um
+                separador de silicone esterilizado.
+            </div>
+            <p>Lembre-se: Um único relato de intoxicação alimentar pode destruir uma reputação construída ao longo de
+                anos em questão de minutos nas redes sociais.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 08</span></div>
+        </div>
+
+        <!-- PAGE 9: CAP 9 -->
+        <div class="page">
+            <h2>Capítulo 9: O Segredo da Textura Perfeita</h2>
+            <p>A textura é o que faz o cliente fechar os olhos ao comer. Para atingir a <span class="gold-text">Textura
+                    Nuvem</span>, a temperatura dos ingredientes é o fator mais crítico.</p>
+            <p>Manteiga e ovos **devem** estar a exatos 21°C. Se estiverem muito frios, a emulsão quebra; se estiverem
+                muito quentes, a estrutura colapsa no forno. Use um termômetro infravermelho para garantir a precisão.
+            </p>
+            <div class="image-placeholder">
+                [GRÁFICO: Diferença visual entre massa batida em excesso vs massa aerada]
+            </div>
+            <p>O descanso da massa na geladeira por 30 minutos antes de ir ao forno ajuda a relaxar o glúten, resultando
+                em um bolo que derrete na boca de forma uniforme.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 09</span></div>
+        </div>
+
+        <!-- PAGE 10: CAP 10 -->
+        <div class="page">
+            <h2>Capítulo 10: Estruturação de Bolos de Andar</h2>
+            <p>Bolos de andar são os produtos de maior ticket médio. Mas eles exigem engenharia. Nunca coloque um bolo
+                sobre o outro sem um sistema de suporte interno.</p>
+            <p>Utilize bancos de suporte de polietileno ou canudos de polipropileno reforçados. Cada andar superior deve
+                ter sua própria base de disco de cartão selado.</p>
+            <div class="highlight-box">
+                <h4>📐 Check-list de Estrutura:</h4>
+                - Andar base com massa amanteigada pesada.<br>
+                - Andar superior com massa chiffon leve.<br>
+                - Guia central que atravessa todos os andares.
+            </div>
+            <p>A segurança do seu transporte depende diretamente da qualidade da sua fundação interna.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 10</span></div>
+        </div>
+
+        <!-- PAGE 11: CAP 11 -->
+        <div class="page">
+            <h2>Capítulo 11: Transportando Obras de Arte</h2>
+            <p>O maior vilão do confeiteiro é o transporte. Uma freada brusca pode custar todo o seu lucro do mês.</p>
+            <p><strong>Dica de Especialista:</strong> Utilize tapetes de silicone antiderrapantes no porta-malas do
+                carro. Coloque o bolo sempre em uma superfície plana, nunca no banco inclinado.</p>
+            <p>Se o trajeto for superior a 20 minutos, utilize gelo seco ou placas térmicas ao redor da caixa para
+                manter a temperatura do buttercream estável.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 11</span></div>
+        </div>
+
+        <!-- PAGE 12: CAP 12 -->
+        <div class="page">
+            <h2>Capítulo 12: Atendimento VIP ao Cliente</h2>
+            <p>Clientes de elite querem exclusividade. Pare de responder apenas com preços. Crie um formulário de
+                consultoria.</p>
+            <p>Pergunte sobre o tema da festa, a decoração do local e as restrições alimentares. Mostre que você se
+                importa com o evento, não apenas com o boleto.</p>
+            <div class="highlight-box" style="background: var(--bg); color: #333;">
+                <strong>Frase que vende:</strong> "Para que eu possa criar algo verdadeiramente exclusivo para o seu
+                evento, me conte um pouco mais sobre a sua decoração principal..."
+            </div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 12</span></div>
+        </div>
+
+        <!-- PAGE 13: CAP 13 -->
+        <div class="page">
+            <h2>Capítulo 13: Criando sua Identidade Visual</h2>
+            <p>Sua marca deve refletir o valor que você cobra. Utilize fontes serifadas para passar tradição e fontes
+                minimalistas para modernidade.</p>
+            <p>A logomarca é o seu brasão de armas. Evite logos gratuitas de aplicativos. O investimento em uma
+                identidade visual profissional se paga na primeira fatura de um contrato grande.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 13</span></div>
+        </div>
+
+        <!-- PAGE 14: CAP 14 -->
+        <div class="page">
+            <h2>Capítulo 14: Marketing de Desejo</h2>
+            <p>Não venda fatias, venda "momentos de pausa no caos". Use o Instagram para mostrar o *Backstage* (o
+                processo).</p>
+            <p>As pessoas compram histórias. Mostre você escolhendo as frutas, batendo a massa e finalizando com
+                cuidado. Isso humaniza a marca e justifica o preço premium.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 14</span></div>
+        </div>
+
+        <!-- PAGE 15: CONCLUSÃO -->
+        <div class="page">
+            <h2>Capítulo 15: O Próximo Passo do seu Império</h2>
+            <p>Você agora detém as chaves da confeitaria de elite. O conhecimento teórico sem execução é apenas
+                distração.</p>
+            <p>Comece aplicando uma técnica nova por semana. Melhore sua fotografia hoje, sua estruturação amanhã. Em 3
+                meses, você não reconhecerá mais o seu próprio negócio.</p>
+            <div class="highlight-box">
+                Assuma o trono. A excelência é uma escolha diária. Deixe o amadorismo para trás e construa o seu
+                império, grama por grama, bolo por bolo.
+            </div>
+            <p style="text-align: center; margin-top: 50px;"><strong>Beatriz Langoni</strong><br>Fundadora do Método
+                Impressionar</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 15</span></div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

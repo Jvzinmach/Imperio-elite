@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Galeria de Imagens - Arquivos Locais</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+        }
+
+        h3 {
+            color: #333;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            display: block;
+            padding: 10px;
+            background: #27ae60;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .warning {
+            background: #fee;
+            border: 1px solid #f00;
+            color: #c00;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>📸 Suas Fotos Estão Aqui! (Sem Erro)</h1>
+    <p>Para resolver o problema dos links, copiei as melhores fotos do seu próprio projeto para esta pasta.</p>
+
+    <div class="gallery">
+
+        <!-- 1 -->
+        <div class="card">
+            <h3>1. Recheios (Chocolate)</h3>
+            <img src="1_recheios_chocolate.png" alt="Recheios">
+            <p>Arquivo: 1_recheios_chocolate.png</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+            <h3>2. Bolo de Pote (Maracujá)</h3>
+            <img src="2_bolo_pote_maracuja.png" alt="Bolo de Pote">
+            <p>Arquivo: 2_bolo_pote_maracuja.png</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+            <h3>3. Doces (Gourmet)</h3>
+            <img src="3_doces_gourmet.png" alt="Doces">
+            <p>Arquivo: 3_doces_gourmet.png</p>
+        </div>
+
+    </div>
+
+    <hr style="margin: 40px 0; border: 0; border-top: 1px solid #ccc;">
+
+    <h3>Onde estão os arquivos?</h3>
+    <p>Eles estão SOLTOS nesta mesma pasta onde você abriu este arquivo (v2).<br>
+        Pode pegar eles direto e arrastar para a Cakto:
+        <br><b>1_recheios_chocolate.png</b>
+        <br><b>2_bolo_pote_maracuja.png</b>
+        <br><b>3_doces_gourmet.png</b>
+    </p>
+
+</body>
+
+</html>

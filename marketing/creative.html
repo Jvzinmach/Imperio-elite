@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Creative - Receitas da Nutri</title>
+    <link rel="stylesheet" href="../assets/css/creative.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="scene-container">
+
+        <!-- SCENE 1: SADNESS (The Problem) -->
+        <div id="scene-1" class="scene">
+            <div class="bg-color-sad"></div>
+            <div class="emoji-container">🤢 🍞</div>
+            <h1 class="text-hook">"Cansou de comer isopor?"</h1>
+        </div>
+
+        <!-- SCENE 2: REVOLT (The Turn) -->
+        <div id="scene-2" class="scene hidden">
+            <div class="bg-color-revolt"></div>
+            <h1 class="text-revolt">CHEGA DE PASSAR VONTADE! 🚫</h1>
+        </div>
+
+        <!-- SCENE 3: JOY (The Solution) -->
+        <div id="scene-3" class="scene hidden">
+            <div class="bg-color-joy"></div>
+            <h2 class="text-solution">A vida é curta demais...<br>Coma esse Bolo! 🍰</h2>
+            <div class="cake-showcase">
+                <img src="../assets/img/cake_chocolate.png" id="cake1" class="cake-img principal-cake">
+            </div>
+            <div class="tags">
+                <span class="tag">Zero Açúcar</span>
+                <span class="tag">Zero Glúten</span>
+            </div>
+        </div>
+
+        <!-- SCENE 4: OFFER -->
+        <div id="scene-4" class="scene hidden">
+            <div class="bg-color-offer"></div>
+            <div class="offer-container">
+                <h2 class="text-offer">100 RECEITAS SECRETAS</h2>
+                <p class="sub-offer">Volte a comer com prazer hoje!</p>
+                <div class="book-cover-3d">
+                    <img src="../assets/img/cake_chocolate.png" alt="Capa">
+                </div>
+                <button class="cta-btn">BAIXAR AGORA ➔</button>
+            </div>
+        </div>
+
+
+        <!-- CAPTIONS LAYER -->
+        <div class="captions-container">
+            <div id="caption-text" class="caption-text"></div>
+        </div>
+
+    </div>
+
+    <script src="../assets/js/creative.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="O Segredo do Bolo Fofinho: O guia definitivo para criar bolos altos, leves e perfeitos.">
+    <title>Checkout - O Segredo do Bolo Fofinho</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --cake-primary: #FF6B6B;
+            --cake-secondary: #4ECDC4;
+            --cake-accent: #FFE66D;
+            --cake-brown: #6a3321;
+            --cake-soft: #fff9e6;
+        }
+
+        body {
+            background-color: var(--cake-soft);
+        }
+
+        .checkout-hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fff9e6 0%, #fff 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .checkout-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: repeating-linear-gradient(45deg, var(--cake-primary), var(--cake-primary) 10px, var(--cake-accent) 10px, var(--cake-accent) 20px);
+            z-index: 10;
+        }
+
+        .checkout-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .product-display {
+            perspective: 1200px;
+        }
+
+        .mockup-3d {
+            width: 100%;
+            max-width: 350px;
+            margin: 0 auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .mockup-img {
+            width: 100%;
+            border-radius: 5px 20px 20px 5px;
+            box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.15);
+            border-left: 10px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .offer-details h1 {
+            font-size: 3rem;
+            color: var(--cake-brown);
+            margin-bottom: 20px;
+        }
+
+        .offer-details .highlight {
+            color: var(--cake-primary);
+        }
+
+        .price-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(106, 51, 33, 0.08);
+            margin: 30px 0;
+            border: 2px solid var(--cake-accent);
+            text-align: center;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+        }
+
+        .cur-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--cake-brown);
+            font-family: var(--font-heading);
+            display: block;
+            margin: 5px 0;
+        }
+
+        .buy-now-btn {
+            background: var(--cake-primary);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            text-decoration: none;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .buy-now-btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.4);
+            background: #ff5252;
+            color: white;
+        }
+
+        .benefits-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .benefit-item i {
+            color: var(--cake-secondary);
+            font-size: 1.2rem;
+        }
+
+        .guarantee-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(78, 205, 196, 0.1);
+            border-radius: 15px;
+            border: 1px dashed var(--cake-secondary);
+        }
+
+        .guarantee-box img {
+            width: 60px;
+        }
+
+        .guarantee-text {
+            font-size: 0.9rem;
+            color: #444;
+            max-width: 250px;
+            text-align: left;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(1deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .product-display {
+                order: -1;
+                margin-bottom: 30px;
+            }
+
+            .offer-details h1 {
+                font-size: 2.5rem;
+            }
+
+            .benefits-mini {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="checkout-hero">
+        <div class="container">
+            <div class="checkout-container">
+
+                <!-- Product Image -->
+                <div class="product-display fade-in-up">
+                    <div class="mockup-3d">
+                        <img src="https://media.atomicatpages.net/u/6P02bGv6l7Nw26kO4JL48xk2ISr1/Pictures/SpYwRp4769772.png?quality=75"
+                            alt="O Segredo do Bolo Fofinho Mockup" class="mockup-img">
+                    </div>
+                </div>
+
+                <!-- Product Info & Checkout -->
+                <div class="offer-details fade-in-up delay-1">
+                    <span class="badge">🔥 OFERTA EXCLUSIVA: EDIÇÃO DE OURO</span>
+                    <h1>Revele o Segredo do <span class="highlight">Bolo Fofinho</span></h1>
+                    <p>Pare de perder ingredientes com bolos solados. Aprenda a técnica da "Massa Nuvem" e surpreenda a
+                        todos!</p>
+
+                    <div class="benefits-mini">
+                        <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> A técnica infalível do "Bolo
+                            Nuvem"</div>
+                        <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> O segredo das formas e
+                            materiais</div>
+                        <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> Guia SOS: O que fazer se o
+                            bolo solar</div>
+                        <div class="benefit-item"><i class="fa-solid fa-check-circle"></i> Acesso imediato no seu e-mail
+                        </div>
+                    </div>
+
+                    <div class="price-card">
+                        <span class="old-price">De R$ 37,90</span>
+                        <span class="cur-price">R$ 17,90</span>
+                        <a href="https://pay.cakto.com.br/6yte6xm_700816" class="buy-now-btn pulse">COMPRAR AGORA ➔</a>
+                        <p style="margin-top: 15px; font-size: 0.8rem; color: #777;"><i class="fa-solid fa-lock"></i>
+                            Pagamento 100% Seguro via Cakto</p>
+                    </div>
+
+                    <div class="guarantee-box">
+                        <img src="https://images.tcdn.com.br/img/editor/314112/1531233633_selo-garantia-satisfacao-7-dias.png"
+                            alt="Garantia">
+                        <div class="guarantee-text">
+                            <strong>Garantia de 7 Dias:</strong> Se você não amar as dicas, devolvemos seu dinheiro na
+                            hora.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="testimonials section-padding" style="background: white;">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>O que dizem as nossas alunas</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="whatsapp-card" style="max-width: 400px; margin: 0 auto;">
+                    <div class="whatsapp-header">
+                        <div class="profile-pic">
+                            <img src="https://i.pravatar.cc/150?u=lucia" alt="Lucia">
+                        </div>
+                        <div class="header-info">
+                            <span class="contact-name">Lucia Confeiteira</span>
+                            <span class="status">online</span>
+                        </div>
+                    </div>
+                    <div class="whatsapp-body">
+                        <div class="message-bubble received">
+                            <p>Gente, o método da nutre sobre a forma de alumínio mudou tudo aqui em casa! Meus bolos
+                                nunca mais solaram. Melhor investimento de R$ 17 reais da vida! 😍🍰</p>
+                            <span class="msg-meta">10:45 <i class="fa-solid fa-check-double read-check"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="section-padding" style="background: var(--cake-brown); color: white; text-align: center;">
+        <div class="container">
+            <p>&copy; 2025 Receitas da Nutri. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Scroll Animation logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+        });
+    </script>
+
+</body>
+
+</html>

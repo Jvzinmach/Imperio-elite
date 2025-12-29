@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Segredo do Bolo Fofinho - Edição de Ouro</title>
+    <link rel="stylesheet" href="../assets/css/ebook.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-vibrant: #FF6B6B;
+            --secondary-vibrant: #4ECDC4;
+            --accent-vibrant: #FFE66D;
+            --text-dark: #2D3436;
+            --white: #FFFFFF;
+            --soft-bg: #F9F9F9;
+            --cake-brown: #5D4037;
+        }
+
+        /* Melhorias Visuais de Confeitaria */
+        .page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background-image: radial-gradient(var(--accent-vibrant) 20%, transparent 20%);
+            background-size: 30px 30px;
+            background-position: 0 0;
+            z-index: 10;
+        }
+
+        .sprinkle-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url('https://www.transparenttextures.com/patterns/pinstriped-suit.png');
+            /* Pattern sutil */
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .floating-icon {
+            animation: float 4s ease-in-out infinite;
+            color: var(--primary-vibrant);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 25px 0;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+        }
+
+        .comparison-table th {
+            padding: 20px;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+        }
+
+        .comparison-table td {
+            padding: 18px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95rem;
+        }
+
+        .bg-red {
+            background: #FFF1F0;
+            color: #E53935;
+            font-weight: bold;
+        }
+
+        .bg-green {
+            background: #F6FFED;
+            color: #389E0D;
+            font-weight: bold;
+        }
+
+        .secret-box {
+            background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+            color: white;
+            padding: 30px;
+            border-radius: 25px;
+            position: relative;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.3);
+        }
+
+        .sos-guide {
+            border: 3px dashed var(--primary-vibrant);
+            padding: 25px;
+            border-radius: 20px;
+            background: #FFF5F5;
+            position: relative;
+        }
+
+        .sos-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--primary-vibrant);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* Grid de Dicas Extra */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tip-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            border-top: 5px solid var(--secondary-vibrant);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Checklist Interativo */
+        .interactive-checklist {
+            background: #fff;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border: 2px solid #f0f0f0;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 12px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .check-item:hover {
+            background: #F8F9FA;
+            transform: translateX(5px);
+        }
+
+        .check-item input[type="checkbox"] {
+            width: 22px;
+            height: 22px;
+            margin-right: 18px;
+            accent-color: var(--secondary-vibrant);
+        }
+
+        .check-item.done {
+            background: #F6FFED;
+            color: #389E0D;
+            text-decoration: none;
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 12px;
+            background: #eee;
+            border-radius: 10px;
+            margin: 25px 0;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(to right, var(--secondary-vibrant), #36B3A8);
+            transition: width 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .confetti-btn {
+            background: linear-gradient(135deg, var(--primary-vibrant), #FF4757);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: none;
+            margin: 30px auto;
+            animation: float 2s infinite;
+        }
+
+        /* FAQ Style */
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .faq-q {
+            font-weight: 800;
+            color: var(--cake-brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .faq-a {
+            color: #666;
+            font-size: 0.95rem;
+            padding-left: 28px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CAPA PREMIUM CORRIGIDA -->
+    <div class="page page-break cover-page"
+        style="background-image: url('https://images.unsplash.com/photo-1579306194872-64d3b19f7f48?q=80&w=2000&auto=format&fit=crop');">
+        <div class="sprinkle-pattern"></div>
+        <div class="cover-overlay"
+            style="background: linear-gradient(135deg, rgba(93, 64, 55, 0.3), rgba(62, 39, 35, 0.9));"></div>
+        <div class="cover-content">
+            <span class="cover-badge"
+                style="background: var(--accent-vibrant); color: var(--cake-brown); font-weight: 800;">REVELADO: O
+                MÉTODO NUVEM</span>
+            <div style="margin-top: auto; margin-bottom: auto;">
+                <!-- Tipografia corrigida: usando uma combinação mais legível -->
+                <h2
+                    style="font-family: var(--font-heading); color: var(--accent-vibrant); font-size: 2.2rem; font-weight: 300; margin-bottom: -10px; letter-spacing: 2px;">
+                    A Ciência do</h2>
+                <h1 class="cover-title"
+                    style="font-size: 7rem; line-height: 0.8; margin-bottom: 10px; font-weight: 900;">
+                    BOLO<br><span
+                        style="color: var(--accent-vibrant); font-family: var(--font-script); text-transform: none; font-size: 6rem;">Fofinho</span>
+                </h1>
+                <p style="color: #fff; font-size: 1.5rem; margin-top: 20px; font-weight: 300; letter-spacing: 1px;">
+                    Pare de perder ingredientes e comece a criar obras de arte</p>
+            </div>
+            <div class="cover-author">
+                <p style="font-size: 1.2rem; letter-spacing: 2px;">POR <strong>RECEITAS DA NUTRI</strong></p>
+                <div style="border-top: 3px solid var(--accent-vibrant); width: 100px; margin: 20px auto;"></div>
+                <p>2025 • EDIÇÃO DE OURO</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 1: O PILAR DA FOFURA -->
+    <div class="page page-break">
+        <div class="sprinkle-pattern"></div>
+        <div class="interior-page">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <i class="fa-solid fa-cake-candles floating-icon"></i>
+                <h2 class="section-title"
+                    style="border-bottom: 2px solid var(--accent-vibrant); display: inline-block; padding-bottom: 10px;">
+                    A Anatomia do Bolo Perfeito</h2>
+            </div>
+
+            <div class="section-card" style="position: relative; overflow: hidden;">
+                <p style="font-size: 1.1rem; line-height: 1.8;">Você sabia que um bolo fit não "sola" por falta de
+                    sorte? Existe uma **química exata** acontecendo dentro do seu forno. Como não temos o glúten para
+                    segurar a estrutura, precisamos criar uma **rede de ar** ultra-resistente.</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 30px;">
+                <div class="tip-card">
+                    <h4 style="color: var(--primary-vibrant);"><i class="fa-solid fa-cloud"></i> Efeito Nuvem</h4>
+                    <p style="font-size: 0.85rem;">O ar capturado nos ovos é o que faz o bolo subir sem precisar de
+                        glúten.</p>
+                </div>
+                <div class="tip-card" style="border-top-color: var(--highlight);">
+                    <h4 style="color: var(--cake-brown);"><i class="fa-solid fa-shield-heart"></i> Sustentação</h4>
+                    <p style="font-size: 0.85rem;">As fibras das farinhas fit precisam de umidade correta para não
+                        pesarem.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: var(--cake-brown); font-family: var(--font-heading);">Diagnóstico
+                Visual: O que deu errado?</h3>
+            <table class="comparison-table">
+                <thead>
+                    <tr style="background: var(--cake-brown); color: white;">
+                        <th>O Erro (Solado)</th>
+                        <th>O Segredo (Nuvem)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="bg-red">Top médio fundo e bordas altas</td>
+                        <td class="bg-green">Top plano ou levemente arredondado</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-red">Textura de chiclete/borracha</td>
+                        <td class="bg-green">Massa que desmancha na boca</td>
+                    </tr>
+                    <tr>
+                        <td class="bg-red">Cheiro forte de ovo</td>
+                        <td class="bg-green">Aroma delicado e equilibrado</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="page-number">Ciência & Prática • 01</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 2: FORMAS E MATERIAIS (NOVO) -->
+    <div class="page page-break">
+        <div class="sprinkle-pattern"></div>
+        <div class="interior-page">
+            <h2 class="section-title"><i class="fa-solid fa-shapes"></i> Módulo 2: O Segredo está na Forma</h2>
+            <p>Muitas confeiteiras ignoram, mas o **material da sua forma** muda completamente o tempo de cozimento e a
+                fofura do bolo.</p>
+
+            <div class="tips-grid">
+                <div class="tip-card" style="border-top-color: #BDBDBD;">
+                    <h4>Alumínio Polido 🏆</h4>
+                    <p style="font-size: 0.9rem;">O melhor para bolos fit! Conduz o calor de forma rápida e uniforme.
+                        Faz o bolo subir por igual.</p>
+                </div>
+                <div class="tip-card" style="border-top-color: #6c5ce7;">
+                    <h4>Silicone ⚠️</h4>
+                    <p style="font-size: 0.9rem;">Cuidado! Silicone retém muita umidade. Em bolos fit (que já são
+                        úmidos), isso pode fazer com que o bolo não asse direito no meio.</p>
+                </div>
+                <div class="tip-card" style="border-top-color: #2F363F;">
+                    <h4>Antiaderente Escura</h4>
+                    <p style="font-size: 0.9rem;">Cuidado redobrado! Formas escuras absorvem calor demais. O fundo
+                        queima antes do meio assar.</p>
+                </div>
+                <div class="tip-card" style="border-top-color: #FFE66D;">
+                    <h4>Tamanho Ideal</h4>
+                    <p style="font-size: 0.9rem;">A massa deve preencher **2/3 da forma**. Se a forma for grande
+                        demais, o bolo não terá onde apoiar para subir.</p>
+                </div>
+            </div>
+
+            <div class="secret-box">
+                <h3 style="color: white; margin-top: 0;"><i class="fa-solid fa-wand-magic-sparkles"></i> O Truque da
+                    Untada</h3>
+                <p>Para bolos de chocolate, unte com manteiga ou óleo de coco e polvilhe **cacau em pó** em vez de
+                    farinha. Para os outros, use farinha de aveia fina. Isso evita aquela "crosta branca" que deixa o
+                    bolo feio.</p>
+            </div>
+            <div class="page-number">Materiais & Preparo • 02</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 3: O PONTO EXATO (NOVO) -->
+    <div class="page page-break">
+        <div class="sprinkle-pattern"></div>
+        <div class="interior-page">
+            <h2 class="section-title"><i class="fa-solid fa-hourglass-half"></i> Módulo 3: O Ponto de Ouro</h2>
+            <p>O teste do palito é clássico, mas para bolos fit, ele tem uma **regra extra**.</p>
+
+            <div class="section-card">
+                <h3>O Teste do Palito 2.0</h3>
+                <p>Fure o bolo. O palito deve sair **limpo, porém úmido**. Se sair totalmente seco, você passou do
+                    ponto e seu bolo vai ficar esfarelando depois de frio.</p>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <h3 style="color: var(--primary-vibrant);">Como Saber sem Abrir o Forno?</h3>
+                <ul style="line-height: 2;">
+                    <li>👂 **Ouça o Bolo:** Quando o bolo está quase pronto, ele começa a "cantar" (um barulhinho de ar
+                        saindo).</li>
+                    <li>👃 **O Aroma:** O cheiro de bolo assado invade a casa inteira? Faltam menos de 5 minutos!</li>
+                    <li>👀 **As Bordas:** O bolo começou a soltar levemente das laterais da forma? ESTÁ PRONTO!</li>
+                </ul>
+            </div>
+
+            <div class="sos-guide" style="margin-top: 40px;">
+                <span class="sos-badge">DICA PRO</span>
+                <p><strong>Deixe o bolo descansar!</strong> Nunca tire o bolo do forno e coloque direto no mármore
+                    gelado. Coloque sobre uma grade ou sobre o fogão desligado para evitar o choque térmico.</p>
+            </div>
+            <div class="page-number">Cozimento • 03</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 4: DESENFORME SEGURO (NOVO) -->
+    <div class="page page-break">
+        <div class="sprinkle-pattern"></div>
+        <div class="interior-page">
+            <h2 class="section-title"><i class="fa-solid fa-hand-holding-heart"></i> Módulo 4: O Desenforme Perfeito
+            </h2>
+            <p>Não adianta ter um bolo fofinho se ele quebrar todo na hora de sair da forma.</p>
+
+            <div style="display: flex; gap: 30px; margin-top: 20px;">
+                <div style="flex: 1;">
+                    <h3 style="color: var(--secondary-vibrant);">A Regra dos 15 Minutos</h3>
+                    <p>Espere EXATAMENTE 15 minutos após tirar do forno. O bolo fit precisa desse tempo para "assentar"
+                        a estrutura. Se desenformar quente, ele quebra. Se desenformar frio, ele gruda devido à
+                        umidade.</p>
+                </div>
+                <div style="flex: 1; background: #f8f9fa; padding: 20px; border-radius: 15px;">
+                    <h3 style="color: var(--cake-brown);">Técnica do "Balancinho"</h3>
+                    <p>Antes de virar, segure a forma e dê leves sacudidas laterais. O bolo deve "dançar" dentro da
+                        forma. Se não dançar, passe uma espátula de silicone nas bordas.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 40px; color: var(--primary-vibrant);">FAQ: Resolvendo Desastres</h3>
+
+            <div class="faq-item">
+                <div class="faq-q"><i class="fa-solid fa-circle-question"></i> "Meu bolo afundou no meio!"</div>
+                <div class="faq-a">Provavelmente você usou fermento demais ou abriu o forno antes dos 30 minutos.
+                    Excesso de açúcar fit também pode causar isso.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q"><i class="fa-solid fa-circle-question"></i> "O topo rachou todo!"</div>
+                <div class="faq-a">Forno quente demais! Reduza a temperatura na próxima vez. O calor faz o topo assar
+                    rápido e a massa de dentro "explode" pra sair.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q"><i class="fa-solid fa-circle-question"></i> "O bolo ficou pesado e gorduroso!"</div>
+                <div class="faq-a">Cuidado com a farinha de amêndoas, ela solta óleo se for batida demais. Misture
+                    sempre à mão e de forma rápida.</div>
+            </div>
+            <div class="page-number">Finalização • 04</div>
+        </div>
+    </div>
+
+    <!-- OS 7 MANDAMENTOS -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">Os 7 Mandamentos do Bolo Perfeito</h2>
+
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+                <div style="display: flex; gap: 20px; align-items: flex-start;">
+                    <span style="font-size: 3rem; font-weight: 900; color: #eee; line-height: 1;">01</span>
+                    <div>
+                        <h4 style="margin: 0; color: var(--primary-vibrant);">PENEIRA SEMPRE</h4>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">Farinhas fit (coco, amêndoas) são úmidas e criam
+                            grumos. Peneirar é o que garante que não fiquem "bolotas" pesadas na massa.</p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px; align-items: flex-start;">
+                    <span style="font-size: 3rem; font-weight: 900; color: #eee; line-height: 1;">02</span>
+                    <div>
+                        <h4 style="margin: 0; color: var(--primary-vibrant);">OVOS EM NEVE? QUASE!</h4>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">Bata os ovos inteiros com o adoçante por 5 a 8
+                            minutos. O creme deve ficar esbranquiçado e triplicar de volume. Esse é o seu maior trunfo.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 20px; align-items: flex-start;">
+                    <span style="font-size: 3rem; font-weight: 900; color: #eee; line-height: 1;">03</span>
+                    <div>
+                        <h4 style="margin: 0; color: var(--primary-vibrant);">O "PULO DO GATO" DO ÁCIDO</h4>
+                        <p style="margin: 5px 0; font-size: 0.95rem;">Adicione uma colher de chá de **vinagre de maçã**
+                            ou suco de limão à massa. O ácido reage com o bicarbonato do fermento e faz o bolo explodir
+                            de fofura.</p>
+                    </div>
+                </div>
+
+                <div class="secret-box">
+                    <h3>💎 Ingrediente Secreto: Goma Xantana</h3>
+                    <p>Como não temos glúten, adicione **1/4 de colher de chá** de Goma Xantana. Ela age como uma rede,
+                        segurando as bolhas de ar dentro da massa e impedindo que o bolo murche após sair do forno.</p>
+                </div>
+            </div>
+            <div class="page-number">Mandamentos 1-3</div>
+        </div>
+    </div>
+
+    <!-- SOS E CHECKLIST -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">Guia SOS: O Bolo Solou! E agora?</h2>
+
+            <div class="sos-guide">
+                <p>Calma! Mesmo os melhores chefs erram. Se o seu bolo não cresceu, **não jogue fora!**</p>
+                <ul style="margin-top: 10px;">
+                    <li><strong>Cake Pops:</strong> Esfarele a massa, misture com um pouco de creme de leite fit e faça
+                        bolinhas cobertas com chocolate.</li>
+                    <li><strong>Trifle Fit:</strong> Coloque camadas de bolo solado picado, frutas e iogurte grego em
+                        uma taça. Fica divino!</li>
+                    <li><strong>Base de Torta:</strong> Triture o bolo e use como base para uma torta fria ou
+                        cheesecake.</li>
+                </ul>
+            </div>
+
+            <div style="margin-top: 40px;">
+                <h3 style="text-align: center; color: var(--secondary-vibrant);"><i class="fa-solid fa-gamepad"></i>
+                    Checklist Interativo</h3>
+                <p style="text-align: center; font-size: 0.9rem; color: #888;">Marque os passos conforme for executando
+                    para ganhar o selo "Mestre da Fofura".</p>
+
+                <div class="progress-container">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <div class="interactive-checklist" id="checklist">
+                    <label class="check-item"><input type="checkbox"> Ingredientes em temp. ambiente</label>
+                    <label class="check-item"><input type="checkbox"> Farinhas peneiradas</label>
+                    <label class="check-item"><input type="checkbox"> Ovos batidos por 5 min+</label>
+                    <label class="check-item"><input type="checkbox"> Misturei a farinha DELICADAMENTE</label>
+                    <label class="check-item"><input type="checkbox"> Adicionei o "toque ácido" (vinagre/limão)</label>
+                    <label class="check-item"><input type="checkbox"> Forno pré-aquecido a 180°C</label>
+                    <label class="check-item"><input type="checkbox"> Prometo NÃO abrir o forno por 30 min</label>
+                </div>
+
+                <button class="confetti-btn" id="finishBtn"
+                    onclick="alert('🎉 PARABÉNS! Você se tornou um Mestre da Fofura! Seu bolo vai ficar incrível!')">OBTER
+                    SELO MESTRE DA FOFURA 🏆</button>
+            </div>
+
+            <script>
+                const checkboxes = document.querySelectorAll('#checklist input');
+                const progressBar = document.getElementById('progressBar');
+                const finishBtn = document.getElementById('finishBtn');
+
+                checkboxes.forEach(cb => {
+                    cb.addEventListener('change', () => {
+                        const total = checkboxes.length;
+                        const checked = document.querySelectorAll('#checklist input:checked').length;
+                        const percent = (checked / total) * 100;
+
+                        progressBar.style.width = percent + '%';
+
+                        // Estilizar o item como "concluído"
+                        if (cb.checked) {
+                            cb.parentElement.classList.add('done');
+                        } else {
+                            cb.parentElement.classList.remove('done');
+                        }
+
+                        if (percent === 100) {
+                            finishBtn.style.display = 'block';
+                        } else {
+                            finishBtn.style.display = 'none';
+                        }
+                    });
+                });
+            </script>
+            <div class="page-number">Finalização</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

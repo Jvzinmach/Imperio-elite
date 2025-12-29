@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precificação e Lucro Real - Guia Estratégico</title>
+    <link rel="stylesheet" href="../assets/css/ebook.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-vibrant: #1A237E;
+            /* Azul Marinho Profissional */
+            --secondary-vibrant: #C5A059;
+            /* Ouro */
+            --accent-vibrant: #F5F5F5;
+            --text-dark: #1A1A1A;
+            --white: #FFFFFF;
+        }
+
+        .page::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 15px;
+            background: var(--secondary-vibrant);
+            z-index: 10;
+        }
+
+        .finance-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #ECEFF1;
+            margin-bottom: 20px;
+        }
+
+        .gold-border {
+            border-left: 5px solid var(--secondary-vibrant);
+        }
+
+        .formula-box {
+            background: var(--primary-vibrant);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .floating-icon {
+            color: var(--secondary-vibrant);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-item {
+            background: #F8F9FA;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary-vibrant);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CAPA -->
+    <div class="page page-break cover-page"
+        style="background-image: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2000&auto=format&fit=crop');">
+        <div class="cover-overlay"
+            style="background: linear-gradient(135deg, rgba(26, 35, 126, 0.7), rgba(0, 0, 0, 0.8));"></div>
+        <div class="cover-content">
+            <span class="cover-badge"
+                style="background: var(--secondary-vibrant); color: var(--primary-vibrant);">EMPREENDEDORISMO</span>
+            <div style="margin-top: auto; margin-bottom: auto;">
+                <h2
+                    style="font-family: var(--font-heading); color: var(--secondary-vibrant); font-size: 2.2rem; font-weight: 300; margin-bottom: -10px; letter-spacing: 2px;">
+                    Guia de</h2>
+                <h1 class="cover-title"
+                    style="font-size: 6rem; line-height: 0.8; margin-bottom: 10px; font-weight: 900;">LUCRO<br><span
+                        style="color: var(--secondary-vibrant); font-family: var(--font-script); text-transform: none; font-size: 5rem;">Real</span>
+                </h1>
+                <p style="color: #fff; font-size: 1.4rem; margin-top: 20px; font-weight: 300;">Como cobrar o preço justo
+                    e nunca mais levar prejuízo</p>
+            </div>
+            <div class="cover-author">
+                <p>MÉTODO DE OURO • 2025</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 1: O MINDSET DO LUCRO -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <i class="fa-solid fa-calculator floating-icon"></i>
+                <h2 class="section-title">Pare de "Achar", Comece a Calcular</h2>
+            </div>
+
+            <div class="finance-card gold-border">
+                <p>O maior erro de quem começa na confeitaria é olhar o preço do vizinho e fazer igual. Você não sabe o
+                    custo dele, nem a margem dele. **Seu lucro depende dos seus números.**</p>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-value">3.3x</span>
+                    <p style="font-size: 0.7rem;">Multiplicador Sugerido</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">70%</span>
+                    <p style="font-size: 0.7rem;">Margem Ideal</p>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value">ZERO</span>
+                    <p style="font-size: 0.7rem;">Prejuízo Aceitável</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 30px;">Os Custos Invisíveis:</h3>
+            <ul style="line-height: 2;">
+                <li>📉 **Desperdício:** 5% a 10% de tudo que você compra vai pro lixo (pontas, cascas, erro).</li>
+                <li>💧 **Limpeza:** Detergente, papel toalha e internet para atender clientes.</li>
+                <li>⏳ **Mão de Obra:** Se você não se paga, você não tem um negócio, tem um hobby caro.</li>
+            </ul>
+
+            <div class="page-number">Pág. 01 • Mentalidade Estratégica</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 2: A FÓRMULA MATEMÁTICA -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">A Equação do Sucesso</h2>
+
+            <div class="formula-box">
+                <h2 style="margin: 0; font-size: 2.5rem;">C × 3.3 = PV</h2>
+                <p style="margin-top: 10px; opacity: 0.9;">Onde <strong>C</strong> é seu Custo Total e
+                    <strong>PV</strong> é o Preço de Venda
+                </p>
+            </div>
+
+            <div class="finance-card">
+                <h3>O que compõe o CUSTO (C)?</h3>
+                <p><strong>1. Ficha Técnica:</strong> Cada grama de farinha conta.</p>
+                <p><strong>2. Gastos Fixos:</strong> 15% do valor do bolo deve ser para pagar aluguel, luz e água.</p>
+                <p><strong>3. Embalagem:</strong> Onde o seu bolo "mora" até chegar no cliente.</p>
+            </div>
+
+            <div style="background: #E8EAF6; padding: 20px; border-radius: 15px; margin-top: 30px;">
+                <h4 style="color: var(--primary-vibrant); margin-top: 0;"><i class="fa-solid fa-lightbulb"></i> Exemplo
+                    de Ouro:</h4>
+                <p style="font-size: 0.9rem;">Se um bolo custa R$ 10,00 para produzir (tudo incluído), você deve
+                    vendê-lo por R$ 33,00. <br><br>
+                    **R$ 10** cobre a produção | **R$ 10** paga seu trabalho | **R$ 13** é o lucro da sua empresa para
+                    crescer.</p>
+            </div>
+
+            <div class="page-number">Pág. 02 • Matemática Financeira</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 3: CHECKLIST DE FECHAMENTO -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">Checklist do Lucro Mensal</h2>
+
+            <div class="interactive-checklist" style="border: 2px solid var(--secondary-vibrant); padding: 25px;">
+                <label class="check-item"><input type="checkbox"> Anotei cada centavo gasto em ingredientes</label>
+                <label class="check-item"><input type="checkbox"> Calculei o custo da minha hora de trabalho</label>
+                <label class="check-item"><input type="checkbox"> Adicionei 10% de margem de erro/desperdício</label>
+                <label class="check-item"><input type="checkbox"> Pesquisei o preço do mercado local para
+                    posicionamento</label>
+                <label class="check-item"><input type="checkbox"> Defini meu salário mensal (Pró-labore)</label>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="font-size: 1.1rem; color: #666;">"Quem não senta para calcular, deita para chorar."</p>
+                <div
+                    style="width: 50px; height: 2px; border-top: 2px solid var(--secondary-vibrant); margin: 20px auto;">
+                </div>
+                <p style="font-weight: bold; color: var(--primary-vibrant);">DOMINE SEUS NÚMEROS!</p>
+            </div>
+
+            <div class="page-number">Pág. 03 • Controle de Caixa</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

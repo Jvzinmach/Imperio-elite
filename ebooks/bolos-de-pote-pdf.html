@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolos de Pote Lucrativos - O Método de Ouro Low Carb (Versão PDF)</title>
+    <link rel="stylesheet" href="../assets/css/ebook.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-vibrant: #FF8F00;
+            /* Amber/Orange Comercial */
+            --secondary-vibrant: #263238;
+            --accent-vibrant: #FFFDE7;
+            --white: #FFFFFF;
+        }
+
+        .cover-page {
+            background-image: url('https://images.unsplash.com/photo-1510439565632-77db7bcddc6e?q=80&w=2000&auto=format&fit=crop');
+        }
+
+        .logic-card {
+            background: white;
+            padding: 30px;
+            border: 2px solid var(--primary-vibrant);
+            border-radius: 20px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .syrup-box {
+            background: linear-gradient(135deg, #FFB300, #F57C00);
+            color: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .combo-card-vibrant {
+            background: var(--white);
+            border-left: 10px solid var(--primary-vibrant);
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .strategy-item {
+            background: var(--secondary-vibrant);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .page-number {
+            font-weight: bold;
+            color: var(--primary-vibrant);
+            font-size: 1.1rem;
+            text-align: right;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+            padding-top: 10px;
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                margin: 0;
+                background: white;
+            }
+
+            .page-break {
+                page-break-after: always;
+                min-height: 100vh;
+                position: relative;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            /* Visual fixes for print */
+            .syrup-box,
+            .cover-page,
+            .strategy-item {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Floating Print Button */
+        .print-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary-vibrant);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: none;
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        .print-fab:hover {
+            transform: scale(1.05);
+            background: #ffa000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="window.print()" class="print-fab no-print">
+        <i class="fa-solid fa-file-pdf"></i> SALVAR PDF / IMPRIMIR
+    </button>
+
+    <!-- PÁGINA 1: CAPA COMERCIAL -->
+    <div class="page page-break cover-page"
+        style="background-image: url('https://images.unsplash.com/photo-1510439565632-77db7bcddc6e?q=80&w=2000&auto=format&fit=crop');">
+        <div class="cover-overlay"
+            style="background: linear-gradient(135deg, rgba(255, 143, 0, 0.4), rgba(0, 0, 0, 0.85));"></div>
+        <div class="cover-content">
+            <span class="cover-badge" style="background: white; color: var(--primary-vibrant); font-weight: 900;">MÉTODO
+                DINHEIRO NO POTE 2025</span>
+            <div style="margin-top: auto; margin-bottom: auto;">
+                <h2
+                    style="font-family: var(--font-heading); color: #FFD54F; font-size: 2.2rem; font-weight: 300; margin-bottom: -10px; letter-spacing: 3px;">
+                    A Versatilidade dos</h2>
+                <h1 class="cover-title"
+                    style="font-size: 6.5rem; line-height: 0.8; margin-bottom: 15px; font-weight: 900;">BOLOS
+                    DE<br><span
+                        style="color: #FFD54F; font-family: var(--font-script); text-transform: none; font-size: 5.5rem;">Pote</span>
+                </h1>
+                <p style="color: #fff; font-size: 1.5rem; margin-top: 25px; font-weight: 300; letter-spacing: 1px;">O
+                    Plano de Ação para faturar R$ 3.000+ vendendo saúde em camadas irresistíveis.</p>
+            </div>
+            <div class="cover-author">
+                <p style="color: #FFD54F;">GUIA PRÁTICO • 8 PÁGINAS DE ESTRATÉGIA</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 2: LÓGICA DAS 3 CAMADAS -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">01. A Engenharia do Pote</h2>
+
+            <p style="font-size: 1.1rem; line-height: 1.8;">Para um bolo de pote ser lucrativo, ele precisa ter o
+                equilíbrio visual perfeito. O cliente come primeiro com os olhos. A regra de ouro é a **Simetria das
+                Camadas**.</p>
+
+            <div class="logic-card">
+                <h4 style="color: var(--primary-vibrant); margin-top: 0;">A Proporção Ideal:</h4>
+                <ul style="line-height: 2;">
+                    <li><strong>Base (20%):</strong> Massa fofa e bem regada.</li>
+                    <li><strong>Recheio 1 (30%):</strong> Textura cremosa e sabor principal.</li>
+                    <li><strong>Centro (20%):</strong> Fruta, contraste ácido ou crocância.</li>
+                    <li><strong>Recheio 2 + Topo (30%):</strong> Visual UAU e finalização.</li>
+                </ul>
+            </div>
+
+            <div
+                style="background: var(--accent-vibrant); padding: 25px; border-radius: 20px; border-left: 5px solid var(--primary-vibrant);">
+                <h4 style="margin-top: 0; color: var(--primary-vibrant);">Dica de Produção em Lote:</h4>
+                <p style="font-size: 0.9rem;">Nunca asse bolos redondos para fazer pão de pote. Use **assadeiras
+                    retangulares grandes**. Isso agiliza o corte e reduz o desperdício das "bordas" em 80%.</p>
+            </div>
+
+            <div class="page-number">Método de Montagem • Pág 02</div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 3: O SEGREDO DA CALDA (NUNCA MAIS BOLO SECO!) -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">02. Caldas de Ouro: O Segredo da Umidade</h2>
+
+            <p style="font-size: 1.05rem;">Bolo de pote "seco" é o maior motivo de perda de clientes. No Low Carb, o
+                desafio é regar sem deixar o bolo virar uma "papa" e sem azedar.</p>
+
+            <div class="syrup-box">
+                <h3 style="margin-top: 0;">Calda Base de Leite de Coco & Baunilha</h3>
+                <p style="font-size: 0.9rem;">200ml Leite de Coco Light + 100ml Água Filtrada + 1 colher de Xilitol +
+                    gotas de Baunilha. **Leve ao fogo até ferver**. Isso mata bactérias e aumenta a validade do seu bolo
+                    no pote.</p>
+            </div>
+
+            <div class="strategy-grid">
+                <div style="background: #E3F2FD; padding: 20px; border-radius: 15px;">
+                    <h5 style="color: #1976D2;">Para Bolos de Chocolate:</h5>
+                    <p style="font-size: 0.8rem;">Adicione 1 colher de Cacau 100% na calda quente. A massa absorve o
+                        sabor e fica com cor de chocolate intenso.</p>
+                </div>
+                <div style="background: #FFF8E1; padding: 20px; border-radius: 15px;">
+                    <h5 style="color: #FFA000;">Para Bolos Cítricos:</h5>
+                    <p style="font-size: 0.8rem;">Substitua 50ml de água por suco de limão siciliano ou laranja
+                        (natural). Frescor garantido.</p>
+                </div>
+            </div>
+
+            <div class="page-number">Segredos de Hidratação • Pág 03</div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 4-5: O MENU DAS 10 CAMPEÃS -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">03. O Menu de Ouro (As 10 que Vendem)</h2>
+
+            <div class="combo-card-vibrant">
+                <h4 style="margin-top: 0;">1. Prestígio Low Carb Real</h4>
+                <p style="font-size: 0.85rem;">Massa extra-dark de cacau, recheio cremoso de coco fresco e ganache 70%
+                    no topo. **Vende 2x mais que qualquer outro**.</p>
+            </div>
+
+            <div class="combo-card-vibrant">
+                <h4 style="margin-top: 0;">2. Red Velvet com Cream Cheese</h4>
+                <p style="font-size: 0.85rem;">Cor vibrante (beterraba) e o azedinho do queijo. O queridinho do
+                    Instagram.</p>
+            </div>
+
+            <div class="combo-card-vibrant">
+                <h4 style="margin-top: 0;">3. Sensação de Morango Artesanal</h4>
+                <p style="font-size: 0.85rem;">Geleia de morango feita sem açúcar (cozida com maçã) + Brigadeiro de
+                    Ninho Branco.</p>
+            </div>
+
+            <div class="combo-card-vibrant">
+                <h4 style="margin-top: 0;">4. Romeu e Julieta Moderno</h4>
+                <p style="font-size: 0.85rem;">Massa de baunilha, recheio de queijo e um coulis de goiabada low carb
+                    (goiaba batida com estévia).</p>
+            </div>
+
+            <div class="page-number">Menu Lucrativo • Pág 04</div>
+        </div>
+    </div>
+
+    <div class="page page-break">
+        <div class="interior-page">
+            <div class="combo-card-vibrant">
+                <h4 style="margin-top: 0;">5. Cenoura com Chocolate (O Clássico)</h4>
+                <p style="font-size: 0.85rem;">Massa de cenoura feita no liquidificador e cobertura de brigadeiro belga
+                    70%.</p>
+            </div>
+
+            <div class="combo-card-vibrant">
+                <h4 style="margin-top: 0;">6. Banoffee no Pote</h4>
+                <p style="font-size: 0.85rem;">Massa de canela, doce de leite low carb e rodelas de banana passadas no
+                    suco de limão (para não escurecer).</p>
+            </div>
+
+            <div class="combo-card-vibrant" style="border-color: #43A047;">
+                <h4 style="margin-top: 0;">7. Pistache & Limão Siciliano</h4>
+                <p style="font-size: 0.85rem;">A opção "Gourmet Luxo". Margem de lucro de 250%.</p>
+            </div>
+
+            <div
+                style="text-align: center; border: 1px dashed var(--primary-vibrant); padding: 20px; border-radius: 20px;">
+                <p style="font-size: 0.85rem; font-style: italic;">"A 10ª receita é a sua Criatividade. Use as sobras de
+                    todos os bolos que você fizer do ebook principal e crie o 'Pote Surpresa da Nutri'."</p>
+            </div>
+
+            <div class="page-number">Menu Lucrativo • Pág 05</div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 6: CUSTO, PREÇO E EMBALAGEM -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">04. A Matemática do Pote</h2>
+
+            <p style="font-size: 1.1rem; margin-bottom: 30px;">Um pote de 250ml custa, em média, **R$ 6,50** para
+                produzir. No mercado Low Carb, ele é vendido por **R$ 18,00 a R$ 22,00**.</p>
+
+            <div style="background: #fafafa; padding: 30px; border-radius: 20px; border: 2px solid #eee;">
+                <h4 style="margin-top: 0; text-align: center;">Exemplo de Lucro Real (Semanal):</h4>
+                <div style="display: flex; justify-content: space-between; margin-top: 20px; font-weight: bold;">
+                    <span>50 Potes Vendidos:</span>
+                    <span style="color: #2E7D32;">R$ 1.000,00</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 10px; color: #D32F2F;">
+                    <span>Custo de Produção:</span>
+                    <span>- R$ 325,00</span>
+                </div>
+                <hr>
+                <div
+                    style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2rem; color: #1565C0;">
+                    <span>LUCRO LÍQUIDO:</span>
+                    <span>R$ 675,00</span>
+                </div>
+                <p style="font-size: 0.8rem; text-align: center; margin-top: 20px; color: #666;">*Estimativa baseada em
+                    venda média de R$ 20,00 por pote.</p>
+            </div>
+
+            <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div
+                    style="background: white; border: 1px solid var(--primary-vibrant); padding: 20px; border-radius: 15px;">
+                    <h5 style="margin-top: 0;">Potes de Vidro:</h5>
+                    <p style="font-size: 0.75rem;">Para clientes Premium. Ideal para delivery de luxo ou presentes.</p>
+                </div>
+                <div
+                    style="background: white; border: 1px solid var(--primary-vibrant); padding: 20px; border-radius: 15px;">
+                    <h5 style="margin-top: 0;">Potes de Acetato:</h5>
+                    <p style="font-size: 0.75rem;">Para volume de vendas. Leves, práticos e permitem empilhamento na
+                        geladeira.</p>
+                </div>
+            </div>
+
+            <div class="page-number">Matemática do Sucesso • Pág 06</div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 7: 8 ESTRATÉGIAS DE VENDA (BÔNUS) -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">05. 8 Estratégias para Vender Tudo Hoje</h2>
+
+            <p style="margin-bottom: 30px;">Muitos sabem fazer, poucos sabem vender. Aplique essas técnicas:</p>
+
+            <div class="strategy-grid">
+                <div class="strategy-item">
+                    <h5 style="margin: 0; color: #FFD54F;">1. A Escassez no WhatsApp</h5>
+                    <p style="font-size: 0.75rem;">"Restam apenas 5 unidades do Sensação!" A pressa faz o cliente
+                        decidir.</p>
+                </div>
+                <div class="strategy-item">
+                    <h5 style="margin: 0; color: #FFD54F;">2. O "Close-up" do Desejo</h5>
+                    <p style="font-size: 0.75rem;">Vídeos curtos (Reels) afundando a colher no pote. A imagem vende mais
+                        que o texto.</p>
+                </div>
+                <div class="strategy-item">
+                    <h5 style="margin: 0; color: #FFD54F;">3. Parceria em Academias</h5>
+                    <p style="font-size: 0.75rem;">Deixe amostras grátis para os professores. Aluno fitness é o cliente
+                        perfeito.</p>
+                </div>
+                <div class="strategy-item">
+                    <h5 style="margin: 0; color: #FFD54F;">4. O Combo Familiar</h5>
+                    <p style="font-size: 0.75rem;">"Leve 4 e ganhe a colher de bambu reutilizável." Aumente seu ticket
+                        médio.</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px; background: #eee; padding: 20px; border-radius: 15px; font-size: 0.85rem;">
+                <p><strong>Dica Extra:</strong> Tenha sempre um "Cardápio Digital" no link da sua Bio do Instagram. O
+                    cliente odeia ter que perguntar o preço por direct.</p>
+            </div>
+
+            <div class="page-number">Marketing Destravado • Pág 07</div>
+        </div>
+    </div>
+
+    <!-- PÁGINA 8: SEGURANÇA E INVENTÁRIO -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <h2 class="section-title">06. Checklist de Segurança & Sucesso</h2>
+
+            <p>O segredo da longevidade de uma marca é a **Segurança Alimentar**.</p>
+
+            <div style="border: 2px solid var(--secondary-vibrant); padding: 30px; border-radius: 25px;">
+                <h4 style="text-align: center; color: var(--secondary-vibrant);">CONTROLE SEMANAL:</h4>
+                <ul style="list-style: none; padding: 0; line-height: 2;">
+                    <li>[ ] Verifiquei a data de validade de todos os potes na geladeira.</li>
+                    <li>[ ] A temperatura da geladeira está mantida em 4°C a 7°C.</li>
+                    <li>[ ] Etiquetas de ingredientes visíveis (Essencial por causa de alergias).</li>
+                    <li>[ ] O estoque de embalagens está garantido para a próxima semana?</li>
+                </ul>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <h3
+                    style="font-family: var(--font-script); font-size: 2.8rem; color: var(--primary-vibrant); margin: 0;">
+                    Você está pronta para escalar!</h3>
+                <p style="font-size: 0.9rem; opacity: 0.7;">Que cada pote vendido seja um degrau para sua liberdade
+                    financeira.</p>
+                <p style="font-size: 0.7rem; opacity: 0.4; margin-top: 40px;">© 2025 Receitas da Nutri - O Método de
+                    Ouro</p>
+            </div>
+
+            <div class="page-number">O Planalto da Vitória • Pág 08</div>
+        </div>
+    </div>
+
+</body>
+
+</html>

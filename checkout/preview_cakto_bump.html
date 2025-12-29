@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preview Order Bump Cakto</title>
+    <!-- Fontes do Projeto -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Simulação do Checkout Container */
+        .checkout-simulator {
+            background: white;
+            width: 100%;
+            max-width: 500px;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            font-family: 'Baloo 2', cursive;
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* --- ESTILO SUGERIDO (COPIE ISSO SE PUDER USAR CSS NO CAKTO) --- */
+
+        .order-bump-box {
+            /* Fundo Creme Suave - Combina com o site */
+            background-color: #FFF9E6;
+
+            /* Borda Pontilhada Elegante */
+            border: 2px dashed #E5D6C6;
+
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            gap: 15px;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .order-bump-box:hover {
+            border-color: #FFBB00;
+            background-color: #fffdf5;
+            box-shadow: 0 4px 15px rgba(255, 187, 0, 0.1);
+        }
+
+        /* Checkbox Customizado */
+        .bump-checkbox {
+            margin-top: 5px;
+            accent-color: #6A3321;
+            /* Cor primária do site */
+            transform: scale(1.5);
+            cursor: pointer;
+        }
+
+        .bump-content {
+            flex: 1;
+        }
+
+        /* Título - Marrom Forte */
+        .bump-title {
+            font-family: 'Baloo 2', cursive;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: #6A3321;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .bump-highlight {
+            color: #d32f2f;
+            /* Vermelho Alerta para 'LEVE TAMBÉM' */
+        }
+
+        /* Descrição - Texto Escuro Suave */
+        .bump-desc {
+            font-size: 0.9rem;
+            color: #5f687f;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .bump-desc strong {
+            color: #2d2d2d;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .new-price {
+            color: #059669;
+            /* Verde Sucesso para o Preço */
+            font-weight: 800;
+        }
+
+        /* Imagem do Produto */
+        .bump-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            object-fit: cover;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Badge Piscante (Opcional) */
+        .blink-badge {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #FFBB00;
+            color: #6A3321;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* --- FIM DO ESTILO --- */
+    </style>
+</head>
+
+<body>
+
+    <div class="checkout-simulator">
+        <h2>Checkout Preview</h2>
+
+        <!-- COMPONENTE ORDER BUMP -->
+        <label class="order-bump-box">
+            <span class="blink-badge">Oportunidade Única</span>
+
+            <!-- Checkbox Nativo -->
+            <input type="checkbox" class="bump-checkbox">
+
+            <!-- Imagem -->
+            <img src="../capas_cakto/v2/1_recheios_chocolate.png" alt="Recheios" class="bump-img">
+
+            <div class="bump-content">
+                <div class="bump-title">
+                    <span class="bump-highlight">🔴 LEVE TAMBÉM:</span> A Bíblia dos Recheios
+                </div>
+                <div class="bump-desc">
+                    Aprenda a "Química Secreta" dos recheios estruturados que aguentam 24h fora da geladeira.
+                    <br>
+                    <span class="old-price">De R$ 29,90</span> por apenas <span class="new-price">R$ 9,70</span>
+                </div>
+            </div>
+        </label>
+        <!-- FIM COMPONENTE -->
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,2952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Império Completo da Confeitaria - Receitas da Nutri</title>
+    <link rel="stylesheet" href="../assets/css/ebook.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '711986754477110');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=711986754477110&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <style>
+        /* CSS CONSOLIDADO DAS FERRAMENTAS */
+        /* Planilha */
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px
+        }
+
+        .calc-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08)
+        }
+
+        .result-panel {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center
+        }
+
+        .input-group {
+            margin-bottom: 20px
+        }
+
+        .btn-calc {
+            background: var(--highlight);
+            color: var(--primary);
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px
+        }
+
+        .metric {
+            margin: 15px 0
+        }
+
+        .metric-val {
+            font-size: 2.2rem;
+            display: block;
+            font-weight: 800;
+            color: var(--highlight)
+        }
+
+        /* Calendário */
+        .day-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+            position: relative
+        }
+
+        .day-label {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            position: absolute;
+            top: -15px;
+            left: 20px
+        }
+
+        .caption-field {
+            background: #fdfdfd;
+            border: 1px dashed #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 0.9rem
+        }
+
+        .strategy-badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: bold
+        }
+
+        /* Criativos */
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0
+        }
+
+        .palette-color {
+            flex: 1;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+        }
+
+        /* Tráfego */
+        .pro-badge {
+            background: #0084ff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px
+        }
+
+        .pro-tip {
+            border-left: 5px solid #0084ff;
+            background: #e6f2ff;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0
+        }
+
+        .step-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            border: 1px solid #eee
+        }
+
+        .step-num {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px
+        }
+
+        /* Mobile fixes */
+        @media (max-width: 800px) {
+            .wrapper {
+                grid-template-columns: 1fr
+            }
+        }
+
+        /* CSS SECTION ELITE */
+        .section-elite {
+            --primary: #4a2511;
+            --gold: #c5a059;
+            --gold-light: #e6c288;
+            --bg: #f9f7f2;
+            --white: #ffffff;
+            --text-main: #333333;
+        }
+
+        .section-elite .cover {
+            background: linear-gradient(135deg, #4a2511 0%, #2a150a 100%);
+            color: white;
+            text-align: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .section-elite .cover-content {
+            border: 2px solid #c5a059;
+            margin: 40px;
+            height: calc(100% - 80px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .section-elite h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 20px;
+            color: #e6c288;
+            text-transform: uppercase;
+        }
+
+        .section-elite .subtitle {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 40px;
+        }
+
+        .section-elite .badge {
+            background: #c5a059;
+            color: #4a2511;
+            padding: 10px 30px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border-radius: 50px;
+        }
+
+        .section-elite h2 {
+            font-family: 'Baloo 2', cursive;
+            color: #4a2511;
+            font-size: 2.2rem;
+            border-bottom: 3px solid #c5a059;
+            display: inline-block;
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+
+        .section-elite p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .section-elite .chapter-intro {
+            background: #f9f7f2;
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            font-style: italic;
+            border-left: 8px solid #c5a059;
+        }
+
+        .section-elite .highlight-box {
+            background: #4a2511;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .section-elite .gold-text {
+            color: #c5a059;
+            font-weight: 700;
+        }
+
+        .section-elite .image-placeholder {
+            width: 100%;
+            height: auto;
+            background: #fff;
+            border: 2px solid #c5a059;
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .section-elite .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .section-elite .info-table th {
+            background: #4a2511;
+            color: #e6c288;
+            padding: 10px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .section-elite .info-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .section-elite .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .section-elite .checklist-item i {
+            color: #c5a059;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .section-elite .footer {
+            position: absolute;
+            bottom: 25mm;
+            left: 25mm;
+            right: 25mm;
+            font-size: 0.8rem;
+            color: #999;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+        }
+
+        /* CSS SECTION MASSAS */
+        .section-massas {
+            --primary: #5c301c;
+            --cream: #f4ece1;
+            --accent: #d4a373;
+            --white: #ffffff;
+            --text: #333333;
+        }
+
+        .section-massas .cover {
+            background: #5c301c;
+            color: #f4ece1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .section-massas .cover-border {
+            border: 4px double #d4a373;
+            margin: 30px;
+            height: calc(100% - 60px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-massas h1 {
+            font-family: 'Baloo 2', cursive;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .section-massas .subtitle {
+            font-size: 1.2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .section-massas h2 {
+            font-family: 'Baloo 2', cursive;
+            color: #5c301c;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            border-left: 10px solid #d4a373;
+            padding-left: 20px;
+        }
+
+        .section-massas .chapter-box {
+            background: #f4ece1;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .section-massas .page-divider {
+            width: 100%;
+            height: auto;
+            background: #fff;
+            border: 2px solid #d4a373;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+
+        .section-massas .info-table th {
+            background: #5c301c;
+            color: #ffffff;
+            padding: 8px;
+            text-align: left;
+            font-size: 0.85rem;
+        }
+
+        .section-massas .tip-box {
+            border: 2px dashed #d4a373;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            background: #fffcf9;
+        }
+
+        /* CSS SECTION RECHEIOS */
+        .section-recheios {
+            --primary-vibrant: #4A148C;
+            --secondary-vibrant: #7B1FA2;
+            --accent-vibrant: #F3E5F5;
+            --gold: #D4AF37;
+            --text-dark: #1A1A1A;
+        }
+
+        .section-recheios .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(74, 20, 140, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .section-recheios .recipe-header-alt {
+            border-left: 8px solid #D4AF37;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        .section-recheios .recipe-header-alt h3 {
+            margin: 0;
+            color: #4A148C;
+            font-size: 1.8rem;
+        }
+
+        .section-recheios .physics-box {
+            background: linear-gradient(135deg, #4A148C, #2E073F);
+            color: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin: 40px 0;
+        }
+
+        .section-recheios .troubleshooting-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .section-recheios .issue-card {
+            background: #FFF5F5;
+            border-left: 5px solid #E53935;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section-recheios .solution-card {
+            background: #F1F8E9;
+            border-left: 5px solid #43A047;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .section-recheios .masterclass-sidebar {
+            background: #F3E5F5;
+            padding: 25px;
+            border-radius: 20px;
+            border: 2px dashed #D4AF37;
+        }
+
+        .section-recheios .page-number {
+            font-weight: bold;
+            color: #D4AF37;
+            font-size: 1.2rem;
+            text-align: right;
+            border-top: 1px solid #eee;
+            padding-top: 10px;
+            margin-top: 20px;
+        }
+
+        /* CSS SECTION POTE */
+        .section-pote {
+            --primary-vibrant: #FF8F00;
+            --secondary-vibrant: #263238;
+            --accent-vibrant: #FFFDE7;
+            --white: #FFFFFF;
+        }
+
+        .section-pote .logic-card {
+            background: white;
+            padding: 30px;
+            border: 2px solid #FF8F00;
+            border-radius: 20px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .section-pote .syrup-box {
+            background: linear-gradient(135deg, #FFB300, #F57C00);
+            color: white;
+            padding: 40px;
+            border-radius: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .section-pote .combo-card-vibrant {
+            background: #FFFFFF;
+            border-left: 10px solid #FF8F00;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-pote .strategy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .section-pote .strategy-item {
+            background: #263238;
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        .section-pote .page-number {
+            font-weight: bold;
+            color: #FF8F00;
+            font-size: 1.1rem;
+            text-align: right;
+            border-top: 1px solid #eee;
+            margin-top: 30px;
+            padding-top: 10px;
+        }
+
+        /* CSS SECTION DOCES */
+        .section-doces {
+            --primary-vibrant: #121212;
+            --secondary-vibrant: #D4AF37;
+            --accent-vibrant: #FDFCF0;
+            --white: #FFFFFF;
+        }
+
+        .section-doces .gold-border-box {
+            border: 1px solid #D4AF37;
+            padding: 30px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .section-doces .rolling-masterclass {
+            background: #121212;
+            color: white;
+            padding: 40px;
+            border-radius: 0;
+            margin: 40px 0;
+        }
+
+        .section-doces .recipe-luxury {
+            margin-bottom: 50px;
+            border-bottom: 2px solid #D4AF37;
+            padding-bottom: 30px;
+        }
+
+        .section-doces .step-badge {
+            background: #D4AF37;
+            color: black;
+            padding: 5px 15px;
+            font-weight: 900;
+            margin-right: 10px;
+        }
+
+        .section-doces .pricing-vibrant {
+            background: #FDFCF0;
+            padding: 30px;
+            border-radius: 15px;
+            border: 3px double #D4AF37;
+        }
+
+        .section-doces .page-number {
+            font-weight: bold;
+            color: #D4AF37;
+            font-size: 1.1rem;
+            text-align: center;
+            border-top: 1px solid #ddd;
+            margin-top: 40px;
+            padding-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CAPA -->
+    <div class="page page-break cover-page">
+        <div class="cover-overlay"></div>
+        <div class="cover-content">
+            <span class="cover-badge" style="background:var(--highlight); color:var(--primary);">A Bíblia
+                Definitiva</span>
+            <div style="margin-top: auto; margin-bottom: auto;">
+                <h2 class="cover-subtitle">O Império Completo da</h2>
+                <h1 class="cover-title">CONFEITARIA<br>LUCRATIVA</h1>
+                <p style="color: #fff; font-size: 1.2rem; margin-top: 20px;">O Caminho do Zero aos R$ 10.000/Mês</p>
+            </div>
+            <div class="cover-author">
+                <p>Por <strong>Receitas da Nutri</strong></p>
+                <div style="border-top: 1px solid rgba(255,255,255,0.5); width: 50px; margin: 20px auto;"></div>
+                <p>2025</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEGAL / COPYRIGHT -->
+    <div class="page page-break">
+        <div class="interior-page"
+            style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h3 style="font-family: var(--font-heading); font-size: 2rem; color: var(--primary);">Nota Legal</h3>
+            </div>
+            <div style="font-size: 0.9rem; color: #555; text-align: justify; line-height: 1.8;">
+                <p><strong>Copyright © 2025 por Receitas da Nutri.</strong></p>
+                <p>Todos os direitos reservados. Nenhuma parte deste livro pode ser reproduzida ou usada de qualquer
+                    forma ou por qualquer meio, eletrônico ou mecânico, inclusive fotocópias, gravações ou sistema de
+                    armazenamento em banco de dados, sem permissão por escrito do proprietário dos direitos autorais.
+                </p>
+                <br>
+                <p><strong>Isenção de Responsabilidade:</strong></p>
+                <p>Este produto não garante a obtenção de resultados. Os resultados variam de pessoa para pessoa e
+                    dependem de diversos fatores incluindo dedicação, esforço e condições de mercado. Qualquer
+                    referência
+                    ao desempenho não deve ser interpretada como uma garantia de resultados.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- INTRODUÇÃO -->
+    <div class="page page-break">
+        <div class="interior-page">
+            <div class="bio-box">
+                <h2
+                    style="font-family: var(--font-heading); color: var(--primary); font-size: 2.5rem; margin-bottom: 20px;">
+                    Bem-vindo(a) ao Seu Novo Negócio!
+                </h2>
+                <div style="font-size: 1.1rem; text-align: left; line-height: 1.8;">
+                    <p>Se você chegou até aqui, é porque já tem as receitas nas mãos. Agora vem a pergunta de ouro:</p>
+                    <p><strong>"Como eu transformo essas receitas em DINHEIRO de verdade?"</strong></p>
+                    <p>É exatamente isso que você vai descobrir neste guia!</p>
+                    <p>Nos próximos capítulos, você vai aprender o passo a passo COMPLETO para:</p>
+                    <ul style="margin: 20px 0;">
+                        <li>✅ Precificar seus bolos para lucrar de verdade</li>
+                        <li>✅ Vender na rua sem medo e com segurança</li>
+                        <li>✅ Conquistar clientes pelo WhatsApp e Instagram</li>
+                        <li>✅ Organizar sua produção e pedidos</li>
+                        <li>✅ Escalar para R$ 3.000, R$ 5.000 ou mais por mês</li>
+                    </ul>
+                    <p>Este não é teoria. São estratégias TESTADAS e APROVADAS por centenas de pessoas que já faturaram
+                        milhares de reais vendendo bolos fit.</p>
+                    <p><strong>Pronta(o) para começar sua jornada empreendedora?</strong></p>
+                    <p>Vamos lá! 🚀</p>
+                </div>
+            </div>
+            <div class="page-number">Introdução</div>
+        </div>
+    </div>
+
+    <!-- ÍNDICE -->
+    <div class="page page-break toc-page" id="toc">
+        <div class="interior-page">
+            <div style="text-align: center;">
+                <h2 class="toc-title">Índice</h2>
+            </div>
+            <ul class="toc-list">
+                <li class="toc-item"><a href="#modulo1">Módulo 1: Precificação que Gera Lucro</a></li>
+                <li class="toc-item"><a href="#modulo2">Módulo 2: Vendendo na Rua com Sucesso</a></li>
+                <li class="toc-item"><a href="#modulo3">Módulo 3: Vendas pelo WhatsApp</a></li>
+                <li class="toc-item"><a href="#modulo4">Módulo 4: Instagram que Vende</a></li>
+                <li class="toc-item"><a href="#modulo5">Módulo 5: Organização & Produção</a></li>
+                <li class="toc-item"><a href="#modulo6">Módulo 6: Escalando para R$ 5.000+</a></li>
+                <li class="toc-item"><a href="#modulo7">Módulo 7: Fotografia que Vende (Novidade!)</a></li>
+                <li class="toc-item"><a href="#modulo8">Módulo 8: Calculadora de Lucro</a></li>
+                <li class="toc-item"><a href="#modulo9">Módulo 9: Calendário de 30 Dias</a></li>
+                <li class="toc-item"><a href="#modulo10">Módulo 10: Criativos de Cinema</a></li>
+                <li class="toc-item"><a href="#modulo11">Módulo 11: Tráfego Pago Descomplicado</a></li>
+                <li class="toc-item"><a href="#recursos">Recursos Práticos & FAQ</a></li>
+                <br>
+                <h3 style="margin-top: 20px; color: var(--primary);">📚 BÔNUS EXCLUSIVOS:</h3>
+                <li class="toc-item"><a href="#elite">Manual da Confeiteira de Elite</a></li>
+                <li class="toc-item"><a href="#massas">Guia das Massas Perfeitas</a></li>
+                <li class="toc-item"><a href="#recheios">Recheios & Coberturas</a></li>
+                <li class="toc-item"><a href="#pote">Bolos de Pote Lucrativos</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+    <!-- MÓDULO 1: PRECIFICAÇÃO -->
+    <div class="page page-break" id="modulo1">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title" style="border-bottom: 3px solid var(--primary);">Módulo 1: Precificação que Gera
+                Lucro</h2>
+
+            <div class="section-card">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-calculator"></i> O Segredo da Precificação</h3>
+                <p>Muita gente perde dinheiro porque não sabe precificar corretamente. A fórmula é simples:</p>
+
+                <div style="background: #f0f0f0; padding: 20px; border-radius: 10px; margin: 20px 0;">
+                    <p style="font-weight: bold; text-align: center; font-size: 1.2rem;">
+                        PREÇO DE VENDA = (CUSTO TOTAL ÷ 0.30) ou (CUSTO TOTAL × 3.33)
+                    </p>
+                    <p style="text-align: center; margin-top: 10px;">Isso garante 70% de lucro!</p>
+                </div>
+
+                <h3 style="color: var(--primary); margin-top: 30px;">Como Calcular o Custo Total</h3>
+                <p><strong>1. Custo dos Ingredientes:</strong></p>
+                <ul>
+                    <li>Some o preço de TODOS os ingredientes da receita</li>
+                    <li>Não esqueça: ovos, adoçante, óleo, fermento, etc.</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>2. Custo da Embalagem:</strong></p>
+                <ul>
+                    <li>Caixinha: R$ 1,00 a R$ 2,50</li>
+                    <li>Etiqueta: R$ 0,20</li>
+                    <li>Garfo/guardanapo: R$ 0,30</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>3. Custo de Energia (Gás/Luz):</strong></p>
+                <ul>
+                    <li>Média por bolo: R$ 0,80 a R$ 1,20</li>
+                </ul>
+
+                <p style="margin-top: 15px;"><strong>4. Seu Tempo:</strong></p>
+                <ul>
+                    <li>Quanto vale sua hora? Mínimo R$ 20/hora</li>
+                    <li>Se leva 30min para fazer um bolo = R$ 10</li>
+                </ul>
+            </div>
+
+            <div class="page-number">Módulo 1 - Página 1</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 1 - EXEMPLO PRÁTICO -->
+    <div class="page page-break">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Exemplo Prático de Precificação</h2>
+
+            <div class="section-card" style="background: #fff3cd; border-left: 5px solid #ffc107;">
+                <h3 style="color: #856404;"><i class="fa-solid fa-cake-candles"></i> Bolo de Cenoura Low Carb (500g)
+                </h3>
+
+                <table style="width: 100%; margin-top: 20px; border-collapse: collapse;">
+                    <thead>
+                        <tr style="background: #f8f9fa;">
+                            <th style="padding: 10px; text-align: left; border-bottom: 2px solid #dee2e6;">Item</th>
+                            <th style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">Ingredientes</td>
+                            <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">R$ 8,50</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">Embalagem + Etiqueta</td>
+                            <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">R$ 1,50</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 1px solid #dee2e6;">Gás/Energia</td>
+                            <td style="padding: 10px; text-align: right; border-bottom: 1px solid #dee2e6;">R$ 0,80</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 10px; border-bottom: 2px solid #dee2e6;">Mão de Obra (30min)</td>
+                            <td style="padding: 10px; text-align: right; border-bottom: 2px solid #dee2e6;">R$ 10,00
+                            </td>
+                        </tr>
+                        <tr style="font-weight: bold; background: #f8f9fa;">
+                            <td style="padding: 10px;">CUSTO TOTAL</td>
+                            <td style="padding: 10px; text-align: right;">R$ 20,80</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="margin-top: 30px; padding: 20px; background: white; border-radius: 10px;">
+                    <p style="font-size: 1.1rem;"><strong>Aplicando a fórmula:</strong></p>
+                    <p style="font-size: 1.2rem; margin: 15px 0;">R$ 20,80 × 3.33 = <span
+                            style="color: #28a745; font-weight: bold; font-size: 1.5rem;">R$ 69,00</span></p>
+
+                    <div style="margin-top: 20px; padding: 15px; background: #d4edda; border-radius: 5px;">
+                        <p><strong>✅ Preço de Venda: R$ 69,00</strong></p>
+                        <p><strong>💰 Seu Lucro: R$ 48,20 (70%)</strong></p>
+                        <p><strong>🎯 Meta: Vender 65 bolos/mês = R$ 3.133 de lucro!</strong></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 30px;">
+                <h4><i class="fa-solid fa-lightbulb"></i> Dica de Ouro</h4>
+                <p>Teste seu preço! Se vender tudo rápido demais, você pode estar BARATO. Se ninguém comprar, talvez
+                    precise
+                    ajustar ou melhorar a apresentação.</p>
+            </div>
+
+            <div class="page-number">Módulo 1 - Página 2</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 2: VENDENDO NA RUA -->
+    <div class="page page-break" id="modulo2">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 2: Vendendo na Rua com Sucesso</h2>
+
+            <div class="section-card">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-location-dot"></i> Melhores Pontos para Vender
+                </h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">🏋️ Academias</h4>
+                        <p><strong>Horários:</strong> 6h-9h e 18h-21h</p>
+                        <p><strong>Vantagem:</strong> Público fit que valoriza produtos saudáveis</p>
+                        <p><strong>Dica:</strong> Ofereça parceria com o dono</p>
+                    </div>
+
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">🏢 Escritórios</h4>
+                        <p><strong>Horários:</strong> 12h-14h e 15h-16h</p>
+                        <p><strong>Vantagem:</strong> Clientes fixos, compra regular</p>
+                        <p><strong>Dica:</strong> Faça encomendas semanais</p>
+                    </div>
+
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">🌳 Praças/Parques</h4>
+                        <p><strong>Horários:</strong> Sábados e domingos 9h-13h</p>
+                        <p><strong>Vantagem:</strong> Alto fluxo, famílias</p>
+                        <p><strong>Dica:</strong> Leve opções individuais</p>
+                    </div>
+
+                    <div style="padding: 15px; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">🏪 Feiras Fit</h4>
+                        <p><strong>Horários:</strong> Conforme evento</p>
+                        <p><strong>Vantagem:</strong> Público qualificado</p>
+                        <p><strong>Dica:</strong> Prepare degustação</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-briefcase"></i> Kit Básico para Vender na Rua
+                </h3>
+                <ul>
+                    <li>✅ Caixa térmica (manter bolos frescos)</li>
+                    <li>✅ Pratos pequenos descartáveis</li>
+                    <li>✅ Garfinhos de plástico</li>
+                    <li>✅ Guardanapos</li>
+                    <li>✅ Álcool gel</li>
+                    <li>✅ Cartões de visita/WhatsApp</li>
+                    <li>✅ Maquininha de cartão ou PIX</li>
+                    <li>✅ Amostras para degustação</li>
+                </ul>
+            </div>
+
+            <div class="page-number">Módulo 2 - Página 1</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 2 - SCRIPTS DE VENDA -->
+    <div class="page page-break">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Scripts de Venda que Funcionam</h2>
+
+            <div class="tip-box" style="background: #fff3cd; border-left: 5px solid #ffc107;">
+                <h4 style="color: #856404;"><i class="fa-solid fa-star"></i> Regra de Ouro</h4>
+                <p>Não seja um vendedor chato! Seja um consultor que ajuda a pessoa a fazer a melhor escolha.</p>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-comments"></i> Script #1: Primeira Abordagem
+                </h3>
+
+                <div style="padding: 20px; background: #f0f8ff; border-radius: 10px; margin: 15px 0;">
+                    <p style="margin: 0;"><strong>Você:</strong> "Oi! Posso oferecer um pedacinho do nosso bolo fit? É
+                        sem açúcar e sem glúten!"</p>
+                </div>
+
+                <p style="margin: 15px 0;"><strong>Por que funciona:</strong></p>
+                <ul>
+                    <li>✅ Oferece degustação (baixo risco)</li>
+                    <li>✅ Destaca benefícios (fit, sem açúcar)</li>
+                    <li>✅ Tom amigável</li>
+                </ul>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-handshake"></i> Script #2: Fechando a Venda
+                </h3>
+
+                <div style="padding: 20px; background: #f0f8ff; border-radius: 10px; margin: 15px 0;">
+                    <p style="margin: 0;"><strong>Cliente:</strong> "Hmmm, gostei!"</p>
+                    <p style="margin: 10px 0;"><strong>Você:</strong> "Que bom! Esse é o de cenoura com chocolate. Tenho
+                        também de limão e brigadeiro. Qual você prefere?"</p>
+                    <p style="margin: 10px 0;"><strong>Cliente:</strong> "O de cenoura mesmo."</p>
+                    <p style="margin: 10px 0;"><strong>Você:</strong> "Perfeito! Esse aqui tem 500g e custa R$ 69.
+                        Aceito PIX ou cartão. Qual prefere?"</p>
+                </div>
+
+                <div class="tip-box" style="margin-top: 15px;">
+                    <h4><i class="fa-solid fa-lightbulb"></i> Técnica</h4>
+                    <p>Dê opções em vez de perguntar sim/não. "Qual prefere?" em vez de "Quer comprar?"</p>
+                </div>
+            </div>
+
+            <div class="page-number">Módulo 2 - Página 2</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 2 - LIDANDO COM OBJEÇÕES -->
+    <div class="page page-break">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Lidando com Objeções</h2>
+
+            <div class="section-card">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-shield-halved"></i> Objeção #1: "Tá caro!"</h3>
+
+                <div style="padding: 15px; background: #ffe6e6; border-radius: 8px; margin: 10px 0;">
+                    <p style="margin: 0; color: #c00;"><strong>❌ Resposta Ruim:</strong></p>
+                    <p style="margin: 5px 0;">"Ah, mas os ingredientes são caros..."</p>
+                </div>
+
+                <div style="padding: 15px; background: #e6ffe6; border-radius: 8px; margin: 10px 0;">
+                    <p style="margin: 0; color: #060;"><strong>✅ Resposta Boa:</strong></p>
+                    <p style="margin: 5px 0;">"Entendo! Mas esse bolo é feito 100% com ingredientes naturais. Zero
+                        açúcar, zero glúten. Você pode comer sem culpa e ainda emagrecer! Vale cada centavo. 😊"</p>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-clock"></i> Objeção #2: "Agora não posso"</h3>
+
+                <div style="padding: 15px; background: #e6ffe6; border-radius: 8px;">
+                    <p style="margin: 0; color: #060;"><strong>✅ Resposta:</strong></p>
+                    <p style="margin: 5px 0;">"Sem problemas! Anota meu WhatsApp: [número]. Quando quiser encomendar, é
+                        só chamar! 😊"</p>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>E depois:</strong> Envie mensagem no dia seguinte lembrando.</p>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-question"></i> Objeção #3: "Não sei se é bom"
+                </h3>
+
+                <div style="padding: 15px; background: #e6ffe6; border-radius: 8px;">
+                    <p style="margin: 0; color: #060;"><strong>✅ Resposta:</strong></p>
+                    <p style="margin: 5px 0;">"Eu entendo! Por isso deixo você provar primeiro. Aqui ó, um pedacinho. E
+                        olha os depoimentos de quem já comprou [mostrar prints]. Todo mundo adora!"</p>
+                </div>
+
+                <div class="tip-box" style="margin-top: 15px;">
+                    <h4><i class="fa-solid fa-star"></i> Prova Social</h4>
+                    <p>SEMPRE tenha prints de depoimentos no celular. Prova social vende!</p>
+                </div>
+            </div>
+
+            <div class="page-number">Módulo 2 - Página 3</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 3: WHATSAPP -->
+    <div class="page page-break" id="modulo3">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 3: Vendas pelo WhatsApp</h2>
+
+            <div class="bio-box">
+                <p style="font-size: 1.2rem; text-align: center;">
+                    <strong>WhatsApp = Sua Máquina de Vendas Automática! 🚀</strong>
+                </p>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-brands fa-whatsapp"></i> Configuração do WhatsApp
+                    Business</h3>
+
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                    <h4 style="margin-top: 0;">Passo 1: Baixar o App</h4>
+                    <p>Procure "WhatsApp Business" na Play Store ou App Store. É GRÁTIS!</p>
+
+                    <h4 style="margin-top: 20px;">Passo 2: Configurar Perfil</h4>
+                    <ul>
+                        <li><strong>Foto:</strong> Logo ou foto dos seus bolos</li>
+                        <li><strong>Nome:</strong> "Bolos Fit - [Seu Nome]"</li>
+                        <li><strong>Descrição:</strong> "Bolos sem açúcar, sem glúten, deliciosos! 🍰"</li>
+                        <li><strong>Categoria:</strong> Comida e Bebidas</li>
+                        <li><strong>Horário:</strong> Seg-Sex: 9h-20h / Sáb: 9h-14h</li>
+                    </ul>
+
+                    <h4 style="margin-top: 20px;">Passo 3: Criar Catálogo</h4>
+                    <p>Adicione seus produtos com:</p>
+                    <ul>
+                        <li>Foto bonita</li>
+                        <li>Nome do bolo</li>
+                        <li>Preço</li>
+                        <li>Descrição curta</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-number">Módulo 3 - Página 1</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 3 - SCRIPTS WHATSAPP -->
+    <div class="page page-break">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Scripts de WhatsApp Prontos</h2>
+
+            <div class="section-card" style="background: #d4edda; border-left: 5px solid #28a745;">
+                <h3 style="color: #155724;"><i class="fa-solid fa-copy"></i> Copie e Cole! (30 scripts no material
+                    extra)</h3>
+
+                <div style="margin-top: 20px;">
+                    <h4 style="color: var(--primary);">📱 Script 1: Primeira Mensagem</h4>
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p style="margin: 0;">"Oi [Nome]! Tudo bem? 😊</p>
+                        <p style="margin: 10px 0;">Faço bolos fit deliciosos, sem açúcar e sem glúten. Perfeito para
+                            quem quer cuidar da saúde sem perder o prazer!</p>
+                        <p style="margin: 10px 0 0 0;">Tem interesse em conhecer?"</p>
+                    </div>
+
+                    <h4 style="color: var(--primary); margin-top: 25px;">📱 Script 2: Envio de Cardápio</h4>
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p style="margin: 0;">"Bolos desta semana: 🍰</p>
+                        <p style="margin: 10px 0;">🍫 Chocolate Trufado - R$ 75<br>
+                            🥕 Cenoura c/ Chocolate - R$ 69<br>
+                            🍋 Limão Siciliano - R$ 69</p>
+                        <p style="margin: 10px 0;">Todos com 500g (8-10 porções)</p>
+                        <p style="margin: 10px 0 0 0;">Qual te interessa? 😊"</p>
+                    </div>
+
+                    <h4 style="color: var(--primary); margin-top: 25px;">📱 Script 3: Fechamento</h4>
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p style="margin: 0;">"Ótimo! Vou separar um de [sabor] para você! 🎉</p>
+                        <p style="margin: 10px 0;">Posso entregar amanhã. Seu endereço é [confirmar]?</p>
+                        <p style="margin: 10px 0 0 0;">Aceito PIX ou cartão. Como prefere?"</p>
+                    </div>
+
+                    <h4 style="color: var(--primary); margin-top: 25px;">📱 Script 4: Pós-Venda</h4>
+                    <div style="background: white; padding: 15px; border-radius: 8px; margin: 10px 0;">
+                        <p style="margin: 0;">"Oi [Nome]! Como foi o bolo? Gostou? 😊</p>
+                        <p style="margin: 10px 0 0 0;">Essa semana tenho outros sabores. Quer que eu te envie?"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 30px;">
+                <h4><i class="fa-solid fa-rocket"></i> Dica Poderosa</h4>
+                <p>Configure "Respostas Rápidas" no WhatsApp Business com esses scripts. Economiza tempo!</p>
+            </div>
+
+            <div class="page-number">Módulo 3 - Página 2</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 3 - LISTA DE TRANSMISSÃO -->
+    <div class="page page-break">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Lista de Transmissão: Venda Todo Dia!</h2>
+
+            <div class="section-card" style="background: #fff3cd; border-left: 5px solid #ffc107;">
+                <h3 style="color: #856404;"><i class="fa-solid fa-bullhorn"></i> O Segredo para Vender Diariamente</h3>
+                <p>Lista de transmissão = Email marketing, mas no WhatsApp!</p>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);">Como Criar:</h3>
+                <ol style="font-size: 1.05rem; line-height: 1.8;">
+                    <li>Abra WhatsApp → Mais opções (3 pontinhos)</li>
+                    <li>Nova transmissão</li>
+                    <li>Adicione seus clientes</li>
+                    <li>Dê um nome: "Clientes VIP"</li>
+                </ol>
+
+                <h3 style="color: var(--primary); margin-top: 30px;">O Que Enviar:</h3>
+
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <p style="margin: 0;"><strong>Segunda-feira (9h):</strong></p>
+                    <p style="margin: 5px 0;">"Bom dia! 🌞 Bolos fresquinhos da semana..."</p>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <p style="margin: 0;"><strong>Quarta-feira (15h):</strong></p>
+                    <p style="margin: 5px 0;">"Últimas unidades! Encomende até 18h..."</p>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <p style="margin: 0;"><strong>Sexta-feira (10h):</strong></p>
+                    <p style="margin: 5px 0;">"Weekend chegando! Bolos especiais..."</p>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 30px;">
+                <h4><i class="fa-solid fa-chart-line"></i> Resultado</h4>
+                <p>Com 50 pessoas na lista, 3 mensagens/semana = vendas DIÁRIAS automáticas! 📈</p>
+            </div>
+
+            <div class="page-number">Módulo 3 - Página 3</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 4: INSTAGRAM -->
+    <div class="page page-break" id="modulo4">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 4: Instagram que Vende</h2>
+
+            <div class="bio-box">
+                <p style="font-size: 1.2rem; text-align: center;">
+                    <strong>Seu Instagram = Vitrine 24/7 que Vende Sozinha! 📸</strong>
+                </p>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-brands fa-instagram"></i> Bio Perfeita que Converte</h3>
+
+                <div
+                    style="background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%); padding: 30px; border-radius: 15px; color: white; margin-top: 20px;">
+                    <p style="margin: 0; font-size: 0.9rem;">@bolosfitdanutri</p>
+                    <p style="margin: 10px 0; font-weight: bold; font-size: 1.1rem;">Bolos Fit da Nutri</p>
+                    <p style="margin: 10px 0;">🍰 Bolos Sem Açúcar | Sem Glúten<br>
+                        💪 Delicioso e Saudável<br>
+                        📍 São Paulo/SP<br>
+                        📲 Encomendas no link 👇</p>
+                    <div
+                        style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 5px; text-align: center; margin-top: 15px;">
+                        linktr.ee/bolosfit
+                    </div>
+                </div>
+
+                <div class="tip-box" style="margin-top: 20px;">
+                    <h4><i class="fa-solid fa-check-circle"></i> Checklist da Bio</h4>
+                    <ul>
+                        <li>✅ O que você vende (claro e direto)</li>
+                        <li>✅ Benefícios principais</li>
+                        <li>✅ Localização</li>
+                        <li>✅ Call-to-action</li>
+                        <li>✅ Link clicável</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-number">Módulo 4 - Página 1</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 4 - 5 TIPOS DE POSTS -->
+    <div class="page page-break">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">5 Tipos de Posts que Vendem</h2>
+
+            <div class="section-card">
+                <h3 style="color: var(--primary);">📸 Post #1: Foto do Produto</h3>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <p><strong>Foto:</strong> Bolo lindo, luz natural, fundo neutro</p>
+                    <p><strong>Legenda:</strong></p>
+                    <p style="font-style: italic; margin: 10px 0;">"Bolo de Cenoura com Chocolate 🍰<br><br>
+                        ✅ Sem açúcar<br>
+                        ✅ Sem glúten<br>
+                        ✅ 120 cal por fatia<br>
+                        ✅ R$ 69 (500g)<br><br>
+                        Encomende: link na bio! 📲"</p>
+                    <p><strong>Hashtags:</strong> #bolossemgluten #lowcarb #fit #saudavel #receitas fit #emagrecimento
+                    </p>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);">💬 Post #2: Depoimento</h3>
+                <div style="background: #d4edda; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <p><strong>Imagem:</strong> Print de WhatsApp com cliente feliz</p>
+                    <p><strong>Legenda:</strong></p>
+                    <p style="font-style: italic; margin: 10px 0;">"Olha o que a Maria falou! ❤️<br><br>
+                        'Esse bolo é MARAVILHOSO! Nem parece fit!'<br><br>
+                        Quer provar também? Link na bio! 🍰"</p>
+                </div>
+                <div class="tip-box">
+                    <h4>Prova Social</h4>
+                    <p>SEMPRE peça permissão antes de postar depoimentos!</p>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);">🔥 Post #3: Urgência/Escassez</h3>
+                <div style="background: #fff3cd; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <p><strong>Imagem:</strong> Fundo chamativo, texto grande</p>
+                    <p><strong>Legenda:</strong></p>
+                    <p style="font-style: italic; margin: 10px 0;">"🔥 ÚLTIMAS VAGAS! 🔥<br><br>
+                        Só 10 bolos disponíveis para amanhã!<br><br>
+                        Garanta o seu: link na bio<br><br>
+                        ⏰ Acaba às 18h!"</p>
+                </div>
+            </div>
+
+            <div class="page-number">Módulo 4 - Página 2</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 5: ORGANIZAÇÃO -->
+    <div class="page page-break" id="modulo5">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 5: Organização & Produção</h2>
+
+            <div class="section-card">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-calendar-check"></i> Sistema de Gestão de
+                    Pedidos</h3>
+
+                <p>Sem organização = caos e clientes insatisfeitos!</p>
+
+                <h4 style="color: var(--primary); margin-top: 25px;">Planilha de Controle (Material Extra)</h4>
+
+                <table style="width: 100%; border-collapse: collapse; margin-top: 15px;">
+                    <thead>
+                        <tr style="background: var(--primary); color: white;">
+                            <th style="padding: 10px; border: 1px solid #ddd;">Cliente</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Sabor</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Entrega</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Valor</th>
+                            <th style="padding: 10px; border: 1px solid #ddd;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Ana Silva</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Cenoura</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">25/12</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">R$ 69</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">✅ Pago</td>
+                        </tr>
+                        <tr style="background: #f8f9fa;">
+                            <td style="padding: 10px; border: 1px solid #ddd;">João Souza</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">Chocolate</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">26/12</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">R$ 75</td>
+                            <td style="padding: 10px; border: 1px solid #ddd;">⏳ Pendente</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-box"></i> Gestão de Estoque</h3>
+
+                <p><strong>Ingredientes Principais</strong></p>
+                <ul>
+                    <li>Farinha de amêndoas</li>
+                    <li>Adoçante eritritol</li>
+                    <li>Ovos</li>
+                    <li>Cacau 100%</li>
+                    <li>Óleo de coco</li>
+                </ul>
+
+                <p style="margin-top: 20px;"><strong>Regra:</strong> Sempre tenha estoque para fazer pelo menos 10 bolos
+                    de emergência!</p>
+            </div>
+
+            <div class="page-number">Módulo 5 - Página 1</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 6: ESCALANDO -->
+    <div class="page page-break" id="modulo6">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 6: Escalando para R$ 5.000+</h2>
+
+            <div class="bio-box">
+                <p style="font-size: 1.2rem; text-align: center;">
+                    <strong>Como Passar de R$ 3.000 para R$ 5.000+ por Mês? 📈</strong>
+                </p>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-users"></i> Estratégia #1: Programa de
+                    Fidelidade</h3>
+
+                <div style="background: #f0f8ff; padding: 20px; border-radius: 10px; margin-top: 15px;">
+                    <p><strong>Sistema Simples:</strong></p>
+                    <p>"Compre 5 bolos, ganhe 1 GRÁTIS!"</p>
+                    <p style="margin-top: 15px;"><strong>Como fazer:</strong></p>
+                    <ul>
+                        <li>Dê um cartão/ficha a cada compra</li>
+                        <li>Marque com carimbo</li>
+                        <li>5ª compra = desconto</li>
+                    </ul>
+                    <p style="margin-top: 15px; font-weight: bold;">Resultado: Clientes compram MAIS para ganhar o
+                        bônus!</p>
+                </div>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-handshake-simple"></i> Estratégia #2: Parcerias
+                </h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <div style="background: #e7f3ff; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">Academias</h4>
+                        <p>Ofereça 20-30% de comissão sobre vendas</p>
+                    </div>
+                    <div style="background: #ffe7f3; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">Nutricionistas</h4>
+                        <p>Faça package: consulta + bolos fit</p>
+                    </div>
+                    <div style="background: #fff8e7; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">Personal Trainers</h4>
+                        <p>Indiquem para clientes, ganham comissão</p>
+                    </div>
+                    <div style="background: #e7ffe7; padding: 15px; border-radius: 8px;">
+                        <h4 style="color: var(--primary); margin-top: 0;">Empresas</h4>
+                        <p>Cafés corporativos fit</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 30px;">
+                <h4><i class="fa-solid fa-rocket"></i> Meta Final</h4>
+                <p><strong>100 bolos/mês × R$ 50 lucro = R$ 5.000!</strong></p>
+                <p>Dividindo: ~25 bolos/semana = 3-4 bolos/dia. TOTALMENTE possível! 🎯</p>
+            </div>
+
+            <div class="page-number">Módulo 6 - Página 1</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 7: FOTOGRAFIA -->
+    <div class="page page-break" id="modulo7">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 7: Fotografia que Vende com Celular</h2>
+            <div class="bio-box">
+                <p>Na internet, o cliente come com os olhos primeiro. Se a foto for ruim, ele nem lê o preço.</p>
+            </div>
+
+            <div class="section-card" style="margin-top: 30px;">
+                <h3 style="color: var(--primary);"><i class="fa-solid fa-camera"></i> 3 Regras de Ouro</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 15px;">
+                    <div style="padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="font-size: 0.9rem; margin-top: 0;">1. Luz Natural</h4>
+                        <p style="font-size: 0.8rem;">Sempre fotografe perto de uma janela. O flash do celular deixa a
+                            comida com cor de plástico.</p>
+                    </div>
+                    <div style="padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="font-size: 0.9rem; margin-top: 0;">2. Regra dos Terços</h4>
+                        <p style="font-size: 0.8rem;">Não coloque o bolo sempre no centro. Use as linhas do celular para
+                            criar ângulos mais dinâmicos.</p>
+                    </div>
+                    <div style="padding: 10px; background: #f8f9fa; border-radius: 8px;">
+                        <h4 style="font-size: 0.9rem; margin-top: 0;">3. Cenário Limpo</h4>
+                        <p style="font-size: 0.8rem;">Use panos de prato limpos, uma tábua de madeira ou ervas frescas
+                            para decorar o fundo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tip-box" style="margin-top: 30px; background: #e3f2fd; border-left-color: #2196f3;">
+                <h4><i class="fa-solid fa-image"></i> A Foto do Recheio</h4>
+                <p>O post que mais vende é o <strong>close-up do recheio</strong>. Corte uma fatia, use um garfo para
+                    puxar um pouco do recheio e foque bem ali. É irresistível!</p>
+            </div>
+            <div class="page-number">Módulo 7 - Página 1</div>
+        </div>
+    </div>
+
+
+
+    <!-- MÓDULO 8: CALCULADORA -->
+    <div class="page page-break" id="modulo8">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 8: Calculadora de Lucro 2.0</h2>
+            <p>Use esta ferramenta interativa para precificar seus bolos corretamente. Preencha os campos abaixo:</p>
+
+            <div class="wrapper" style="margin-top: 20px;">
+                <div class="calc-panel">
+                    <h3>📊 Custos do Produto</h3>
+                    <div class="input-group">
+                        <label>Custos de Ingredientes (R$)</label>
+                        <input type="number" id="ing" placeholder="Ex: 12.50" step="0.01"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+                    <div class="input-group">
+                        <label>Embalagem e Etiquetas (R$)</label>
+                        <input type="number" id="emb" placeholder="Ex: 3.00" step="0.01"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+                    <div class="input-group">
+                        <label>Fator de Perda (5% a 10%)</label>
+                        <input type="number" id="lost" value="5"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+
+                    <h3 style="margin-top: 20px;">🏢 Custos Fixos</h3>
+                    <div class="input-group">
+                        <label>Custo Fixo Mensal (R$)</label>
+                        <input type="number" id="fixed_total" placeholder="Ex: 400.00"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+                    <div class="input-group">
+                        <label>Meta de Vendas (Unid/Mês)</label>
+                        <input type="number" id="goal" value="100"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+
+                    <button class="btn-calc" onclick="calcPro()">CALCULAR PREÇO ➔</button>
+                </div>
+
+                <div class="result-panel">
+                    <div class="metric">
+                        <p>Preço Mínimo (Margem 30%)</p>
+                        <span class="metric-val" id="res_min">R$ 0,00</span>
+                    </div>
+                    <div class="metric">
+                        <p>Preço Sugerido (Lucro 60%)</p>
+                        <span class="metric-val" id="res_sugg" style="color: #64ffda;">R$ 0,00</span>
+                    </div>
+                    <div class="metric" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px;">
+                        <p>Lucro Real por Unidade</p>
+                        <span id="res_profit" style="font-weight: bold; font-size: 1.2rem;">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function calcPro() {
+                    const ing = parseFloat(document.getElementById('ing').value) || 0;
+                    const emb = parseFloat(document.getElementById('emb').value) || 0;
+                    const lost = parseFloat(document.getElementById('lost').value) / 100;
+                    const fixedT = parseFloat(document.getElementById('fixed_total').value) || 0;
+                    const goal = parseFloat(document.getElementById('goal').value) || 1;
+
+                    const custoVariavel = (ing + emb) * (1 + lost);
+                    const custoFixoUnid = fixedT / goal;
+                    const custoTotal = custoVariavel + custoFixoUnid;
+
+                    const precoMin = custoTotal / (1 - 0.30);
+                    const precoSugg = custoTotal / (1 - 0.60);
+                    const lucroReal = precoSugg - custoTotal;
+
+                    document.getElementById('res_min').innerText = "R$ " + precoMin.toFixed(2).replace('.', ',');
+                    document.getElementById('res_sugg').innerText = "R$ " + precoSugg.toFixed(2).replace('.', ',');
+                    document.getElementById('res_profit').innerText = "R$ " + lucroReal.toFixed(2).replace('.', ',');
+                }
+            </script>
+            <div class="page-number">Calculadora</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 9: CALENDÁRIO -->
+    <div class="page page-break" id="modulo9">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 9: Calendário de 30 Dias</h2>
+            <p>O segredo da venda no Instagram não é postar muito, é postar com <strong>Estratégia</strong>.</p>
+
+            <div style="height: 600px; overflow-y: scroll; padding-right: 15px; margin-top: 20px;">
+                <!-- DIA 1 -->
+                <div class="day-box">
+                    <span class="day-label">DIA 01</span>
+                    <div><span class="strategy-badge">TOPO DE FUNIL</span></div>
+                    <h4 style="margin-top: 10px;">Foto/Vídeo: O seu melhor bolo</h4>
+                    <div class="caption-field">Legenda: "Sabe aquele desejo de um doce que não pesa na consciência? Esse
+                        é o nosso [Nome do Bolo]. 🍰✨ Clique no link da bio!"</div>
+                </div>
+                <!-- DIA 2 -->
+                <div class="day-box">
+                    <span class="day-label">DIA 02</span>
+                    <div><span class="strategy-badge">MEIO DE FUNIL</span></div>
+                    <h4 style="margin-top: 10px;">Bastidores: Ingredientes</h4>
+                    <div class="caption-field">Legenda: "O que vai por trás da mágica? 🥣 Mostrando a qualidade da nossa
+                        farinha de amêndoas e o cacau 100%. Saúde em primeiro lugar!"</div>
+                </div>
+                <!-- DIA 3 -->
+                <div class="day-box">
+                    <span class="day-label">DIA 03</span>
+                    <div><span class="strategy-badge">VENDA DIRETA</span></div>
+                    <h4 style="margin-top: 10px;">Promoção Relâmpago</h4>
+                    <div class="caption-field">Legenda: "⚡ Só hoje! Na compra de 2 bolos de pote, o 3º sai pela metade
+                        do preço. Restam 5 unidades!"</div>
+                </div>
+                <!-- DIA 4-10 -->
+                <div class="day-box">
+                    <span class="day-label">SEMANA 2: DESEJO</span>
+                    <p>Foque em vídeos mostrando a textura, o recheio caindo, o barulho da embalagem abrindo (ASMR).</p>
+                </div>
+                <!-- DIA 11-20 -->
+                <div class="day-box">
+                    <span class="day-label">SEMANA 3: PROVA SOCIAL</span>
+                    <p>Poste print de clientes elogiando. "Olha o que a Ana falou do nosso bolo!". Isso gera confiança.
+                    </p>
+                </div>
+                <!-- DIA 21-30 -->
+                <div class="day-box">
+                    <span class="day-label">SEMANA 4: ESCASSEZ</span>
+                    <p>"Agenda de encomendas para o fim de mês fechando!". Avise que vai acabar.</p>
+                </div>
+            </div>
+            <div class="page-number">Calendário</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 10: CRIATIVOS -->
+    <div class="page page-break" id="modulo10">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 10: Criativos de Cinema</h2>
+            <p>Aprenda a fazer fotos e vídeos que deixam o cliente salivando.</p>
+
+            <div class="color-palette">
+                <div class="palette-color" style="background: #6a3321;">MARROM (Desejo)</div>
+                <div class="palette-color" style="background: #f7f5e0; color: #6a3321;">CREME (Leveza)</div>
+                <div class="palette-color" style="background: #ffbb00;">OURO (Premium)</div>
+            </div>
+
+            <div class="section-card">
+                <h3><i class="fa-solid fa-lightbulb"></i> A Iluminação Perfeita (De Graça)</h3>
+                <p>Nunca use o flash! Vá para perto de uma janela. A luz natural lateral cria sombras suaves que dão
+                    volume ao bolo.</p>
+            </div>
+
+            <div class="step-card" style="margin-top: 20px;">
+                <h3>Scripts para Reels</h3>
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <strong>1. O "Zoom"</strong><br>
+                    Comece o vídeo bem de perto da cobertura e vá afastando. <br>
+                    <em>Legenda na tela: "Você não vai acreditar que isso é FIT..."</em>
+                </div>
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 8px;">
+                    <strong>2. O "Corte"</strong><br>
+                    Grave cortando uma fatia devagar. <br>
+                    <em>Áudio: Música clássica ou instrumental suave.</em>
+                </div>
+            </div>
+            <div class="page-number">Criativos</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 11: TRÁFEGO PAGO -->
+    <div class="page page-break" id="modulo11">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 11: Tráfego Pago Descomplicado</h2>
+            <div class="pro-badge">Edição 2.0</div>
+            <p>Como investir R$ 10 e voltar R$ 50 em vendas.</p>
+
+            <div class="step-card">
+                <h3><span class="step-num">1</span> O Segredo do Raio</h3>
+                <p>No gerenciador de anúncios, nunca anuncie para a cidade toda (se for grande). Coloque um pino na sua
+                    cozinha e anuncie para <strong>Raio de 3 a 5km</strong>. O frete fica barato e o cliente recebe
+                    rápido!</p>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-num">2</span> O Público Comprador</h3>
+                <p><strong>Interesses:</strong> Comida saudável, Nutrição, Dietas, Doces.<br>
+                    <strong>Idade:</strong> 25 a 55 anos (geralmente quem tem poder de compra).
+                </p>
+            </div>
+
+            <div class="pro-tip">
+                <strong>Dica de Mestre:</strong> Faça anúncios nos horários de fome! Programe para rodar das 11h às 13h
+                (almoço) e das 16h às 19h (café da tarde/jantar).
+            </div>
+
+            <div class="highlight-box"
+                style="margin-top: 20px; background: var(--primary); color: white; padding: 20px; border-radius: 10px;">
+                <strong>Meta de Investimento:</strong> Comece com R$ 10 ou R$ 20 por final de semana. O lucro dessas
+                vendas você reinveste na próxima semana!
+            </div>
+            <div class="page-number">Tráfego</div>
+        </div>
+    </div>
+
+    <!-- RECURSOS PRÁTICOS -->
+    <div class="page page-break" id="recursos">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Recursos Práticos</h2>
+
+            <div class="section-card"
+                style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px;">
+                <h3 style="color: white; margin-top: 0;"><i class="fa-solid fa-gift"></i> Materiais Extras Inclusos</h3>
+
+                <div style="margin-top: 20px;">
+                    <h4 style="color: white;">📊 Planilhas:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0;">✅ Calculadora de Precificação</li>
+                        <li style="padding: 8px 0;">✅ Controle de Vendas Diário</li>
+                        <li style="padding: 8px 0;">✅ Controle de Estoque</li>
+                        <li style="padding: 8px 0;">✅ Fluxo de Caixa</li>
+                    </ul>
+
+                    <h4 style="color: white; margin-top: 25px;">📄 Templates:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0;">✅ 30 Scripts de WhatsApp</li>
+                        <li style="padding: 8px 0;">✅ 30 Posts para Instagram (Canva)</li>
+                        <li style="padding: 8px 0;">✅ Cardápio Digital Editável</li>
+                        <li style="padding: 8px 0;">✅ Etiquetas para Imprimir</li>
+                    </ul>
+
+                    <h4 style="color: white; margin-top: 25px;">📚 Guias:</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 8px 0;">✅ 100 Hashtags que Funcionam</li>
+                        <li style="padding: 8px 0;">✅ Guia de Fotografia com Celular</li>
+                        <li style="padding: 8px 0;">✅ Lista de Fornecedores</li>
+                    </ul>
+                </div>
+            </div>
+
+
+
+            <div class="page-number">Recursos Práticos</div>
+        </div>
+    </div>
+
+    <!-- CONCLUSÃO -->
+    <div class="page page-break">
+        <div class="interior-page"
+            style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <div class="bio-box" style="text-align: center;">
+                <h2 style="font-family: var(--font-heading); color: var(--primary); font-size: 2.5rem;">
+                    Parabéns! 🎉
+                </h2>
+                <p style="font-size: 1.2rem; margin-top: 20px;">
+                    Você tem TUDO que precisa para começar a lucrar vendendo bolos fit!
+                </p>
+
+                <div
+                    style="margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; color: white;">
+                    <h3 style="color: white; font-size: 1.5rem;">Plano de Ação - Próximos 7 Dias</h3>
+                    <ol style="text-align: left; font-size: 1.1rem; line-height: 2;">
+                        <li>Calcule o preço dos seus bolos (use a planilha)</li>
+                        <li>Configure WhatsApp Business</li>
+                        <li>Faça 5 bolos e tire fotos lindas</li>
+                        <li>Crie seu Instagram</li>
+                        <li>Venda para 3 amigos/familiares (teste)</li>
+                        <li>Escolha seu ponto de venda na rua</li>
+                        <li>Faça sua primeira venda!</li>
+                    </ol>
+                </div>
+
+                <p style="font-size: 1.1rem; margin-top: 30px;">
+                    Lembre-se: <strong>AÇÃO é o que separa quem sonha de quem conquista!</strong>
+                </p>
+
+                <p style="font-size: 1.2rem; margin-top: 30px; color: var(--primary); font-weight: bold;">
+                    Sua jornada de R$ 3.000+/mês começa HOJE! 🚀
+                </p>
+
+                <p style="margin-top: 40px;">
+                    Com carinho,<br>
+                    <strong>Equipe Receitas da Nutri</strong>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================== -->
+
+    <!-- ============================================== -->
+    <!-- SECÇÃO 12: MANUAL DA CONFEITARIA DE ELITE -->
+    <!-- ============================================== -->
+    <div id="elite" class="section-elite">
+        <div class="page page-break"
+            style="background: var(--primary); color: white; display:flex; align-items:center; justify-content:center; text-align:center;">
+            <div>
+                <h1 style="color:var(--gold); font-size: 4rem;">PARTE 2</h1>
+                <h2 style="color:white; border:none; font-size: 2.5rem;">MANUAL DA CONFEITEIRA DE ELITE</h2>
+            </div>
+        </div>
+
+        <!-- CONTEÚDO ELITE -->
+        <div class="ebook-container" style="box-shadow:none; margin:0; width:100%;">
+            <!-- PAGE 1: COVER -->
+            <div class="page cover">
+                <div class="cover-content">
+                    <span class="subtitle">MÉTODO IMPRESSIONAR</span>
+                    <h1>MANUAL DA<br>CONFEITEIRA<br><span style="color: white;">DE ELITE</span></h1>
+                    <p class="subtitle" style="text-align: center; margin-top: 20px;">Transformando Bolos em Joias
+                        Comestíveis</p>
+                    <div class="badge">EDIÇÃO LUXO 2025</div>
+                    <div style="margin-top: 60px; color: #e6c288;">BEATRIZ LANGONI</div>
+                </div>
+            </div>
+            <!-- PAGE 2: SUMÁRIO -->
+            <div class="page">
+                <h2>Sumário</h2>
+                <div class="toc-list">
+                    <div class="toc-item"><span>Capítulo 1: A Psicologia da Primeira Garfada</span><span>03</span></div>
+                    <div class="toc-item"><span>Capítulo 2: Harmonia de Cores e Paletas Luxuosas</span><span>04</span>
+                    </div>
+                    <div class="toc-item"><span>Capítulo 3: Bicos de Confeitar: Guia de Modelagem</span><span>05</span>
+                    </div>
+                    <div class="toc-item"><span>Capítulo 4: Finalização com Frutas e Flores</span><span>06</span></div>
+                    <div class="toc-item"><span>Capítulo 5: A Engenharia das Embalagens de Luxo</span><span>07</span>
+                    </div>
+                    <div class="toc-item"><span>Capítulo 6: Fotografia de Alimentos com Celular</span><span>08-09</span>
+                    </div>
+                    <div class="toc-item"><span>Capítulo 7: Como Cobrar Preços Premium</span><span>10-11</span></div>
+                    <div class="toc-item"><span>Capítulo 8: Higiene e Segurança de Elite</span><span>12</span></div>
+                    <div class="toc-item"><span>Capítulo 9: O Segredo da Textura Perfeita</span><span>13</span></div>
+                    <div class="toc-item"><span>Capítulo 10: Estruturação de Bolos de Andar</span><span>14</span></div>
+                    <div class="toc-item"><span>Capítulo 11: Transportando Obras de Arte</span><span>15</span></div>
+                    <div class="toc-item"><span>Capítulo 12: Atendimento VIP ao Cliente</span><span>16</span></div>
+                    <div class="toc-item"><span>Capítulo 13: Criando sua Identidade Visual</span><span>17</span></div>
+                    <div class="toc-item"><span>Capítulo 14: Marketing de Desejo</span><span>18</span></div>
+                    <div class="toc-item"><span>Capítulo 15: O Próximo Passo do seu Império</span><span>19</span></div>
+                    <div class="toc-item"><span>BÔNUS: A Rotina da Confeiteira Milionária</span><span>20</span></div>
+                    <div class="toc-item"><span>Glossário da Confeitaria de Elite</span><span>21</span></div>
+                </div>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 02</span></div>
+            </div>
+
+            <!-- PAGE 3: CAP 1 -->
+            <div class="page">
+                <h2>Capítulo 1: A Psicologia da Primeira Garfada</h2>
+                <div class="chapter-intro">
+                    "Ninguém compra um bolo apenas porque está com fome. Compramos bolos para celebrar, para
+                    impressionar e
+                    para sentir que merecemos um momento de luxo."
+                </div>
+                <p>A ciência explica que nós comemos primeiro com os olhos. O cérebro humano demora apenas <strong>0,5
+                        segundos</strong> para decidir se algo é apetitoso ou não. Em um mercado saturado, a sua única
+                    chance de se destacar é dominando a estética.</p>
+                <p>Neste capítulo, exploraremos como criar o <span class="gold-text">Gatilho do Prazer Imediato</span>.
+                    Não
+                    se trata apenas de colocar um morango no topo, mas sim de entender a geometria do desejo. A simetria
+                    (ou
+                    a assimetria proposital) guia o olhar do seu cliente até o ponto focal do seu bolo.</p>
+                <div class="highlight-box">
+                    <h4>💡 Insight de Elite:</h4>
+                    O brilho da calda e a opacidade da massa criam contrastes que o cérebro interpreta como frescor e
+                    qualidade premium.
+                </div>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 03</span></div>
+            </div>
+
+            <!-- PAGE 4: CAP 2 -->
+            <div class="page">
+                <h2>Capítulo 2: Harmonia de Cores e Paletas Luxuosas</h2>
+                <p>Cores erradas podem fazer o bolo mais gostoso do mundo parecer um desastre caseiro. A confeitaria de
+                    elite utiliza a <span class="gold-text">Roda de Cores</span> para criar sofisticação.</p>
+                <p>Dê preferência a cores análogas (tons vizinhos no círculo cromático) para um visual calmo e elegante,
+                    ou
+                    cores complementares para um visual vibrante e festivo. Fuja dos cores "Artificiais" intensas
+                    demais,
+                    que podem passar a ideia de excesso de corantes químicos.</p>
+                <div class="image-placeholder">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">🔍 Tabela de Emoções Cromáticas</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Efeito Psicológico</th>
+                            <th>Contexto Elite</th>
+                        </tr>
+                        <tr>
+                            <td>Dourado</td>
+                            <td>Status e Valor</td>
+                            <td>Logos, fios e detalhes.</td>
+                        </tr>
+                        <tr>
+                            <td>Chocolate</td>
+                            <td>Paladar e Desejo</td>
+                            <td>Bases e recheios.</td>
+                        </tr>
+                        <tr>
+                            <td>Pastéis</td>
+                            <td>Classe e Delicadeza</td>
+                            <td>Casamentos e Batizados.</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>Lembre-se: O branco nunca é "apenas branco". Existe o marfim, o pérola e o off-white, cada um
+                    transmitindo um nível diferente de sofisticação para o seu chantilly ou buttercream.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 04</span></div>
+            </div>
+
+            <!-- PAGE 5: CAP 3 -->
+            <div class="page">
+                <h2>Capítulo 3: Bicos de Confeitar: Guia de Modelagem</h2>
+                <p>O bico de confeitar é a caneta do artista. Dominar os movimentos básicos separa as amadoras das
+                    profissionais de elite.</p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li><strong>Bico 1M:</strong> A clássica roseta, mas com técnica de pressão constante.</li>
+                    <li><strong>Bico Folha:</strong> Para dar vida e movimento.</li>
+                    <li><strong>Bico Perlê:</strong> Para escritas e detalhes de precisão.</li>
+                </ul>
+                <p>O segredo da elite não é ter 100 bicos, mas saber usar 5 bicos com perfeição total. A consistência do
+                    seu
+                    creme é o fator determinante aqui: ele deve ser firme o suficiente para segurar a forma, mas macio o
+                    suficiente para não "serrilhar" as bordas.</p>
+                <div class="image-placeholder">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">📐 Guia Rápido de Movimento</h4>
+                    <div class="checklist-item"><i class="fas fa-arrow-right"></i> <strong>Pressão:</strong> Comece
+                        firme e
+                        termine suave para pontas finas.</div>
+                    <div class="checklist-item"><i class="fas fa-arrow-right"></i> <strong>Ângulo:</strong> Mantenha 45°
+                        para bordas e 90° para topos.</div>
+                    <div class="checklist-item"><i class="fas fa-arrow-right"></i> <strong>Distância:</strong> Fique a
+                        1cm
+                        da base para não arrastar o creme.</div>
+                </div>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 05</span></div>
+            </div>
+
+            <!-- PAGE 6: CAP 4 -->
+            <div class="page">
+                <h2>Capítulo 4: Finalização com Frutas e Flores</h2>
+                <p>Produtos naturais elevam o valor percebido de forma imediata. Um bolo decorado com flores frescas
+                    selecionadas pode custar até 40% a mais do que um decorado apenas com açúcar.</p>
+                <div class="highlight-box"
+                    style="background: #fdfdfd; color: var(--primary); border: 2px solid var(--primary);">
+                    <strong>⚠️ Atenção à Segurança:</strong> Sempre higienize as flores e proteja o caule com fita para
+                    que
+                    o contato com o alimento seja seguro. Utilize apenas flores classificadas como comestíveis ou não
+                    tóxicas.
+                </div>
+                <div class="image-placeholder">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">🌡️ Tabela de Pontos do Drip</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Temp.</th>
+                            <th>Estado</th>
+                            <th>Resultado Visual</th>
+                        </tr>
+                        <tr>
+                            <td>45°C</td>
+                            <td>Líquida</td>
+                            <td>Escorre até a base (Desleixado).</td>
+                        </tr>
+                        <tr>
+                            <td>32°C</td>
+                            <td>Ideal</td>
+                            <td>Gota perfeita (Elite).</td>
+                        </tr>
+                        <tr>
+                            <td>28°C</td>
+                            <td>Pastosa</td>
+                            <td>Não escorre (Acúmulo no topo).</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>A técnica do "Drip" (calda escorrendo) deve parecer um acidente controlado, não uma bagunça. A
+                    temperatura da calda é a chave para o escorrimento perfeito.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 06</span></div>
+            </div>
+
+            <!-- PAGE 7: CAP 5 -->
+            <div class="page">
+                <h2>Capítulo 5: A Engenharia das Embalagens de Luxo</h2>
+                <p>O seu cliente não compra só o bolo, ele compra a experiência de "desembrulhar um presente". Se você
+                    entrega um bolo premium em uma caixa comum de papelão fino, você está destruindo o seu lucro antes
+                    mesmo
+                    do cliente provar.</p>
+                <p>Invista em caixas com visores transparentes, fitas de cetim grossas e tags personalizadas. O som do
+                    papel
+                    de seda sendo aberto faz parte da gastronomia sensorial.</p>
+                <div class="image-placeholder">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">📦 Checklist do Unboxing Perfeito</h4>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Caixa com visor de acetato limpo.
+                    </div>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Fita de cetim com brilho (mínimo 2cm
+                        largura).</div>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Tag com nome do cliente à mão.</div>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Aroma exclusivo ao abrir a caixa.
+                    </div>
+                </div>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 07</span></div>
+            </div>
+
+            <div class="page-break"></div>
+
+            <!-- PAGE 8: CAP 6 -->
+            <div class="page">
+                <h2>Capítulo 6: Fotografia de Alimentos com Celular</h2>
+                <div class="chapter-intro">
+                    "Sua foto é o seu catálogo. Se a foto é amadora, o preço será amador."
+                </div>
+                <p>O segredo da elite não é a câmera, mas a <strong>luz</strong>. A fotografia profissional de alimentos
+                    é
+                    80% iluminação, 15% composição e apenas 5% equipamento. Um celular com luz correta vence uma DSLR
+                    com
+                    flash direto.</p>
+
+                <div class="image-placeholder">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">☀️ Tabela Técnica: Luz & Direção</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Tipo de Luz</th>
+                            <th>Horário Ideal</th>
+                            <th>Efeito Visual</th>
+                        </tr>
+                        <tr>
+                            <td>Lateral Suave</td>
+                            <td>9h-11h / 15h-17h</td>
+                            <td>Textura realçada, sombras naturais.</td>
+                        </tr>
+                        <tr>
+                            <td>Contraluz (Backlight)</td>
+                            <td>16h-18h</td>
+                            <td>Halo dourado, aspecto etéreo.</td>
+                        </tr>
+                        <tr>
+                            <td>Difusa (Nublado)</td>
+                            <td>Qualquer hora</td>
+                            <td>Cores fiéis, sem sombras duras.</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="image-placeholder" style="margin-top: 20px;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">📐 Ângulos da Elite</h4>
+                    <div class="checklist-item"><i class="fas fa-angle-right"></i> <strong>0° (Eye Level):</strong>
+                        Bolos
+                        altos, naked cakes, drip cakes.</div>
+                    <div class="checklist-item"><i class="fas fa-angle-right"></i> <strong>45°:</strong> Versátil,
+                        mostra
+                        topo e lateral.</div>
+                    <div class="checklist-item"><i class="fas fa-angle-right"></i> <strong>90° (Flatlay):</strong> Mesas
+                        decoradas, kits de festa.</div>
+                </div>
+
+                <p style="margin-top: 15px;">Use o <strong>bloqueio de foco</strong> (toque e segure) e reduza a
+                    exposição
+                    em -0.3 a -0.7 para cores mais saturadas e profissionais.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 08</span></div>
+            </div>
+
+            <div class="page-break"></div>
+
+            <!-- PAGE 8.5: CAP 6 CONTINUATION - Props & Color -->
+            <div class="page">
+                <h2>Capítulo 6: Fotografia de Alimentos (Continuação)</h2>
+                <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 15px;">Styling & Composição</h3>
+
+                <div class="image-placeholder">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">🎨 Harmonia de Cores na Fotografia</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Cor do Bolo</th>
+                            <th>Fundo Ideal</th>
+                            <th>Props Complementares</th>
+                        </tr>
+                        <tr>
+                            <td>Chocolate / Marrom</td>
+                            <td>Branco, Creme, Cinza claro</td>
+                            <td>Madeira natural, linho bege.</td>
+                        </tr>
+                        <tr>
+                            <td>Frutas Vermelhas</td>
+                            <td>Branco puro, Mármore</td>
+                            <td>Folhas verdes, guardanapo branco.</td>
+                        </tr>
+                        <tr>
+                            <td>Naked Cake (Bege)</td>
+                            <td>Madeira escura, Ardósia</td>
+                            <td>Flores secas, renda vintage.</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="image-placeholder" style="margin-top: 20px;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">🍴 Kit Básico de Props</h4>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Tábua de madeira clara e escura.
+                    </div>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Tecidos neutros (linho, algodão
+                        cru).
+                    </div>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Pratos brancos lisos (sem estampa).
+                    </div>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Flores frescas ou secas (sempre).
+                    </div>
+                    <div class="checklist-item"><i class="fas fa-check-circle"></i> Guardanapos de tecido dobrados.
+                    </div>
+                </div>
+
+                <p style="margin-top: 20px;"><strong>Regra de Ouro:</strong> Menos é mais. Três elementos visuais (bolo
+                    + 2
+                    props) criam uma composição limpa e profissional. Mais que isso vira poluição visual.</p>
+
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 09</span></div>
+            </div>
+
+            <div class="page-break"></div>
+
+            <!-- PAGE 9: CAP 7 -->
+            <div class="page">
+                <h2>Capítulo 7: Como Cobrar Preços Premium</h2>
+                <p>Preço é o que o cliente paga. Valor é o que ele leva. Para cobrar caro, você deve resolver um
+                    problema: o
+                    medo do cliente de a festa ser um fracasso.</p>
+                <div class="highlight-box">
+                    <strong>A Regra dos 3x:</strong> Nunca calcule apenas (Ingredientes + 30%). O preço de elite deve
+                    considerar sua autoridade e o nível de personalização.
+                </div>
+                <table class="info-table">
+                    <tr>
+                        <th>Nível</th>
+                        <th>Base de Cálculo</th>
+                        <th>Público-Alvo</th>
+                    </tr>
+                    <tr>
+                        <td>Comum</td>
+                        <td>Custo + 100%</td>
+                        <td>Familiar / Amigos</td>
+                    </tr>
+                    <tr>
+                        <td>Profissional</td>
+                        <td>Custo + 200%</td>
+                        <td>Eventos e Festas Médias</td>
+                    </tr>
+                    <tr>
+                        <td>Elite</td>
+                        <td>Valor por Projeto</td>
+                        <td>Casamentos e Luxo</td>
+                    </tr>
+                </table>
+                <p>Lembre-se: quando você cobra barato, você atrai o cliente que reclama do preço. Quando você cobra o
+                    justo
+                    (valor de elite), você atrai o cliente que agradece pelo serviço.</p>
+
+                <div class="image-placeholder" style="margin-top: 25px;">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">💰 Psicologia do Preço</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Estratégia</th>
+                            <th>Exemplo</th>
+                            <th>Efeito Psicológico</th>
+                        </tr>
+                        <tr>
+                            <td>Charm Pricing</td>
+                            <td>R$ 299,90</td>
+                            <td>Percepção de "desconto" (varejo).</td>
+                        </tr>
+                        <tr>
+                            <td>Prestige Pricing</td>
+                            <td>R$ 350,00</td>
+                            <td>Números redondos = Luxo e confiança.</td>
+                        </tr>
+                        <tr>
+                            <td>Ancoragem</td>
+                            <td>De R$ 500 por R$ 350</td>
+                            <td>Cliente sente que está economizando.</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p style="margin-top: 15px;"><strong>Para Elite:</strong> Use sempre números redondos (R$ 400, R$ 600,
+                    R$
+                    1.200). Evite centavos. Eles comunicam "promoção", não exclusividade.</p>
+
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 10</span></div>
+            </div>
+
+            <div class="page-break"></div>
+
+            <!-- PAGE 10.5: CAP 7 CONTINUATION - Value Pricing -->
+            <div class="page">
+                <h2>Capítulo 7: Precificação Premium (Continuação)</h2>
+                <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 15px;">Precificação por Valor, Não
+                    por
+                    Hora</h3>
+
+                <p>A confeiteira comum cobra por hora trabalhada. A confeiteira de elite cobra pelo <strong>resultado
+                        entregue</strong>. Um bolo de casamento não é "8 horas de trabalho", é "a peça central da festa
+                    mais
+                    importante da vida do cliente".</p>
+
+                <div class="highlight-box" style="background: #fff8f0; border-left: 5px solid var(--accent);">
+                    <strong>Exemplo Real:</strong> Um bolo naked de 3 andares custa R$ 180 de ingredientes. Tempo: 6
+                    horas.<br><br>
+                    <strong>Cálculo Comum:</strong> R$ 180 + (6h × R$ 50) = R$ 480.<br>
+                    <strong>Cálculo Elite:</strong> Valor emocional do casamento = R$ 1.200 a R$ 1.800.
+                </div>
+
+                <div class="image-placeholder" style="margin-top: 25px;">
+                    <h4 style="color: var(--primary); margin-bottom: 10px;">🎯 Perguntas para Precificar por Valor</h4>
+                    <div class="checklist-item"><i class="fas fa-question-circle"></i> Qual o orçamento total do evento?
+                    </div>
+                    <div class="checklist-item"><i class="fas fa-question-circle"></i> Quantos convidados?</div>
+                    <div class="checklist-item"><i class="fas fa-question-circle"></i> O bolo é o destaque visual da
+                        festa?
+                    </div>
+                    <div class="checklist-item"><i class="fas fa-question-circle"></i> Há personalização (cores, tema,
+                        flores)?</div>
+                </div>
+
+                <p style="margin-top: 20px;">Quanto mais "sim" para essas perguntas, maior o valor percebido. Um bolo de
+                    R$
+                    1.500 em um casamento de R$ 50.000 é apenas 3% do orçamento — barato para o cliente, lucrativo para
+                    você.</p>
+
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 11</span></div>
+            </div>
+
+            <div class="page-break"></div>
+
+            <!-- PAGE 12: CAP 8 -->
+            <div class="page">
+                <h2>Capítulo 8: Higiene e Segurança de Elite</h2>
+                <div class="chapter-intro">
+                    "O luxo não aceita falhas. A segurança alimentar é a base invisível que sustenta a sua autoridade."
+                </div>
+                <p>Em um ambiente de elite, a limpeza não é opcional, é ritualística. Cada utensílio, cada bancada e
+                    cada
+                    ingrediente deve passar por um processo rigoroso de controle.</p>
+                <p><strong>A Regra de Ouro:</strong> Nunca utilize panos de prato convencionais. Utilize papéis
+                    descartáveis
+                    de alta absorção ou bobinas de TNT esterilizadas. Isso reduz o risco de contaminação cruzada em 95%.
+                </p>
+                <div class="highlight-box">
+                    <h4>🔒 Protocolo de Segurança:</h4>
+                    Armazene seus ovos em prateleiras separadas e nuca utilize a casca para separar a gema da clara. Use
+                    um
+                    separador de silicone esterilizado.
+                </div>
+                <p>Lembre-se: Um único relato de intoxicação alimentar pode destruir uma reputação construída ao longo
+                    de
+                    anos em questão de minutos nas redes sociais.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 12</span></div>
+            </div>
+
+            <!-- PAGE 9: CAP 9 -->
+            <div class="page">
+                <h2>Capítulo 9: O Segredo da Textura Perfeita</h2>
+                <p>A textura é o que faz o cliente fechar os olhos ao comer. Para atingir a <span
+                        class="gold-text">Textura
+                        Nuvem</span>, a temperatura dos ingredientes é o fator mais crítico.</p>
+                <p>Manteiga e ovos **devem** estar a exatos 21°C. Se estiverem muito frios, a emulsão quebra; se
+                    estiverem
+                    muito quentes, a estrutura colapsa no forno. Use um termômetro infravermelho para garantir a
+                    precisão.
+                </p>
+                <div class="image-placeholder">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">🧪 O Teste da Humidade Perfeita</h4>
+                    <div class="checklist-item"><i class="fas fa-vial"></i> <strong>Toque:</strong> O centro deve voltar
+                        após uma leve pressão.</div>
+                    <div class="checklist-item"><i class="fas fa-vial"></i> <strong>Visão:</strong> Bordas levemente
+                        douradas, centro pálido.</div>
+                    <div class="checklist-item"><i class="fas fa-vial"></i> <strong>Corte:</strong> Sem migalhas soltas
+                        (massa coesa).</div>
+                </div>
+                <p>O descanso da massa na geladeira por 30 minutos antes de ir ao forno ajuda a relaxar o glúten,
+                    resultando
+                    em um bolo que derrete na boca de forma uniforme.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 11</span></div>
+            </div>
+
+            <!-- PAGE 10: CAP 10 -->
+            <div class="page">
+                <h2>Capítulo 10: Estruturação de Bolos de Andar</h2>
+                <p>Bolos de andar são os produtos de maior ticket médio. Mas eles exigem engenharia. Nunca coloque um
+                    bolo
+                    sobre o outro sem um sistema de suporte interno.</p>
+                <p>Utilize bancos de suporte de polietileno ou canudos de polipropileno reforçados. Cada andar superior
+                    deve
+                    ter sua própria base de disco de cartão selado.</p>
+                <div class="highlight-box">
+                    <h4>📐 Check-list de Estrutura:</h4>
+                    - Andar base com massa amanteigada pesada.<br>
+                    - Andar superior com massa chiffon leve.<br>
+                    - Guia central que atravessa todos os andares.
+                </div>
+                <p>A segurança do seu transporte depende diretamente da qualidade da sua fundação interna.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 14</span></div>
+            </div>
+
+            <!-- PAGE 11: CAP 11 -->
+            <div class="page">
+                <h2>Capítulo 11: Transportando Obras de Arte</h2>
+                <p>O maior vilão do confeiteiro é o transporte. Uma freada brusca pode custar todo o seu lucro do mês.
+                </p>
+                <p><strong>Dica de Especialista:</strong> Utilize tapetes de silicone antiderrapantes no porta-malas do
+                    carro. Coloque o bolo sempre em uma superfície plana, nunca no banco inclinado.</p>
+                <p>Se o trajeto for superior a 20 minutos, utilize gelo seco ou placas térmicas ao redor da caixa para
+                    manter a temperatura do buttercream estável.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 15</span></div>
+            </div>
+
+            <!-- PAGE 12: CAP 12 -->
+            <div class="page">
+                <h2>Capítulo 12: Atendimento VIP ao Cliente</h2>
+                <p>Clientes de elite querem exclusividade. Pare de responder apenas com preços. Crie um formulário de
+                    consultoria.</p>
+                <p>Pergunte sobre o tema da festa, a decoração do local e as restrições alimentares. Mostre que você se
+                    importa com o evento, não apenas com o boleto.</p>
+                <div class="highlight-box" style="background: var(--bg); color: #333;">
+                    <strong>Frase que vende:</strong> "Para que eu possa criar algo verdadeiramente exclusivo para o seu
+                    evento, me conte um pouco mais sobre a sua decoração principal..."
+                </div>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 16</span></div>
+            </div>
+
+            <!-- PAGE 13: CAP 13 -->
+            <div class="page">
+                <h2>Capítulo 13: Criando sua Identidade Visual</h2>
+                <p>Sua marca deve refletir o valor que você cobra. Utilize fontes serifadas para passar tradição e
+                    fontes
+                    minimalistas para modernidade.</p>
+                <p>A logomarca é o seu brasão de armas. Evite logos gratuitas de aplicativos. O investimento em uma
+                    identidade visual profissional se paga na primeira fatura de um contrato grande.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 17</span></div>
+            </div>
+
+            <!-- PAGE 14: CAP 14 -->
+            <div class="page">
+                <h2>Capítulo 14: Marketing de Desejo</h2>
+                <p>Não venda fatias, venda "momentos de pausa no caos". Use o Instagram para mostrar o *Backstage* (o
+                    processo).</p>
+                <p>As pessoas compram histórias. Mostre você escolhendo as frutas, batendo a massa e finalizando com
+                    cuidado. Isso humaniza a marca e justifica o preço premium.</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 18</span></div>
+            </div>
+
+            <!-- PAGE 15: CONCLUSÃO -->
+            <div class="page">
+                <h2>Capítulo 15: O Próximo Passo do seu Império</h2>
+                <p>Você agora detém as chaves da confeitaria de elite. O conhecimento teórico sem execução é apenas
+                    distração.</p>
+                <p>Comece aplicando uma técnica nova por semana. Melhore sua fotografia hoje, sua estruturação amanhã.
+                    Em 3
+                    meses, você não reconhecerá mais o seu próprio negócio.</p>
+                <div class="highlight-box">
+                    Assuma o trono. A excelência é uma escolha diária. Deixe o amadorismo para trás e construa o seu
+                    império, grama por grama, bolo por bolo.
+                </div>
+                <p style="text-align: center; margin-top: 50px;"><strong>Beatriz Langoni</strong><br>Fundadora do Método
+                    Impressionar</p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 19</span></div>
+            </div>
+
+            <!-- PAGE 18: BONUS -->
+            <div class="page">
+                <h2>BÔNUS: A Rotina da Confeiteira Milionária</h2>
+                <div class="image-placeholder" style="background: var(--bg);">
+                    <h4 style="color: var(--primary); margin-bottom: 15px;">📅 Planejamento Semanal (Foco em R$ 1k/dia)
+                    </h4>
+                    <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Segunda:</strong> Gestão de
+                        estoque e anúncios Meta.</div>
+                    <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Terça/Quarta:</strong>
+                        Produção
+                        de base e recheios.</div>
+                    <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Quinta:</strong> Criação de
+                        conteúdo estratégico (Reels).</div>
+                    <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Sexta/Sábado:</strong>
+                        Montagem,
+                        finalização e entregas VIP.</div>
+                    <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Domingo:</strong> Descanso e
+                        análise de métricas de lucro.</div>
+                </div>
+                <div class="highlight-box" style="text-align: center;">
+                    "O hábito da excelência é o que constrói o seu tesouro."
+                </div>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 20</span></div>
+            </div>
+
+            <!-- PAGE 19: GLOSSARY -->
+            <div class="page">
+                <h2>Glossário da Confeitaria de Elite</h2>
+                <div class="image-placeholder">
+                    <table class="info-table">
+                        <tr>
+                            <th>Termo</th>
+                            <th>Tradução Elite</th>
+                        </tr>
+                        <tr>
+                            <td>Ganache</td>
+                            <td>Veludo de Chocolate</td>
+                        </tr>
+                        <tr>
+                            <td>Coulis</td>
+                            <td>Essência de Frutas Frescas</td>
+                        </tr>
+                        <tr>
+                            <td>Zests</td>
+                            <td>Perfume de Frutos Cítricos</td>
+                        </tr>
+                        <tr>
+                            <td>Mise en Place</td>
+                            <td>Ritual de Preparação</td>
+                        </tr>
+                        <tr>
+                            <td>Nappe</td>
+                            <td>O Ponto do Banho Perfeito</td>
+                        </tr>
+                    </table>
+                </div>
+                <p style="text-align: center; margin-top: 40px; color: var(--gold);">"O luxo começa no seu vocabulário."
+                </p>
+                <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 21</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="massas" class="section-massas">
+        <!-- SEPARATOR PAGE -->
+        <div class="page page-break"
+            style="background: var(--primary); color: white; display:flex; align-items:center; justify-content:center; text-align:center;">
+            <div>
+                <h1 style="color:var(--accent); font-size: 4rem;">PARTE 3</h1>
+                <h2 style="color:white; border:none; font-size: 2.5rem;">GUIA DAS MASSAS PERFEITAS</h2>
+            </div>
+        </div>
+
+        <!-- MASSAS CONTENT -->
+        <div class="ebook-container" style="box-shadow:none; margin:0; width:100%;">
+            <!-- COVER -->
+            <div class="page cover">
+                <div class="cover-border">
+                    <span class="subtitle">Curso de Fundamento</span>
+                    <h1>O GUIA DAS<br><span style="color: var(--white);">MASSAS</span><br>PERFEITAS</h1>
+                    <p style="margin-top:20px; font-weight: 300; font-size: 1.4rem;">A Ciência da Estrutura e Sabor</p>
+                    <div
+                        style="margin-top: 50px; background: var(--accent); color: var(--primary); padding: 10px 40px; font-weight: 800; border-radius: 50px;">
+                        PRO SERIES</div>
+                </div>
+            </div>
+
+            <!-- SUMARIO -->
+            <div class="page">
+                <h2>Sumário</h2>
+                <div style="margin-top: 40px; font-size: 1.2rem;">
+                    <p><strong>01.</strong> A Ciência do Glúten de Ouro ................... 03</p>
+                    <p><strong>02.</strong> Gordura vs Hidratação ............................... 05</p>
+                    <p><strong>03.</strong> O Método Amanteigado (Bolo Inglês) .......... 07</p>
+                    <p><strong>04.</strong> Massas de Chiffon: Estrutura em Nuvens .... 09</p>
+                    <p><strong>05.</strong> Massas Esponja: O Segredo da Absorção .... 11</p>
+                    <p><strong>06.</strong> Aromatização Natural e Infusões ................ 13</p>
+                    <p><strong>07.</strong> Estrutura para Bolos de Camadas ............... 15</p>
+                    <p><strong>08.</strong> O Papel do PH nas Massas ........................ 16</p>
+                    <p><strong>09.</strong> Forno e Convecção ..................................... 17</p>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>02</span></div>
+            </div>
+
+            <!-- CAP 1 -->
+            <div class="page">
+                <h2>Capítulo 1: A Ciência do Glúten de Ouro</h2>
+                <div class="chapter-box">
+                    "Fazer um bolo não é seguir uma receita, é gerenciar uma reação química controlada."
+                </div>
+                <p>A maior dificuldade das confeiteiras iniciantes é entender por que o bolo sola, murcha ou fica seco
+                    demais. Tudo começa na proteína da farinha. Na confeitaria de elite, não queremos glúten em excesso
+                    (elasticidade), queremos <strong>amido estrutural</strong>.</p>
+                <div class="tip-box">
+                    <strong>💎 Dica Técnica:</strong> A temperatura de todos os ingredientes (ovos, leite, gordura) deve
+                    estar a exatos 21°C para a emulsão perfeita.
+                </div>
+                <div class="page-divider">
+                    <h4 style="color: var(--primary);">🔬 Guia de Proteína da Farinha</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Proteína</th>
+                            <th>Uso na Elite</th>
+                        </tr>
+                        <tr>
+                            <td>T-45 (França)</td>
+                            <td>8-9%</td>
+                            <td>Massas leves e esponjas.</td>
+                        </tr>
+                        <tr>
+                            <td>Tipo 1 (Brasil)</td>
+                            <td>10%</td>
+                            <td>Massas amanteigadas base.</td>
+                        </tr>
+                        <tr>
+                            <td>Farinha de Amêndoas</td>
+                            <td>21%</td>
+                            <td>Estrutura e umidade (Sem glúten).</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>03</span></div>
+            </div>
+
+            <!-- CAP 2: GORDURA -->
+            <div class="page">
+                <h2>Capítulo 2: Gordura vs Hidratação</h2>
+                <p>A gordura não serve apenas para dar sabor; ela é um agente de maciez. Ela "bloqueia" a formação de
+                    glúten, garantindo que o bolo não fique elástico como um pão.</p>
+                <div class="page-divider">
+                    <h4 style="color: var(--primary);">🧈 Tabela Comparativa: Gorduras na Confeitaria</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Tipo de Gordura</th>
+                            <th>Ponto de Fusão</th>
+                            <th>Melhor Uso</th>
+                        </tr>
+                        <tr>
+                            <td>Manteiga (82% gordura)</td>
+                            <td>32°C</td>
+                            <td>Sabor premium, massas amanteigadas.</td>
+                        </tr>
+                        <tr>
+                            <td>Óleo de Coco</td>
+                            <td>24°C</td>
+                            <td>Umidade prolongada, bolos tropicais.</td>
+                        </tr>
+                        <tr>
+                            <td>Óleo Neutro (Canola)</td>
+                            <td>Líquido</td>
+                            <td>Máxima maciez, chiffon, esponjas.</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tip-box" style="margin-top: 20px;">
+                    <strong>💧 Regra de Hidratação:</strong> Para cada 100g de farinha, use 60-80ml de líquido. Massas
+                    mais
+                    úmidas (80ml) são ideais para bolos que serão refrigerados.
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>04</span></div>
+            </div>
+
+            <!-- CAP 3: AMANTEIGADO -->
+            <div class="page">
+                <h2>Capítulo 3: O Método Amanteigado (Creaming)</h2>
+                <p>Este é o método mais clássico da confeitaria europeia. O segredo está em bater a manteiga com o
+                    açúcar
+                    até que a mistura fique esbranquiçada e dobrada de volume.</p>
+                <div class="page-divider">
+                    <h4 style="color: var(--primary);">⏱️ Cronometragem do Creaming Perfeito</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Tempo</th>
+                            <th>Textura</th>
+                            <th>Resultado</th>
+                        </tr>
+                        <tr>
+                            <td>2 minutos</td>
+                            <td>Granulada</td>
+                            <td>Insuficiente - bolo denso.</td>
+                        </tr>
+                        <tr>
+                            <td>5-7 minutos</td>
+                            <td>Cremosa e pálida</td>
+                            <td>✅ Ponto ideal - bolo fofo.</td>
+                        </tr>
+                        <tr>
+                            <td>10+ minutos</td>
+                            <td>Separada</td>
+                            <td>Excesso - bolo oleoso.</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>05</span></div>
+            </div>
+
+            <!-- CAP 4: CHIFFON -->
+            <div class="page">
+                <h2>Capítulo 4: Massas de Chiffon</h2>
+                <p>A massa Chiffon combina a maciez do bolo de óleo com a leveza do pão de ló.</p>
+                <div class="page-divider">
+                    <h4 style="color: var(--primary);">☁️ Protocolo Chiffon: 3 Regras de Sorte</h4>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">
+                        1. <strong>Frio de Janeiro:</strong> Claras batidas em temperatura ambiente.<br>
+                        2. <strong>Movimento J:</strong> Incorpore em formato de 'J' do fundo para cima.<br>
+                        3. <strong>Anti-Gravidade:</strong> Esfrie o bolo de cabeça para baixo.
+                    </p>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>06</span></div>
+            </div>
+
+            <!-- CAP 5: ESPONJA -->
+            <div class="page">
+                <h2>Capítulo 5: Massas Esponja</h2>
+                <p>Ideal para "Naked Cakes" e bolos que recebem caldas de licor.</p>
+                <div class="page-divider">
+                    <h4 style="color: var(--primary);">💧 Capacidade de Absorção</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Tipo de Massa</th>
+                            <th>Absorção Máxima</th>
+                            <th>Calda Ideal</th>
+                        </tr>
+                        <tr>
+                            <td>Pão de Ló Clássico</td>
+                            <td>40ml por 100g</td>
+                            <td>Calda de açúcar 1:1</td>
+                        </tr>
+                        <tr>
+                            <td>Genovesa</td>
+                            <td>50ml por 100g</td>
+                            <td>Licor + açúcar</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>07</span></div>
+            </div>
+
+            <!-- CAP 6: AROMATIZAÇÃO -->
+            <div class="page">
+                <h2>Capítulo 6: Aromatização Natural</h2>
+                <p>A gordura é um excelente condutor de aroma. Se você aquecer levemente o seu óleo com ramos de alecrim
+                    ou
+                    tomilho e depois coar, seu bolo terá uma nota aromática invisível.</p>
+                <div class="page-divider">
+                    <h4 style="color: var(--primary);">🌿 Guia de Infusões Naturais</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Ingrediente</th>
+                            <th>Método</th>
+                            <th>Combinação Ideal</th>
+                        </tr>
+                        <tr>
+                            <td>Baunilha (fava)</td>
+                            <td>Infundir no leite morno</td>
+                            <td>Massas brancas</td>
+                        </tr>
+                        <tr>
+                            <td>Alecrim</td>
+                            <td>Infundir no óleo aquecido</td>
+                            <td>Bolos de azeite</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>08</span></div>
+            </div>
+
+            <!-- CAP 7 -->
+            <div class="page">
+                <h2>Capítulo 7: Estrutura para Bolos de Camadas</h2>
+                <p>Quanto mais alto o bolo, mais densa deve ser a massa base.</p>
+                <div class="tip-box">
+                    <strong>⚖️ Regra de Ouro:</strong> O peso do recheio não deve ultrapassar 150% do peso da massa.
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>09</span></div>
+            </div>
+
+            <!-- CAP 12: ERROS -->
+            <div class="page">
+                <h2>Capítulo 12: Erros Comuns e Como Corrigi-los</h2>
+                <div class="page-divider">
+                    <h4 style="color: var(--primary);">🚑 Primeiros Socorros do Forno</h4>
+                    <table class="info-table">
+                        <tr>
+                            <th>Sintoma</th>
+                            <th>Causa Provável</th>
+                            <th>Solução</th>
+                        </tr>
+                        <tr>
+                            <td>Bolo "Vulcão"</td>
+                            <td>Forno muito quente</td>
+                            <td>Reduza 10°C.</td>
+                        </tr>
+                        <tr>
+                            <td>Bolo "Solado"</td>
+                            <td>Liquido frio demais</td>
+                            <td>Suba a temp. dos ovos.</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>14</span></div>
+            </div>
+
+            <!-- FINAL -->
+            <div class="page">
+                <h2>O Caminho da Maestria</h2>
+                <p>Dominar as massas é dominar a fundação do seu império.</p>
+                <div
+                    style="background: var(--primary); color: white; padding: 40px; border-radius: 20px; text-align: center; margin-top: 50px;">
+                    <h3>Seja Bem-Vinda à Elite da Confeitaria</h3>
+                </div>
+                <div class="footer"><span>Guia das Massas Perfeitas</span><span>15</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="recheios" class="section-recheios">
+        <!-- SEPARATOR -->
+        <div class="page page-break"
+            style="background: var(--primary-vibrant); color: white; display:flex; align-items:center; justify-content:center; text-align:center;">
+            <div>
+                <h1 style="color:var(--gold); font-size: 4rem;">PARTE 4</h1>
+                <h2 style="color:white; border:none; font-size: 2.5rem;">RECHEIOS & COBERTURAS</h2>
+            </div>
+        </div>
+
+        <div class="ebook-container" style="box-shadow:none; margin:0; width:100%;">
+            <!-- CAPA -->
+            <div class="page page-break cover-page"
+                style="background-image: url('https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=2000&auto=format&fit=crop');">
+                <div class="cover-overlay"
+                    style="background: linear-gradient(135deg, rgba(46, 7, 63, 0.6), rgba(0, 0, 0, 0.9));"></div>
+                <div class="cover-content">
+                    <span class="cover-badge" style="background: var(--gold); color: black;">GOLD EDITION •
+                        MASTERCLASS</span>
+                    <div style="margin-top: auto; margin-bottom: auto;">
+                        <h2
+                            style="font-family: var(--font-heading); color: var(--gold); font-size: 2.2rem; font-weight: 300; margin-bottom: -10px; letter-spacing: 5px;">
+                            A Ciência dos</h2>
+                        <h1 class="cover-title"
+                            style="font-size: 7rem; line-height: 0.8; margin-bottom: 15px; font-weight: 900;">
+                            RECHEIOS<br><span
+                                style="color: var(--gold); font-family: var(--font-script); text-transform: none; font-size: 6rem;">Sublimes</span>
+                        </h1>
+                        <p
+                            style="color: #fff; font-size: 1.6rem; margin-top: 25px; font-weight: 300; letter-spacing: 1px;">
+                            O Manual Definitivo de Texturas, Estabilidade e Sabores.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 2 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">01. O DNA do Recheio Low Carb</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">Muitas pessoas acham que recheio é só misturar
+                        ingredientes. Na confeitaria Low Carb, dependemos da **emulsão lipídica**.</p>
+                    <div class="physics-box">
+                        <h3 style="color: var(--gold); margin-top: 0;">Por que seu recheio "chora"?</h3>
+                        <p>O fenômeno da **sinérese** acontece quando a água se separa da gordura. Se você não usar um
+                            agente estabilizante natural, seu recheio vai soltar água.</p>
+                        <p style="margin-top: 20px; font-weight: bold; color: var(--gold);">A Regra de Ouro: O descanso
+                            de
+                            12 horas é inegociável.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h4>O Tripé da Estabilidade:</h4>
+                        <ul style="line-height: 2;">
+                            <li><strong>Gordura Estrutural:</strong> Chocolate 70%+ ou Manteiga Ghee.</li>
+                            <li><strong>Agente de Corpo:</strong> Leite em pó integral (fit).</li>
+                            <li><strong>Emulsificante:</strong> Gemas de ovos ou Mixer de mão.</li>
+                        </ul>
+                    </div>
+                    <div class="page-number">Manual Técnico • Pág 02</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 3: RECEITAS -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">02. As Bases de Elite</h2>
+                    <div class="glass-card">
+                        <div class="recipe-header-alt">
+                            <h3>01. Brigadeiro de Ninho Belga</h3>
+                        </div>
+                        <p style="font-size: 0.9rem;">A textura que permite bico, colher ou recheio.</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+                            <div>
+                                <h5 style="margin-bottom: 5px; color: var(--secondary-vibrant);">Fórmula:</h5>
+                                <ul style="font-size: 0.8rem; padding-left: 15px;">
+                                    <li>395g Leite Condensado Low Carb Especial</li>
+                                    <li>200g Creme de Leite (Mínimo 20% gordura)</li>
+                                    <li>100g Chocolate Branco Zero</li>
+                                    <li>60g Leite em Pó Integral</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="glass-card">
+                        <div class="recipe-header-alt">
+                            <h3>02. Ganache Noir Intense</h3>
+                        </div>
+                        <p style="font-size: 0.9rem;">Resiste a 24h fora da geladeira.</p>
+                        <p style="font-size: 0.8rem; background: #eee; padding: 10px; border-radius: 5px;">250g
+                            Chocolate
+                            70% + 150g Creme de Leite + 15g Manteiga.</p>
+                    </div>
+                    <div class="page-number">Receitas Elite • Pág 03</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 4: RECEITAS 2 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">03. Sabores do Mediterrâneo</h2>
+                    <div class="glass-card">
+                        <div class="recipe-header-alt">
+                            <h3>05. Creme de Pistache Iraniano</h3>
+                        </div>
+                        <p style="font-size: 0.85rem;">Use a **Farinha de Pistache Crua**.</p>
+                    </div>
+                    <div class="glass-card">
+                        <div class="recipe-header-alt">
+                            <h3>06. Coulis Artesanal de Frutas</h3>
+                        </div>
+                        <p style="font-size: 0.9rem;">O contraste ácido que limpa o paladar.</p>
+                    </div>
+                    <div class="page-number">Receitas Elite • Pág 04</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 6: MASTERCLASS -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title"><i class="fa-solid fa-sliders"></i> Masterclass de Textura</h2>
+                    <div class="glass-card">
+                        <h4 style="color: var(--gold);">1. Ponto de Recheio</h4>
+                        <p style="font-size: 0.85rem;">Quando você levanta a espátula e o creme cai em "blocos".</p>
+                    </div>
+                    <div class="glass-card">
+                        <h4 style="color: var(--gold);">2. Ponto de Bico</h4>
+                        <p style="font-size: 0.85rem;">Atingido após 12h de geladeira.</p>
+                    </div>
+                    <div class="page-number">Domínio de Técnica • Pág 06</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 7: TROUBLESHOOTING -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title"><i class="fa-solid fa-first-aid"></i> Troubleshooting</h2>
+                    <div class="troubleshooting-grid">
+                        <div class="issue-card">
+                            <h5 style="margin-top: 0; color: #D32F2F;">O Recheio Talhou</h5>
+                            <p style="font-size: 0.75rem; color: #43A047; font-weight: bold;">Salvação: Use o MIXER DE
+                                MÃO.
+                            </p>
+                        </div>
+                        <div class="solution-card">
+                            <h5 style="margin-top: 0; color: #2E7D32;">Ficou Líquido Demais</h5>
+                            <p style="font-size: 0.75rem; color: #1565C0; font-weight: bold;">Salvação: Gelatina incolor
+                                +
+                                geladeira.</p>
+                        </div>
+                    </div>
+                    <div class="page-number">Consultoria Profissional • Pág 07</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 8: FINAL -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title"><i class="fa-solid fa-boxes-stacked"></i> Conservação</h2>
+                    <table style="width: 100%; border-collapse: collapse; margin-top: 20px; font-size: 0.85rem;">
+                        <tr style="background: var(--gold); color: black;">
+                            <th style="padding: 12px; text-align: left;">Sabor Base</th>
+                            <th style="padding: 12px; text-align: left;">Validade</th>
+                        </tr>
+                        <tr>
+                            <td>Chocolate Noir</td>
+                            <td>10 Dias</td>
+                        </tr>
+                        <tr>
+                            <td>Ninho Branco</td>
+                            <td>7 Dias</td>
+                        </tr>
+                    </table>
+                    <div style="text-align: center; margin-top: 40px;">
+                        <h3 style="font-family: var(--font-script); font-size: 2.5rem; color: var(--gold); margin: 0;">
+                            Excelentes Vendas!</h3>
+                    </div>
+                    <div class="page-number">O Fim do Início • Pág 08</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="pote" class="section-pote">
+        <!-- SEPARATOR -->
+        <div class="page page-break"
+            style="background: var(--primary-vibrant); color: white; display:flex; align-items:center; justify-content:center; text-align:center;">
+            <div>
+                <h1 style="color:white; font-size: 4rem;">PARTE 5</h1>
+                <h2 style="color:white; border:none; font-size: 2.5rem;">BOLOS DE POTE LUCRATIVOS</h2>
+            </div>
+        </div>
+
+        <div class="ebook-container" style="box-shadow:none; margin:0; width:100%;">
+            <!-- PÁGINA 1: CAPA -->
+            <div class="page page-break cover-page"
+                style="background-image: url('https://images.unsplash.com/photo-1510439565632-77db7bcddc6e?q=80&w=2000&auto=format&fit=crop');">
+                <div class="cover-overlay"
+                    style="background: linear-gradient(135deg, rgba(255, 143, 0, 0.4), rgba(0, 0, 0, 0.85));"></div>
+                <div class="cover-content">
+                    <span class="cover-badge"
+                        style="background: white; color: var(--primary-vibrant); font-weight: 900;">MÉTODO DINHEIRO NO
+                        POTE
+                        2025</span>
+                    <div style="margin-top: auto; margin-bottom: auto;">
+                        <h2
+                            style="font-family: var(--font-heading); color: #FFD54F; font-size: 2.2rem; font-weight: 300; margin-bottom: -10px; letter-spacing: 3px;">
+                            A Versatilidade dos</h2>
+                        <h1 class="cover-title"
+                            style="font-size: 6.5rem; line-height: 0.8; margin-bottom: 15px; font-weight: 900;">BOLOS
+                            DE<br><span
+                                style="color: #FFD54F; font-family: var(--font-script); text-transform: none; font-size: 5.5rem;">Pote</span>
+                        </h1>
+                        <p
+                            style="color: #fff; font-size: 1.5rem; margin-top: 25px; font-weight: 300; letter-spacing: 1px;">
+                            O Plano de Ação para faturar R$ 3.000+ vendendo saúde.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 2 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">01. A Engenharia do Pote</h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8;">Para um bolo de pote ser lucrativo, ele precisa ter
+                        o
+                        equilíbrio visual perfeito. A regra de ouro é a **Simetria das Camadas**.</p>
+                    <div class="logic-card">
+                        <h4 style="color: var(--primary-vibrant); margin-top: 0;">A Proporção Ideal:</h4>
+                        <ul style="line-height: 2;">
+                            <li><strong>Base (20%):</strong> Massa fofa e bem regada.</li>
+                            <li><strong>Recheio 1 (30%):</strong> Textura cremosa.</li>
+                            <li><strong>Centro (20%):</strong> Fruta ou crocância.</li>
+                            <li><strong>Top (30%):</strong> Visual UAU.</li>
+                        </ul>
+                    </div>
+                    <div class="page-number">Método de Montagem • Pág 02</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 3 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">02. Caldas de Ouro</h2>
+                    <div class="syrup-box">
+                        <h3 style="margin-top: 0;">Calda Base de Leite de Coco</h3>
+                        <p style="font-size: 0.9rem;">200ml Leite de Coco + 100ml Água + Xilitol. Ferver para aumentar
+                            validade.</p>
+                    </div>
+                    <div class="page-number">Segredos de Hidratação • Pág 03</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 4 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">03. O Menu de Ouro</h2>
+                    <div class="combo-card-vibrant">
+                        <h4 style="margin-top: 0;">1. Prestígio Low Carb Real</h4>
+                        <p style="font-size: 0.85rem;">Massa dark, coco fresco e ganache.</p>
+                    </div>
+                    <div class="combo-card-vibrant">
+                        <h4 style="margin-top: 0;">2. Red Velvet com Cream Cheese</h4>
+                        <p style="font-size: 0.85rem;">O queridinho do Instagram.</p>
+                    </div>
+                    <div class="page-number">Menu Lucrativo • Pág 04</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 5 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <div class="combo-card-vibrant">
+                        <h4 style="margin-top: 0;">3. Sensação de Morango</h4>
+                        <p style="font-size: 0.85rem;">Geleia caseira + Brigadeiro Ninho.</p>
+                    </div>
+                    <div class="combo-card-vibrant">
+                        <h4 style="margin-top: 0;">4. Banoffee no Pote</h4>
+                        <p style="font-size: 0.85rem;">Doce de leite fit + banana.</p>
+                    </div>
+                    <div class="page-number">Menu Lucrativo • Pág 05</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 6 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">04. A Matemática do Pote</h2>
+                    <div style="background: #fafafa; padding: 30px; border-radius: 20px; border: 2px solid #eee;">
+                        <h4 style="margin-top: 0; text-align: center;">Exemplo de Lucro Real (Semanal):</h4>
+                        <div
+                            style="display: flex; justify-content: space-between; margin-top: 20px; font-weight: bold;">
+                            <span>50 Potes:</span><span style="color: #2E7D32;">R$ 1.000,00</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 10px; color: #D32F2F;">
+                            <span>Custo:</span><span>- R$ 325,00</span>
+                        </div>
+                        <div
+                            style="display: flex; justify-content: space-between; margin-top: 10px; font-size: 1.2rem; color: #1565C0;">
+                            <span>LUCRO LÍQUIDO:</span><span>R$ 675,00</span>
+                        </div>
+                    </div>
+                    <div class="page-number">Matemática do Sucesso • Pág 06</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 7 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">05. 8 Estratégias para Vender</h2>
+                    <div class="strategy-grid">
+                        <div class="strategy-item">
+                            <h5 style="margin: 0; color: #FFD54F;">1. A Escassez no WhatsApp</h5>
+                            <p style="font-size: 0.75rem;">"Restam apenas 5 unidades!"</p>
+                        </div>
+                        <div class="strategy-item">
+                            <h5 style="margin: 0; color: #FFD54F;">2. O "Close-up"</h5>
+                            <p style="font-size: 0.75rem;">Vídeos de colherada.</p>
+                        </div>
+                    </div>
+                    <div class="page-number">Marketing Destravado • Pág 07</div>
+                </div>
+            </div>
+
+            <!-- PÁGINA 8 -->
+            <div class="page page-break">
+                <div class="interior-page">
+                    <h2 class="section-title">06. Checklist de Segurança</h2>
+                    <div style="text-align: center; margin-top: 60px;">
+                        <h3
+                            style="font-family: var(--font-script); font-size: 2.8rem; color: var(--primary-vibrant); margin: 0;">
+                            Você está pronta para escalar!</h3>
+                    </div>
+                    <div class="page-number">O Planalto da Vitória • Pág 08</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

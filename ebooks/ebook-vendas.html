@@ -26,6 +26,171 @@
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=711986754477110&ev=PageView&noscript=1" /></noscript>
     <!-- End Meta Pixel Code -->
+    <style>
+        /* CSS CONSOLIDADO DAS FERRAMENTAS */
+        /* Planilha */
+        .wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px
+        }
+
+        .calc-panel {
+            background: white;
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08)
+        }
+
+        .result-panel {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center
+        }
+
+        .input-group {
+            margin-bottom: 20px
+        }
+
+        .btn-calc {
+            background: var(--highlight);
+            color: var(--primary);
+            width: 100%;
+            padding: 20px;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px
+        }
+
+        .metric {
+            margin: 15px 0
+        }
+
+        .metric-val {
+            font-size: 2.2rem;
+            display: block;
+            font-weight: 800;
+            color: var(--highlight)
+        }
+
+        /* Calendário */
+        .day-box {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+            position: relative
+        }
+
+        .day-label {
+            background: var(--primary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: bold;
+            position: absolute;
+            top: -15px;
+            left: 20px
+        }
+
+        .caption-field {
+            background: #fdfdfd;
+            border: 1px dashed #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-family: monospace;
+            font-size: 0.9rem
+        }
+
+        .strategy-badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 2px 10px;
+            border-radius: 5px;
+            font-size: 0.7rem;
+            font-weight: bold
+        }
+
+        /* Criativos */
+        .color-palette {
+            display: flex;
+            gap: 10px;
+            margin: 20px 0
+        }
+
+        .palette-color {
+            flex: 1;
+            height: 60px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
+        }
+
+        /* Tráfego */
+        .pro-badge {
+            background: #0084ff;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            margin-bottom: 20px
+        }
+
+        .pro-tip {
+            border-left: 5px solid #0084ff;
+            background: #e6f2ff;
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 20px 0
+        }
+
+        .step-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            margin-bottom: 25px;
+            border: 1px solid #eee
+        }
+
+        .step-num {
+            background: var(--primary);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px
+        }
+
+        /* Mobile fixes */
+        @media (max-width: 800px) {
+            .wrapper {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -115,6 +280,10 @@
                 <li class="toc-item"><a href="#modulo5">Módulo 5: Organização & Produção</a></li>
                 <li class="toc-item"><a href="#modulo6">Módulo 6: Escalando para R$ 5.000+</a></li>
                 <li class="toc-item"><a href="#modulo7">Módulo 7: Fotografia que Vende (Novidade!)</a></li>
+                <li class="toc-item"><a href="#modulo8">Módulo 8: Calculadora de Lucro</a></li>
+                <li class="toc-item"><a href="#modulo9">Módulo 9: Calendário de 30 Dias</a></li>
+                <li class="toc-item"><a href="#modulo10">Módulo 10: Criativos de Cinema</a></li>
+                <li class="toc-item"><a href="#modulo11">Módulo 11: Tráfego Pago Descomplicado</a></li>
                 <li class="toc-item"><a href="#recursos">Recursos Práticos & FAQ</a></li>
             </ul>
         </div>
@@ -807,6 +976,213 @@
     </div>
 
 
+
+    <!-- MÓDULO 8: CALCULADORA -->
+    <div class="page page-break" id="modulo8">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 8: Calculadora de Lucro 2.0</h2>
+            <p>Use esta ferramenta interativa para precificar seus bolos corretamente. Preencha os campos abaixo:</p>
+
+            <div class="wrapper" style="margin-top: 20px;">
+                <div class="calc-panel">
+                    <h3>📊 Custos do Produto</h3>
+                    <div class="input-group">
+                        <label>Custos de Ingredientes (R$)</label>
+                        <input type="number" id="ing" placeholder="Ex: 12.50" step="0.01"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+                    <div class="input-group">
+                        <label>Embalagem e Etiquetas (R$)</label>
+                        <input type="number" id="emb" placeholder="Ex: 3.00" step="0.01"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+                    <div class="input-group">
+                        <label>Fator de Perda (5% a 10%)</label>
+                        <input type="number" id="lost" value="5"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+
+                    <h3 style="margin-top: 20px;">🏢 Custos Fixos</h3>
+                    <div class="input-group">
+                        <label>Custo Fixo Mensal (R$)</label>
+                        <input type="number" id="fixed_total" placeholder="Ex: 400.00"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+                    <div class="input-group">
+                        <label>Meta de Vendas (Unid/Mês)</label>
+                        <input type="number" id="goal" value="100"
+                            style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                    </div>
+
+                    <button class="btn-calc" onclick="calcPro()">CALCULAR PREÇO ➔</button>
+                </div>
+
+                <div class="result-panel">
+                    <div class="metric">
+                        <p>Preço Mínimo (Margem 30%)</p>
+                        <span class="metric-val" id="res_min">R$ 0,00</span>
+                    </div>
+                    <div class="metric">
+                        <p>Preço Sugerido (Lucro 60%)</p>
+                        <span class="metric-val" id="res_sugg" style="color: #64ffda;">R$ 0,00</span>
+                    </div>
+                    <div class="metric" style="background: rgba(255,255,255,0.1); padding: 15px; border-radius: 15px;">
+                        <p>Lucro Real por Unidade</p>
+                        <span id="res_profit" style="font-weight: bold; font-size: 1.2rem;">R$ 0,00</span>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function calcPro() {
+                    const ing = parseFloat(document.getElementById('ing').value) || 0;
+                    const emb = parseFloat(document.getElementById('emb').value) || 0;
+                    const lost = parseFloat(document.getElementById('lost').value) / 100;
+                    const fixedT = parseFloat(document.getElementById('fixed_total').value) || 0;
+                    const goal = parseFloat(document.getElementById('goal').value) || 1;
+
+                    const custoVariavel = (ing + emb) * (1 + lost);
+                    const custoFixoUnid = fixedT / goal;
+                    const custoTotal = custoVariavel + custoFixoUnid;
+
+                    const precoMin = custoTotal / (1 - 0.30);
+                    const precoSugg = custoTotal / (1 - 0.60);
+                    const lucroReal = precoSugg - custoTotal;
+
+                    document.getElementById('res_min').innerText = "R$ " + precoMin.toFixed(2).replace('.', ',');
+                    document.getElementById('res_sugg').innerText = "R$ " + precoSugg.toFixed(2).replace('.', ',');
+                    document.getElementById('res_profit').innerText = "R$ " + lucroReal.toFixed(2).replace('.', ',');
+                }
+            </script>
+            <div class="page-number">Calculadora</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 9: CALENDÁRIO -->
+    <div class="page page-break" id="modulo9">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 9: Calendário de 30 Dias</h2>
+            <p>O segredo da venda no Instagram não é postar muito, é postar com <strong>Estratégia</strong>.</p>
+
+            <div style="height: 600px; overflow-y: scroll; padding-right: 15px; margin-top: 20px;">
+                <!-- DIA 1 -->
+                <div class="day-box">
+                    <span class="day-label">DIA 01</span>
+                    <div><span class="strategy-badge">TOPO DE FUNIL</span></div>
+                    <h4 style="margin-top: 10px;">Foto/Vídeo: O seu melhor bolo</h4>
+                    <div class="caption-field">Legenda: "Sabe aquele desejo de um doce que não pesa na consciência? Esse
+                        é o nosso [Nome do Bolo]. 🍰✨ Clique no link da bio!"</div>
+                </div>
+                <!-- DIA 2 -->
+                <div class="day-box">
+                    <span class="day-label">DIA 02</span>
+                    <div><span class="strategy-badge">MEIO DE FUNIL</span></div>
+                    <h4 style="margin-top: 10px;">Bastidores: Ingredientes</h4>
+                    <div class="caption-field">Legenda: "O que vai por trás da mágica? 🥣 Mostrando a qualidade da nossa
+                        farinha de amêndoas e o cacau 100%. Saúde em primeiro lugar!"</div>
+                </div>
+                <!-- DIA 3 -->
+                <div class="day-box">
+                    <span class="day-label">DIA 03</span>
+                    <div><span class="strategy-badge">VENDA DIRETA</span></div>
+                    <h4 style="margin-top: 10px;">Promoção Relâmpago</h4>
+                    <div class="caption-field">Legenda: "⚡ Só hoje! Na compra de 2 bolos de pote, o 3º sai pela metade
+                        do preço. Restam 5 unidades!"</div>
+                </div>
+                <!-- DIA 4-10 -->
+                <div class="day-box">
+                    <span class="day-label">SEMANA 2: DESEJO</span>
+                    <p>Foque em vídeos mostrando a textura, o recheio caindo, o barulho da embalagem abrindo (ASMR).</p>
+                </div>
+                <!-- DIA 11-20 -->
+                <div class="day-box">
+                    <span class="day-label">SEMANA 3: PROVA SOCIAL</span>
+                    <p>Poste print de clientes elogiando. "Olha o que a Ana falou do nosso bolo!". Isso gera confiança.
+                    </p>
+                </div>
+                <!-- DIA 21-30 -->
+                <div class="day-box">
+                    <span class="day-label">SEMANA 4: ESCASSEZ</span>
+                    <p>"Agenda de encomendas para o fim de mês fechando!". Avise que vai acabar.</p>
+                </div>
+            </div>
+            <div class="page-number">Calendário</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 10: CRIATIVOS -->
+    <div class="page page-break" id="modulo10">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 10: Criativos de Cinema</h2>
+            <p>Aprenda a fazer fotos e vídeos que deixam o cliente salivando.</p>
+
+            <div class="color-palette">
+                <div class="palette-color" style="background: #6a3321;">MARROM (Desejo)</div>
+                <div class="palette-color" style="background: #f7f5e0; color: #6a3321;">CREME (Leveza)</div>
+                <div class="palette-color" style="background: #ffbb00;">OURO (Premium)</div>
+            </div>
+
+            <div class="section-card">
+                <h3><i class="fa-solid fa-lightbulb"></i> A Iluminação Perfeita (De Graça)</h3>
+                <p>Nunca use o flash! Vá para perto de uma janela. A luz natural lateral cria sombras suaves que dão
+                    volume ao bolo.</p>
+            </div>
+
+            <div class="step-card" style="margin-top: 20px;">
+                <h3>Scripts para Reels</h3>
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <strong>1. O "Zoom"</strong><br>
+                    Comece o vídeo bem de perto da cobertura e vá afastando. <br>
+                    <em>Legenda na tela: "Você não vai acreditar que isso é FIT..."</em>
+                </div>
+                <div style="background: #f0f8ff; padding: 15px; border-radius: 8px;">
+                    <strong>2. O "Corte"</strong><br>
+                    Grave cortando uma fatia devagar. <br>
+                    <em>Áudio: Música clássica ou instrumental suave.</em>
+                </div>
+            </div>
+            <div class="page-number">Criativos</div>
+        </div>
+    </div>
+
+    <!-- MÓDULO 11: TRÁFEGO PAGO -->
+    <div class="page page-break" id="modulo11">
+        <a href="#toc" class="back-to-index"><i class="fa-solid fa-arrow-left"></i> Índice</a>
+        <div class="interior-page">
+            <h2 class="section-title">Módulo 11: Tráfego Pago Descomplicado</h2>
+            <div class="pro-badge">Edição 2.0</div>
+            <p>Como investir R$ 10 e voltar R$ 50 em vendas.</p>
+
+            <div class="step-card">
+                <h3><span class="step-num">1</span> O Segredo do Raio</h3>
+                <p>No gerenciador de anúncios, nunca anuncie para a cidade toda (se for grande). Coloque um pino na sua
+                    cozinha e anuncie para <strong>Raio de 3 a 5km</strong>. O frete fica barato e o cliente recebe
+                    rápido!</p>
+            </div>
+
+            <div class="step-card">
+                <h3><span class="step-num">2</span> O Público Comprador</h3>
+                <p><strong>Interesses:</strong> Comida saudável, Nutrição, Dietas, Doces.<br>
+                    <strong>Idade:</strong> 25 a 55 anos (geralmente quem tem poder de compra).
+                </p>
+            </div>
+
+            <div class="pro-tip">
+                <strong>Dica de Mestre:</strong> Faça anúncios nos horários de fome! Programe para rodar das 11h às 13h
+                (almoço) e das 16h às 19h (café da tarde/jantar).
+            </div>
+
+            <div class="highlight-box"
+                style="margin-top: 20px; background: var(--primary); color: white; padding: 20px; border-radius: 10px;">
+                <strong>Meta de Investimento:</strong> Comece com R$ 10 ou R$ 20 por final de semana. O lucro dessas
+                vendas você reinveste na próxima semana!
+            </div>
+            <div class="page-number">Tráfego</div>
+        </div>
+    </div>
 
     <!-- RECURSOS PRÁTICOS -->
     <div class="page page-break" id="recursos">

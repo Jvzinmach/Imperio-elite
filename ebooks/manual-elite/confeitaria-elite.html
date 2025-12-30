@@ -143,16 +143,46 @@
 
         .image-placeholder {
             width: 100%;
-            height: 250px;
-            background: #f0f0f0;
-            border: 1px dashed #ccc;
+            height: auto;
+            background: #fff;
+            border: 2px solid var(--gold);
+            margin: 30px 0;
+            padding: 20px;
+            border-radius: 15px;
+            display: block;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .info-table th {
+            background: var(--primary);
+            color: var(--gold-light);
+            padding: 10px;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .info-table td {
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.9rem;
+        }
+
+        .checklist-item {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 20px 0;
-            border-radius: 10px;
-            color: #999;
-            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        .checklist-item i {
+            color: var(--gold);
+            margin-right: 15px;
+            font-size: 1.2rem;
         }
 
         .footer {
@@ -226,21 +256,24 @@
             <h2>Sumário</h2>
             <div class="toc-list">
                 <div class="toc-item"><span>Capítulo 1: A Psicologia da Primeira Garfada</span><span>03</span></div>
-                <div class="toc-item"><span>Capítulo 2: Harmonia de Cores e Paletas Luxuosas</span><span>05</span></div>
-                <div class="toc-item"><span>Capítulo 3: Bicos de Confeitar: Guia de Modelagem</span><span>07</span>
+                <div class="toc-item"><span>Capítulo 2: Harmonia de Cores e Paletas Luxuosas</span><span>04</span></div>
+                <div class="toc-item"><span>Capítulo 3: Bicos de Confeitar: Guia de Modelagem</span><span>05</span>
                 </div>
-                <div class="toc-item"><span>Capítulo 4: Finalização com Frutas e Flores</span><span>09</span></div>
-                <div class="toc-item"><span>Capítulo 5: A Engenharia das Embalagens de Luxo</span><span>11</span></div>
-                <div class="toc-item"><span>Capítulo 6: Fotografia de Alimentos com Celular</span><span>13</span></div>
-                <div class="toc-item"><span>Capítulo 7: Como Cobrar Preços Premium</span><span>15</span></div>
-                <div class="toc-item"><span>Capítulo 8: Higiene e Segurança de Elite</span><span>17</span></div>
-                <div class="toc-item"><span>Capítulo 9: O Segredo da Textura Perfeita</span><span>19</span></div>
-                <div class="toc-item"><span>Capítulo 10: Estruturação de Bolos de Andar</span><span>21</span></div>
-                <div class="toc-item"><span>Capítulo 11: Transportando Obras de Arte</span><span>23</span></div>
-                <div class="toc-item"><span>Capítulo 12: Atendimento VIP ao Cliente</span><span>25</span></div>
-                <div class="toc-item"><span>Capítulo 13: Criando sua Identidade Visual</span><span>27</span></div>
-                <div class="toc-item"><span>Capítulo 14: Marketing de Desejo</span><span>29</span></div>
-                <div class="toc-item"><span>Capítulo 15: O Próximo Passo do seu Império</span><span>31</span></div>
+                <div class="toc-item"><span>Capítulo 4: Finalização com Frutas e Flores</span><span>06</span></div>
+                <div class="toc-item"><span>Capítulo 5: A Engenharia das Embalagens de Luxo</span><span>07</span></div>
+                <div class="toc-item"><span>Capítulo 6: Fotografia de Alimentos com Celular</span><span>08-09</span>
+                </div>
+                <div class="toc-item"><span>Capítulo 7: Como Cobrar Preços Premium</span><span>10-11</span></div>
+                <div class="toc-item"><span>Capítulo 8: Higiene e Segurança de Elite</span><span>12</span></div>
+                <div class="toc-item"><span>Capítulo 9: O Segredo da Textura Perfeita</span><span>13</span></div>
+                <div class="toc-item"><span>Capítulo 10: Estruturação de Bolos de Andar</span><span>14</span></div>
+                <div class="toc-item"><span>Capítulo 11: Transportando Obras de Arte</span><span>15</span></div>
+                <div class="toc-item"><span>Capítulo 12: Atendimento VIP ao Cliente</span><span>16</span></div>
+                <div class="toc-item"><span>Capítulo 13: Criando sua Identidade Visual</span><span>17</span></div>
+                <div class="toc-item"><span>Capítulo 14: Marketing de Desejo</span><span>18</span></div>
+                <div class="toc-item"><span>Capítulo 15: O Próximo Passo do seu Império</span><span>19</span></div>
+                <div class="toc-item"><span>BÔNUS: A Rotina da Confeiteira Milionária</span><span>20</span></div>
+                <div class="toc-item"><span>Glossário da Confeitaria de Elite</span><span>21</span></div>
             </div>
             <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 02</span></div>
         </div>
@@ -275,7 +308,29 @@
                 cores complementares para um visual vibrante e festivo. Fuja dos cores "Artificiais" intensas demais,
                 que podem passar a ideia de excesso de corantes químicos.</p>
             <div class="image-placeholder">
-                [INFOGRÁFICO: Exemplos de combinações Marrom/Dourado e Rosa/Champanhe]
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🔍 Tabela de Emoções Cromáticas</h4>
+                <table class="info-table">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Efeito Psicológico</th>
+                        <th>Contexto Elite</th>
+                    </tr>
+                    <tr>
+                        <td>Dourado</td>
+                        <td>Status e Valor</td>
+                        <td>Logos, fios e detalhes.</td>
+                    </tr>
+                    <tr>
+                        <td>Chocolate</td>
+                        <td>Paladar e Desejo</td>
+                        <td>Bases e recheios.</td>
+                    </tr>
+                    <tr>
+                        <td>Pastéis</td>
+                        <td>Classe e Delicadeza</td>
+                        <td>Casamentos e Batizados.</td>
+                    </tr>
+                </table>
             </div>
             <p>Lembre-se: O branco nunca é "apenas branco". Existe o marfim, o pérola e o off-white, cada um
                 transmitindo um nível diferente de sofisticação para o seu chantilly ou buttercream.</p>
@@ -295,6 +350,15 @@
             <p>O segredo da elite não é ter 100 bicos, mas saber usar 5 bicos com perfeição total. A consistência do seu
                 creme é o fator determinante aqui: ele deve ser firme o suficiente para segurar a forma, mas macio o
                 suficiente para não "serrilhar" as bordas.</p>
+            <div class="image-placeholder">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📐 Guia Rápido de Movimento</h4>
+                <div class="checklist-item"><i class="fas fa-arrow-right"></i> <strong>Pressão:</strong> Comece firme e
+                    termine suave para pontas finas.</div>
+                <div class="checklist-item"><i class="fas fa-arrow-right"></i> <strong>Ângulo:</strong> Mantenha 45°
+                    para bordas e 90° para topos.</div>
+                <div class="checklist-item"><i class="fas fa-arrow-right"></i> <strong>Distância:</strong> Fique a 1cm
+                    da base para não arrastar o creme.</div>
+            </div>
             <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 05</span></div>
         </div>
 
@@ -309,6 +373,31 @@
                 o contato com o alimento seja seguro. Utilize apenas flores classificadas como comestíveis ou não
                 tóxicas.
             </div>
+            <div class="image-placeholder">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🌡️ Tabela de Pontos do Drip</h4>
+                <table class="info-table">
+                    <tr>
+                        <th>Temp.</th>
+                        <th>Estado</th>
+                        <th>Resultado Visual</th>
+                    </tr>
+                    <tr>
+                        <td>45°C</td>
+                        <td>Líquida</td>
+                        <td>Escorre até a base (Desleixado).</td>
+                    </tr>
+                    <tr>
+                        <td>32°C</td>
+                        <td>Ideal</td>
+                        <td>Gota perfeita (Elite).</td>
+                    </tr>
+                    <tr>
+                        <td>28°C</td>
+                        <td>Pastosa</td>
+                        <td>Não escorre (Acúmulo no topo).</td>
+                    </tr>
+                </table>
+            </div>
             <p>A técnica do "Drip" (calda escorrendo) deve parecer um acidente controlado, não uma bagunça. A
                 temperatura da calda é a chave para o escorrimento perfeito.</p>
             <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 06</span></div>
@@ -322,10 +411,228 @@
                 do cliente provar.</p>
             <p>Invista em caixas com visores transparentes, fitas de cetim grossas e tags personalizadas. O som do papel
                 de seda sendo aberto faz parte da gastronomia sensorial.</p>
+            <div class="image-placeholder">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📦 Checklist do Unboxing Perfeito</h4>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Caixa com visor de acetato limpo.</div>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Fita de cetim com brilho (mínimo 2cm
+                    largura).</div>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Tag com nome do cliente à mão.</div>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Aroma exclusivo ao abrir a caixa.</div>
+            </div>
             <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 07</span></div>
         </div>
 
-        <!-- PAGE 8: CAP 8 -->
+        <div class="page-break"></div>
+
+        <!-- PAGE 8: CAP 6 -->
+        <div class="page">
+            <h2>Capítulo 6: Fotografia de Alimentos com Celular</h2>
+            <div class="chapter-intro">
+                "Sua foto é o seu catálogo. Se a foto é amadora, o preço será amador."
+            </div>
+            <p>O segredo da elite não é a câmera, mas a <strong>luz</strong>. A fotografia profissional de alimentos é
+                80% iluminação, 15% composição e apenas 5% equipamento. Um celular com luz correta vence uma DSLR com
+                flash direto.</p>
+
+            <div class="image-placeholder">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">☀️ Tabela Técnica: Luz & Direção</h4>
+                <table class="info-table">
+                    <tr>
+                        <th>Tipo de Luz</th>
+                        <th>Horário Ideal</th>
+                        <th>Efeito Visual</th>
+                    </tr>
+                    <tr>
+                        <td>Lateral Suave</td>
+                        <td>9h-11h / 15h-17h</td>
+                        <td>Textura realçada, sombras naturais.</td>
+                    </tr>
+                    <tr>
+                        <td>Contraluz (Backlight)</td>
+                        <td>16h-18h</td>
+                        <td>Halo dourado, aspecto etéreo.</td>
+                    </tr>
+                    <tr>
+                        <td>Difusa (Nublado)</td>
+                        <td>Qualquer hora</td>
+                        <td>Cores fiéis, sem sombras duras.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="image-placeholder" style="margin-top: 20px;">
+                <h4 style="color: var(--primary); margin-bottom: 10px;">📐 Ângulos da Elite</h4>
+                <div class="checklist-item"><i class="fas fa-angle-right"></i> <strong>0° (Eye Level):</strong> Bolos
+                    altos, naked cakes, drip cakes.</div>
+                <div class="checklist-item"><i class="fas fa-angle-right"></i> <strong>45°:</strong> Versátil, mostra
+                    topo e lateral.</div>
+                <div class="checklist-item"><i class="fas fa-angle-right"></i> <strong>90° (Flatlay):</strong> Mesas
+                    decoradas, kits de festa.</div>
+            </div>
+
+            <p style="margin-top: 15px;">Use o <strong>bloqueio de foco</strong> (toque e segure) e reduza a exposição
+                em -0.3 a -0.7 para cores mais saturadas e profissionais.</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 08</span></div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- PAGE 8.5: CAP 6 CONTINUATION - Props & Color -->
+        <div class="page">
+            <h2>Capítulo 6: Fotografia de Alimentos (Continuação)</h2>
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 15px;">Styling & Composição</h3>
+
+            <div class="image-placeholder">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🎨 Harmonia de Cores na Fotografia</h4>
+                <table class="info-table">
+                    <tr>
+                        <th>Cor do Bolo</th>
+                        <th>Fundo Ideal</th>
+                        <th>Props Complementares</th>
+                    </tr>
+                    <tr>
+                        <td>Chocolate / Marrom</td>
+                        <td>Branco, Creme, Cinza claro</td>
+                        <td>Madeira natural, linho bege.</td>
+                    </tr>
+                    <tr>
+                        <td>Frutas Vermelhas</td>
+                        <td>Branco puro, Mármore</td>
+                        <td>Folhas verdes, guardanapo branco.</td>
+                    </tr>
+                    <tr>
+                        <td>Naked Cake (Bege)</td>
+                        <td>Madeira escura, Ardósia</td>
+                        <td>Flores secas, renda vintage.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="image-placeholder" style="margin-top: 20px;">
+                <h4 style="color: var(--primary); margin-bottom: 10px;">🍴 Kit Básico de Props</h4>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Tábua de madeira clara e escura.</div>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Tecidos neutros (linho, algodão cru).
+                </div>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Pratos brancos lisos (sem estampa).
+                </div>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Flores frescas ou secas (sempre).</div>
+                <div class="checklist-item"><i class="fas fa-check-circle"></i> Guardanapos de tecido dobrados.</div>
+            </div>
+
+            <p style="margin-top: 20px;"><strong>Regra de Ouro:</strong> Menos é mais. Três elementos visuais (bolo + 2
+                props) criam uma composição limpa e profissional. Mais que isso vira poluição visual.</p>
+
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 09</span></div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- PAGE 9: CAP 7 -->
+        <div class="page">
+            <h2>Capítulo 7: Como Cobrar Preços Premium</h2>
+            <p>Preço é o que o cliente paga. Valor é o que ele leva. Para cobrar caro, você deve resolver um problema: o
+                medo do cliente de a festa ser um fracasso.</p>
+            <div class="highlight-box">
+                <strong>A Regra dos 3x:</strong> Nunca calcule apenas (Ingredientes + 30%). O preço de elite deve
+                considerar sua autoridade e o nível de personalização.
+            </div>
+            <table class="info-table">
+                <tr>
+                    <th>Nível</th>
+                    <th>Base de Cálculo</th>
+                    <th>Público-Alvo</th>
+                </tr>
+                <tr>
+                    <td>Comum</td>
+                    <td>Custo + 100%</td>
+                    <td>Familiar / Amigos</td>
+                </tr>
+                <tr>
+                    <td>Profissional</td>
+                    <td>Custo + 200%</td>
+                    <td>Eventos e Festas Médias</td>
+                </tr>
+                <tr>
+                    <td>Elite</td>
+                    <td>Valor por Projeto</td>
+                    <td>Casamentos e Luxo</td>
+                </tr>
+            </table>
+            <p>Lembre-se: quando você cobra barato, você atrai o cliente que reclama do preço. Quando você cobra o justo
+                (valor de elite), você atrai o cliente que agradece pelo serviço.</p>
+
+            <div class="image-placeholder" style="margin-top: 25px;">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">💰 Psicologia do Preço</h4>
+                <table class="info-table">
+                    <tr>
+                        <th>Estratégia</th>
+                        <th>Exemplo</th>
+                        <th>Efeito Psicológico</th>
+                    </tr>
+                    <tr>
+                        <td>Charm Pricing</td>
+                        <td>R$ 299,90</td>
+                        <td>Percepção de "desconto" (varejo).</td>
+                    </tr>
+                    <tr>
+                        <td>Prestige Pricing</td>
+                        <td>R$ 350,00</td>
+                        <td>Números redondos = Luxo e confiança.</td>
+                    </tr>
+                    <tr>
+                        <td>Ancoragem</td>
+                        <td>De R$ 500 por R$ 350</td>
+                        <td>Cliente sente que está economizando.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <p style="margin-top: 15px;"><strong>Para Elite:</strong> Use sempre números redondos (R$ 400, R$ 600, R$
+                1.200). Evite centavos. Eles comunicam "promoção", não exclusividade.</p>
+
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 10</span></div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- PAGE 10.5: CAP 7 CONTINUATION - Value Pricing -->
+        <div class="page">
+            <h2>Capítulo 7: Precificação Premium (Continuação)</h2>
+            <h3 style="color: var(--accent); font-size: 1.4rem; margin-bottom: 15px;">Precificação por Valor, Não por
+                Hora</h3>
+
+            <p>A confeiteira comum cobra por hora trabalhada. A confeiteira de elite cobra pelo <strong>resultado
+                    entregue</strong>. Um bolo de casamento não é "8 horas de trabalho", é "a peça central da festa mais
+                importante da vida do cliente".</p>
+
+            <div class="highlight-box" style="background: #fff8f0; border-left: 5px solid var(--accent);">
+                <strong>Exemplo Real:</strong> Um bolo naked de 3 andares custa R$ 180 de ingredientes. Tempo: 6
+                horas.<br><br>
+                <strong>Cálculo Comum:</strong> R$ 180 + (6h × R$ 50) = R$ 480.<br>
+                <strong>Cálculo Elite:</strong> Valor emocional do casamento = R$ 1.200 a R$ 1.800.
+            </div>
+
+            <div class="image-placeholder" style="margin-top: 25px;">
+                <h4 style="color: var(--primary); margin-bottom: 10px;">🎯 Perguntas para Precificar por Valor</h4>
+                <div class="checklist-item"><i class="fas fa-question-circle"></i> Qual o orçamento total do evento?
+                </div>
+                <div class="checklist-item"><i class="fas fa-question-circle"></i> Quantos convidados?</div>
+                <div class="checklist-item"><i class="fas fa-question-circle"></i> O bolo é o destaque visual da festa?
+                </div>
+                <div class="checklist-item"><i class="fas fa-question-circle"></i> Há personalização (cores, tema,
+                    flores)?</div>
+            </div>
+
+            <p style="margin-top: 20px;">Quanto mais "sim" para essas perguntas, maior o valor percebido. Um bolo de R$
+                1.500 em um casamento de R$ 50.000 é apenas 3% do orçamento — barato para o cliente, lucrativo para
+                você.</p>
+
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 11</span></div>
+        </div>
+
+        <div class="page-break"></div>
+
+        <!-- PAGE 12: CAP 8 -->
         <div class="page">
             <h2>Capítulo 8: Higiene e Segurança de Elite</h2>
             <div class="chapter-intro">
@@ -342,7 +649,7 @@
             </div>
             <p>Lembre-se: Um único relato de intoxicação alimentar pode destruir uma reputação construída ao longo de
                 anos em questão de minutos nas redes sociais.</p>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 08</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 12</span></div>
         </div>
 
         <!-- PAGE 9: CAP 9 -->
@@ -354,11 +661,17 @@
                 muito quentes, a estrutura colapsa no forno. Use um termômetro infravermelho para garantir a precisão.
             </p>
             <div class="image-placeholder">
-                [GRÁFICO: Diferença visual entre massa batida em excesso vs massa aerada]
+                <h4 style="color: var(--primary); margin-bottom: 15px;">🧪 O Teste da Humidade Perfeita</h4>
+                <div class="checklist-item"><i class="fas fa-vial"></i> <strong>Toque:</strong> O centro deve voltar
+                    após uma leve pressão.</div>
+                <div class="checklist-item"><i class="fas fa-vial"></i> <strong>Visão:</strong> Bordas levemente
+                    douradas, centro pálido.</div>
+                <div class="checklist-item"><i class="fas fa-vial"></i> <strong>Corte:</strong> Sem migalhas soltas
+                    (massa coesa).</div>
             </div>
             <p>O descanso da massa na geladeira por 30 minutos antes de ir ao forno ajuda a relaxar o glúten, resultando
                 em um bolo que derrete na boca de forma uniforme.</p>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 09</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 11</span></div>
         </div>
 
         <!-- PAGE 10: CAP 10 -->
@@ -375,7 +688,7 @@
                 - Guia central que atravessa todos os andares.
             </div>
             <p>A segurança do seu transporte depende diretamente da qualidade da sua fundação interna.</p>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 10</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 14</span></div>
         </div>
 
         <!-- PAGE 11: CAP 11 -->
@@ -386,7 +699,7 @@
                 carro. Coloque o bolo sempre em uma superfície plana, nunca no banco inclinado.</p>
             <p>Se o trajeto for superior a 20 minutos, utilize gelo seco ou placas térmicas ao redor da caixa para
                 manter a temperatura do buttercream estável.</p>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 11</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 15</span></div>
         </div>
 
         <!-- PAGE 12: CAP 12 -->
@@ -400,7 +713,7 @@
                 <strong>Frase que vende:</strong> "Para que eu possa criar algo verdadeiramente exclusivo para o seu
                 evento, me conte um pouco mais sobre a sua decoração principal..."
             </div>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 12</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 16</span></div>
         </div>
 
         <!-- PAGE 13: CAP 13 -->
@@ -410,7 +723,7 @@
                 minimalistas para modernidade.</p>
             <p>A logomarca é o seu brasão de armas. Evite logos gratuitas de aplicativos. O investimento em uma
                 identidade visual profissional se paga na primeira fatura de um contrato grande.</p>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 13</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 17</span></div>
         </div>
 
         <!-- PAGE 14: CAP 14 -->
@@ -420,7 +733,7 @@
                 processo).</p>
             <p>As pessoas compram histórias. Mostre você escolhendo as frutas, batendo a massa e finalizando com
                 cuidado. Isso humaniza a marca e justifica o preço premium.</p>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 14</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 18</span></div>
         </div>
 
         <!-- PAGE 15: CONCLUSÃO -->
@@ -436,7 +749,64 @@
             </div>
             <p style="text-align: center; margin-top: 50px;"><strong>Beatriz Langoni</strong><br>Fundadora do Método
                 Impressionar</p>
-            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 15</span></div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 19</span></div>
+        </div>
+
+        <!-- PAGE 18: BONUS -->
+        <div class="page">
+            <h2>BÔNUS: A Rotina da Confeiteira Milionária</h2>
+            <div class="image-placeholder" style="background: var(--bg);">
+                <h4 style="color: var(--primary); margin-bottom: 15px;">📅 Planejamento Semanal (Foco em R$ 1k/dia)</h4>
+                <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Segunda:</strong> Gestão de
+                    estoque e anúncios Meta.</div>
+                <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Terça/Quarta:</strong> Produção
+                    de base e recheios.</div>
+                <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Quinta:</strong> Criação de
+                    conteúdo estratégico (Reels).</div>
+                <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Sexta/Sábado:</strong> Montagem,
+                    finalização e entregas VIP.</div>
+                <div class="checklist-item"><i class="fas fa-calendar-day"></i> <strong>Domingo:</strong> Descanso e
+                    análise de métricas de lucro.</div>
+            </div>
+            <div class="highlight-box" style="text-align: center;">
+                "O hábito da excelência é o que constrói o seu tesouro."
+            </div>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 20</span></div>
+        </div>
+
+        <!-- PAGE 19: GLOSSARY -->
+        <div class="page">
+            <h2>Glossário da Confeitaria de Elite</h2>
+            <div class="image-placeholder">
+                <table class="info-table">
+                    <tr>
+                        <th>Termo</th>
+                        <th>Tradução Elite</th>
+                    </tr>
+                    <tr>
+                        <td>Ganache</td>
+                        <td>Veludo de Chocolate</td>
+                    </tr>
+                    <tr>
+                        <td>Coulis</td>
+                        <td>Essência de Frutas Frescas</td>
+                    </tr>
+                    <tr>
+                        <td>Zests</td>
+                        <td>Perfume de Frutos Cítricos</td>
+                    </tr>
+                    <tr>
+                        <td>Mise en Place</td>
+                        <td>Ritual de Preparação</td>
+                    </tr>
+                    <tr>
+                        <td>Nappe</td>
+                        <td>O Ponto do Banho Perfeito</td>
+                    </tr>
+                </table>
+            </div>
+            <p style="text-align: center; margin-top: 40px; color: var(--gold);">"O luxo começa no seu vocabulário."</p>
+            <div class="footer"><span>Manual da Confeiteira de Elite</span><span>Página 21</span></div>
         </div>
 
     </div>

@@ -20,12 +20,12 @@ Cadastre como "Complementos" no checkout do produto acima:
 ## 🎡 2. Produtos do Upsell (A Vitrine)
 Você deve cadastrar **4 produtos diferentes** para usar na sua página de Upsell:
 
-| Produto | Preço Sugerido | Descrição Curta |
-| :--- | :--- | :--- |
-| **Manual Confeiteira de Elite** | R$ 19,90 | Decoração, Fotografia e Embalagem Profissional. |
-| **Guia Massas Perfeitas** | R$ 19,90 | A ciência das massas estruturadas e úmidas. |
-| **Pack Gestão Lucrativa** | R$ 27,90 | Tráfego Pago + Criativos + Planilha + Calendário. |
-| **O Império Completo (TUDO)** | R$ 47,00 | Todos os itens acima + Recheios + Pote + Doces. |
+| Produto | Preço Sugerido | Descrição Curta | Link Cakto |
+| :--- | :--- | :--- | :--- |
+| **Manual Confeiteira de Elite** | R$ 13,90 | Decoração, Fotografia e Embalagem Profissional. | [✅ Cadastrado](https://pay.cakto.com.br/3cqmqiv_703766) |
+| **Guia Massas Perfeitas** | R$ 12,90 | A ciência das massas estruturadas e úmidas. | ⏳ Pendente |
+| **Pack Gestão Lucrativa** | R$ 27,90 | Tráfego Pago + Criativos + Planilha + Calendário. | [✅ Cadastrado](https://pay.cakto.com.br/myus7z4_704049) |
+| **O Império Completo (TUDO)** | R$ 47,00 | Todos os itens acima + Recheios + Pote + Doces. | ⏳ Pendente |
 
 ---
 
